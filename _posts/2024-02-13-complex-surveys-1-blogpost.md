@@ -76,8 +76,16 @@ $$
     = {N-1 \choose n-1} && \text{see above} \cr
 &3. \mathbb{P}(\text{select element} j) = \frac{\text{step 2}}{\text{step 1}} \
     && \text{probability =} \frac{n_{\text{ways to succeed}}}{n_{\text{outcomes}}} \cr
-&4. \mathbb{P}(\text{select element} j) = \frac{{N-1 \choose n-1}}{{N \choose n}} \
-    && \text{substitution} \cr
+&5. = \frac{\frac{(N-1)!}{(n-1)!(N-1 - [n-1])!}}{\frac{N!}{n! (N-n)!}} \
+    && \text{definition} \cr
+&6. = \frac{\frac{(N-1)!}{(n-1)! (N-n)!}}{\frac{N!}{n!(N-n)!}} \
+    && \text{simplification} \cr
+&7. = \frac{\frac{(N-1)!}{(n-1)!}}{\frac{N!}{n!}} \
+    && \text{more simplification} \cr
+&8. = \frac{(N-1)!n!}{N!(n-1)!} \
+    && \text{more simplification} \cr
+&8. = \frac{n}{N} \
+    && \text{definition of factorials} \cr
 \end{align*}
 $$
 
