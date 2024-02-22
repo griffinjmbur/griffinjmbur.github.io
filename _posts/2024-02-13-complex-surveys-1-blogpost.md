@@ -72,6 +72,10 @@ $$
 \begin{align*}
 &1. \text{number of ways to pick any given sample} = {N \choose n} \
     && \text{definition of binomial coefficient} \cr
+&2. \text{num. ways to select sample which definitely has element} j \
+    = {N-1 \choose n-1} && \text{see above} \cr
+&3. \mathbb{P}(\text{select element} j) = \frac{\text{step 2}}{\text{step 1}} \
+    && \text{probability =} \frac{n_{\text{ways to succeed}}}{n_{\text{outcomes}}} \cr
 \end{align*}
 $$
 
