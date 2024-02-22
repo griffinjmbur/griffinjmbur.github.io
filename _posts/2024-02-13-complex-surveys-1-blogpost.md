@@ -23,6 +23,8 @@ Note, by the way, that the idea of an *abstract representation* of a *specific r
 
 Let's first prove that the sample mean, \\(\hat{\mu}_Y\\), of a sample from a finite population is unbiased. We can use a new type of proof here (relative to what you might have seen before). 
 
+Let's begin with the fact that by definition, the expectation of the sample mean, denoted \\(\mathbb{E}[\hat{\mu}_Y]\\), is equal to the sum of probability-weighted possible outcomes:
+
 By definition, the expectation of the sample mean, \\(\mathbb{E}[\hat{\mu}_Y]\\), is equal to the sum of the probability-weighted outcomes: \\(\mathbb{E}[\hat{\mu}_Y] = \sum_{y} \mathbb{P}[Y=y]y \\). With equal probability sampling, the expectation is equal to the simple average of all possible samples. Let's have \\(S\\) be a random variable representing any possible sample with \\(s\\) being a realization (i.e., some specific sample), avoiding the use of \\(n\\) here since it is the size of each sample. Then, for a finite population, each sample has \\(\mathbb{P}[S=s] = 1/\binom{N}{n}\\), and this constant can be factored out. We'll let the "pretentious *S*", \\(\mathscr{S}\\), represent the universe of all possible samples. 
 
 Then, we have ...
