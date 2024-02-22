@@ -95,7 +95,7 @@ $$
 
 We use here an elegant argument from Cornfield (1944), which has the bonus of answering a question that even bothers many undergraduates: aren't all populations dealt with by sociology actually finite and therefore no person's income is really a "trial"? The outlines of this answer occurred to me as a graduate student learning statistics belatedly, but I cannot claim to have worked out the logic in any detail. The basic answer is that the random quantity is actually someone's selection into the sample; we do not have to pretend that someone's income is actually unknown until observed (of course, there is also a subjectivist, Bayesian answer to this question).
 
-Cornfield's approach is simple: we write the sample total as a sum over the population, so that \\( n \hat{\mu}_{Y} = \sum_{i=1}^N A_i y_i \\), where \\(A_i, i \in \{1, 2, ... N\}\\) are dummy random variables such that \\(A_i = 1 \iff i \in S\\) and \\(A_i = 0 \iff i \not\in S\\), where \\(S\\) again indicates the sample set considered as a random vector. In words, this means that a sample total is the result of multiplying the (fixed, non-random) score of each of the \\(N\\) elements in the universe by a dummy random variable. If the dummy is \\(1\\), we multiply their score by one and it is added to the sample total; if it is \\(0\\), their score effectively does not count. The result is that we can write the sample total or sample mean as a sum over all elements of the population. 
+Cornfield's approach is simple: we write the sample total as a sum over the population, \\(\sum_{i=1}^N A_i y_i \\), where \\(A_i, i \in \{1, 2, ... N\}\\) are dummy random variables such that \\(A_i = 1 \iff i \in S\\) and \\(A_i = 0 \iff i \not\in S\\), where \\(S\\) again indicates the sample set considered as a random vector. In words, this means that a sample total is the result of multiplying the (fixed, non-random) score of each of the \\(N\\) elements in the universe by a dummy random variable. If the dummy is \\(1\\), we multiply their score by one and it is added to the sample total; if it is \\(0\\), their score effectively does not count. The result is that we can write the sample total or sample mean as a sum over all elements of the population. 
 
 We start with two basic results. First, \\(\mathbb{E}[A_i] = \pi_{i} = \frac{n}{N}\\) (the last equality follows only when we have equal probability sampling or *epsem*). 
 
@@ -126,7 +126,7 @@ $$
             &5. = \mathbb{E}[Y^2] - 2*\mu_Y*\mu_Y + \mathbb{E}[\mu_Y^2]
                 && \text{definition of expectation} \cr
             &6. = \mathbb{E}[Y^2] - 2*\mu_Y^2 + \mu_Y^2
-                && \text{expectation of a constant is just that constant, definition of square} \cr
+                && \text{expectation of a constant is itself; definition of square} \cr
             &7. = \mathbb{E}[Y^2] - \mu_Y^2
                 && \text{arithmetic} \cr
             &8. \mathbb{V}[Y] = \mathbb{E}[Y^2] - \mathbb{E}[Y]^2
@@ -217,7 +217,7 @@ $$
     \cr 
 &2. = \frac{1}{n^2} \sum_{i=1}^n \sigma^2_{Y_i} 
     + 2\sum_{i>j}^n\sum_{j=1}^n \sigma^2_{Y_i, Y_j}
-    && \text{KH identity, factoring out \\(n\\)} \cr
+    && \text{KH identity, factoring out \\( n \\) } \cr
 &3. = \frac{1}{n^2} \sum_{i=1}^N \mathbb{V}[A_iy_i]
     + 2\sum_{i>j}^N\sum_{j=1}^N \mathbb{COV}[A_iy_i, A_jy_j]
     && \text{Cornfield approach} \cr
@@ -258,7 +258,7 @@ $$
     && \text{add/subtract a constant} \cr
 &15. = (1-f)\frac{1}{n} \left\{\frac{\sum_{i=1}^N y_i^2 
     -2\mu_Y\sum_{i=1}^N y_i + \sum_{i=1}^N \mu_Y^2}{N-1} \right\}
-    && \text{rewrite one \\(N\mu_Y\\) as \\(\sum_{i=1}^N y_i\\)} \cr 
+    && \text{rewrite one \\( N \mu_{Y} \\)} \cr 
 &16. = (1-f)\frac{1}{n} \left\{\frac{\sum_{i=1}^N (y_i
     -\mu_Y)^2}{N-1} \right\}
     && \text{reverse binomial expansion} \cr 
