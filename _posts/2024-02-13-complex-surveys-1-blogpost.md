@@ -23,6 +23,8 @@ Note, by the way, that the idea of an *abstract representation* of a *specific r
 
 Let's first prove that the sample mean, \\(\hat{\mu}_Y\\), of a sample from a finite population is unbiased. We can use a new type of proof here (relative to what you might have seen before). 
 
+\\(\mathbb{E}[Y]\\)
+
 By definition, the expectation of the sample mean, \\(\mathbb{E}[\hat{\mu}_Y]\\), is equal to the sum of the probability-weighted outcomes: \\(\mathbb{E}[\hat{\mu}_Y] = \sum_{y} \mathbb{P}[Y=y]y \\). With equal probability sampling, the expectation is equal to the simple average of all possible samples. Let's have \\(S\\) be a random variable representing any possible sample with \\(s\\) being a realization (i.e., some specific sample), avoiding the use of \\(n\\) here since it is the size of each sample. Then, for a finite population, each sample has \\(\mathbb{P}[S=s] = 1/\binom{N}{n}\\), and this constant can be factored out. We'll let the "pretentious *S*", \\(\mathscr{S}\\), represent the universe of all possible samples. 
 
 Then, we have ...
@@ -95,7 +97,7 @@ We use here an elegant argument from Cornfield (1944), which has the bonus of an
 
 Cornfield's approach is simple: the sample total \\(n\hat{\mu}_y = \sum_{i=1}^N A_i y_i\\), where \\(A_i, i \in \{1, 2, ... N\}\\) are dummy random variables such that \\(A_i = 1 \iff i \in S\\) and \\(A_i = 0 \iff i \not\in S\\), where \\(S\\) again indicates the sample set considered as a random vector. In words, this means that a sample total is the result of multiplying the (fixed, non-random) score of each of the \\(N\\) elements in the universe by a dummy random variable. If the dummy is \\(1\\), we multiply their score by one and it is added to the sample total; if it is \\(0\\), their score effectively does not count. The result is that we can write the sample total or sample mean as a sum over all elements of the population. 
 
-We start with two straightforward results. First, \\(\mathbb{E}[A_i] = \pi_i = \frac{n}{N}\\) (the last equality follows only when we have equal probability sampling or *epsem*). This follows as a consequence of the definition of expected value: \\(\mathbb{E}[A_i] = \mathbb{P}[A_i = 0](0) + \mathbb{P}[A_i = 1](1) = (1 - \frac{n}{N})(0) + \frac{n}{N}(1) = \frac{n}{N}\\). Second, the variance of the indicator inclusion variable is, like that of any Bernoulli variable, easily derived from the general variance of binary random variables. 
+We start with two straightforward results. First, \\(\mathbb{E}[A_i] = \pi_i = \frac{n}{N}\\) (the last equality follows only when we have equal probability sampling or *epsem*). This follows as a consequence of the definition of expected value:   \\(\mathbb{E}[A_i] = \mathbb{P}[A_i = 0](0) + \mathbb{P}[A_i = 1](1) = (1 - \frac{n}{N})(0) + \frac{n}{N}(1) = \frac{n}{N}\\). Second, the variance of the indicator inclusion variable is, like that of any Bernoulli variable, easily derived from the general variance of binary random variables. 
 
 ### The ubiquitous König-Huygens formula for the variance
 
