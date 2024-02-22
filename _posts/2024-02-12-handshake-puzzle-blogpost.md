@@ -1,10 +1,11 @@
 ---
 title: "The handshake puzzle: introduction to counting"
+date: 2012-08-14
 ---
 
-Here is my inaugural blogpost. This is written in a way so that a talented middle-school student could make sense of it, but this might be useful to people who haven't needed to use this beautiful math in the long interval between high school and graduate school.
+Here is my inaugural blogpost. This was written in a way so that a talented middle-school student could make sense of it, but this might be useful to people who haven't needed to use this beautiful math in the long interval between high school and graduate school.
 
-How many ways can $n$ people shake hands at a party, if \\(n\\) represents any old number? It is pretty obvious that if we have a small party of two people, the answer is \\(1\\), and if we have three people, a bit of careful counting&mdash;maybe we call the people \\(A, B\\), and \\(C\\)&mdash;shows that we have three ways: A&B, A&C, and B&C. Note that we don't count the handshakes twice; I didn't list, for example, B&A. It's just the same handshake. Anyways, this puzzle is interesting because the answer is not obvious if we have \\(n=30\\). 
+How many ways can \\(n\\) people shake hands at a party, if \\(n\\) represents any old number? It is pretty obvious that if we have a small party of two people, the answer is \\(1\\), and if we have three people, a bit of careful counting&mdash;maybe we call the people \\(A, B\\), and \\(C\\)&mdash;shows that we have three ways: A&B, A&C, and B&C. Note that we don't count the handshakes twice; I didn't list, for example, B&A. It's just the same handshake. Anyways, this puzzle is interesting because the answer is not obvious if we have \\(n=30\\). 
 
 It is also interesting because the different ways to solve this puzzle lead to a variety of beautiful maths. This is sometimes called "discrete mathematics" because the numbers involved in this special kind of math are *discrete*, which you can think about as being like "concrete": they are solid, familiar things, the numbers you already know. The difficult, and exciting, part of this math will be the techniques we use, but the numbers will be ones like you know: \\(0, 1, 2, 3\\), etc.; they are contained in the "set" (which is just fancy talk for a group) of natural numbers, written \\(\mathbb{N}\\). [^continuousmath] 
 
