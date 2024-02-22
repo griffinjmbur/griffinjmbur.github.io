@@ -5,9 +5,10 @@ date: 2024-02-21
 
 # Stratified random sampling
 
-## Stratifying vs. clustering: two very different approaches
-
 In the next couple of posts, I will introduce the general concepts of stratified and cluster random sampling. Rather than begin with the difference in definitions&mdash;in fact, I have never seen a generalist textbook which answers this question precisely (e.g. the sloppy Bryman 2012)&mdash;let me start with the problems that these approaches solve. 
+
+
+## Stratifying vs. clustering: two very different approaches
 
 Suppose that we have one of the following goals. 
 
@@ -40,7 +41,7 @@ $$
 \end{align*} 
 $$
 
-This becomes less trivial and more resembles the expectation formula if we have repeat values. For example, if we have a sample of size \\(n=10\\) where every observed value happens to occur twice, we could, rather than counting all ten values when calculating the mean, simply write \\(\hat{\mu}_\text{Y} = \sum_{j=1}^{5} \frac{1}{5} y_{j}\\), where \\(j\\) indexes the *unique* values. This is more obviously a form of the expected value formula (for discrete variables). That said, for a simple random sample, the computational advantage of the expected value is moot: we would have to first catalogue repeat values before actually applying this, which would waste time rather than save it. 
+This becomes less trivial and more resembles the expectation formula if we have repeat values. For example, if we have a sample of size \\(n=10\\) where every observed value happens to occur twice, we could, rather than counting all ten values when calculating the mean, simply write \\(\hat{\mu}_Y = \sum_{j=1}^{5} \frac{1}{5} y_{j}\\), where \\(j\\) indexes the *unique* values. This is more obviously a form of the expected value formula (for discrete variables). That said, for a simple random sample, the computational advantage of the expected value is moot: we would have to first catalogue repeat values before actually applying this, which would waste time rather than save it. 
 
 **However**, applying these probabilities is extremely important *if* we know that we have sampled people with different probabilities, depending on their group membership. In general, if the *simple* sample mean formula is (in pseudo-algebra) \\(\sum_{\text{unique outcomes}} \text{\{estimated probability of outcome}\} \text{\{value of outcome}\}\\), a stratified random sample with different sampling probabilities needs to be adjusted so that we have an unbiased estimate of the expected value of the random variable. In other words, if we treat a stratified random sample like a simple one, what we really have is \\(\sum_{\text{unique outcomes}} \text{\{biased probability of outcome}\} \text{\{value of outcome}\}\\). 
 
@@ -93,7 +94,21 @@ $$
 \end{align*}
 $$
 
-This alternative definition of weights is somewhat complex for the formulation of the sample estimate of the mean. Fortunately, it is simple for the estimate of the population total: we simply omit the denominator, leaving \\(\hat{\tau}_Y = \sum_{h=1}^{L} \sum_{i=1}^{n_h} \omega_{\text{prob.},h} y_{ih}\\). Correspondingly, the formula involving the "expected value" weights needs to be modified to be multiplied by \\(N : \hat{\tau}_Y = N \sum_{h=1}^{L} \omega_h \hat{\mu}_{Y, h}\\). 
+This alternative definition of weights is somewhat complex for the formulation of the sample estimate of the mean. Fortunately, it is simple for the estimate of the population total: we simply omit the denominator:
+
+$$
+\begin{align*}
+\hat{\tau}_Y = \sum_{h=1}^{L} \sum_{i=1}^{n_h} \omega_{\text{prob.},h} y_{ih}
+\end{align*}
+$$
+
+Correspondingly, the formula involving the "expected value" weights needs to be modified to be multiplied by the population size. 
+
+$$
+\begin{align*}
+\hat{\tau}_Y = N \sum_{h=1}^{L} \omega_h \hat{\mu}_{Y, h}
+\end{align*}
+$$
 
 Note an important fact: when the sampling fraction is the same in all groups (i.e., we use the stratification method to simply ensure an exactly proportional sample), we have a *self-weighting* sample. The standard error, to be derived momentarily, should still be calculated with weights, but the point estimate is the simple random sample mean. The basic idea is that with proportional sampling, the overall sampling fraction \\(\frac{n}{N}\\) is also the sampling fraction for every group, \\(\frac{n_h}{N_h}\\). If this is true, \\(\frac{n}{N}=\frac{n_h}{N_h}\\), and so \\(\frac{N_h}{N}=\frac{n_h}{n}\\): because the sampling fraction is the same for each group, the fraction that a group is of the population is also the fraction that it is of the sample. 
 
@@ -173,7 +188,7 @@ N_h \sum_{h=1}^L (\hat{\mu}_\text{Y, h} - \hat{\mu}_\text{Y})^2\\) since the sum
 
 ### Stratified random sampling as an improvement on simple random sampling
 
-Now we can move to the demonstration that this is an improvement on simple random sampling. We'll start by writing the TSS as a scalar multiple of the population standard deviation. 
+Now we can move to the demonstration that this is an improvement on simple random sampling. We'll start by writing \\(SS_T\\) as a scalar multiple of the population standard deviation. 
 
 \begin{align*} 
 &1. (N-1)\sigma^2_\text{Y, adj.} = \sum_{h=1}^L \sum_{i=1}^{N_h} (y_{ih} - \hat{\mu}_\text{Y, h})^2 + 
