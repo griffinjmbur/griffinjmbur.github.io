@@ -2,7 +2,7 @@
 
 In the following series of posts, I want to provide a short introduction to complex survey design. 
 
-I have not found, anywhere on the internet, a short (\\(\leq$ 30\\) page) document that introduces the concepts of stratified and cluster random sampling from a finite population clearly and which derives point estimators for the mean and true and estimated sampling variance of the mean. In principle, all of this can be developed without need of much advanced math, and Kish (1965); Cochran (1977); Särndal, Swensson, and Wretman (SSW) (1992); and Lohr (1999) all provide accessible, good treatments. That said, each graduate-level textbook requires most of its 300 or 400 pages to get users to the point of being able to fully understand a complex survey. For many users, this is simply too much detail, and I have found that each of the textbooks above, while individually useful, typically omits certain important assumptions that one only finds fully spelled out in one of the others. 
+I have not found, anywhere on the internet, a short (\\(\leq 30\\) page) document that introduces the concepts of stratified and cluster random sampling from a finite population clearly and which derives point estimators for the mean and true and estimated sampling variance of the mean. In principle, all of this can be developed without need of much advanced math, and Kish (1965); Cochran (1977); Särndal, Swensson, and Wretman (SSW) (1992); and Lohr (1999) all provide accessible, good treatments. That said, each graduate-level textbook requires most of its 300 or 400 pages to get users to the point of being able to fully understand a complex survey. For many users, this is simply too much detail, and I have found that each of the textbooks above, while individually useful, typically omits certain important assumptions that one only finds fully spelled out in one of the others. 
 
 I will start with finite population statistics generally, assuming simple random sampling. The big takeaways are relatively straightforward: our sample mean is still unbiased, and its sampling variance is actually reduced in a way that is proportional to the *sampling fraction*, the relative size of a sample to the finite population from which it is taken. 
 
@@ -12,7 +12,7 @@ Note that contemporary mathematical norms favor precise notation, something that
 
 Roman letters like \\(X, Y\\), and \\(Z\\) will indicate random variables, which you can think of as the most abstract form of a property we care about, the very concept itself. A realization of that variable, i.e. the property actually observed in some person or firm or what have you, will look like \\(x, y\\), and \\(z\\) for our variables respectively. Greek letters such as \\(\sigma\\) and \\(\mu\\) will refer to parameters, properties of population that we don't directly observe (hence, *para* + *meter*). I'll try to remind people of this convention and explain any others that I use.
 
-Note, by the way, that the idea of an *abstract representation* of a *specific realization* seems a bit paradoxical. It isn't, but this can cause confusion at first. You might want to think about statistical objects as arranged on a scale from completely concrete (e.g., $10$ might be someone year's of education) to completely abstract (e.g., \\(Y\\) might represent the very concept of education as a variable), with \\(y\\) being the concept of some specific value of education. Subscripts (e.g. \\(y_i\\) or \\(y_1\\)) just indicate that we are considering a specific *person's* education, with \\(i\\) being a index variable and \\(1\\) referring to person \\(1\\) (note that any actual assignment of index numbers to people is also arbitrary). 
+Note, by the way, that the idea of an *abstract representation* of a *specific realization* seems a bit paradoxical. It isn't, but this can cause confusion at first. You might want to think about statistical objects as arranged on a scale from completely concrete (e.g., \\(10\\) might be someone year's of education) to completely abstract (e.g., \\(Y\\) might represent the very concept of education as a variable), with \\(y\\) being the concept of some specific value of education. Subscripts (e.g. \\(y_i\\) or \\(y_1\\)) just indicate that we are considering a specific *person's* education, with \\(i\\) being a index variable and \\(1\\) referring to person \\(1\\) (note that any actual assignment of index numbers to people is also arbitrary). 
 
 # Finite population sampling properties
 
@@ -20,7 +20,7 @@ Note, by the way, that the idea of an *abstract representation* of a *specific r
 
 Let's first prove that the sample mean, \\(\hat{\mu}_Y\\), of a sample from a finite population is unbiased. We can use a new type of proof here (relative to what you might have seen before). 
 
-By definition, the expectation of the sample mean, \\(\mathbb{E}[\hat{\mu}_Y]\\), is equal to the sum of the probability-weighted outcomes: \\(\mathbb{E}[\hat{\mu}_Y] = \sum_{y} \mathbb{P}[Y=y]y\\). With equal probability sampling, the expectation is equal to the simple average of all possible samples. Let's have $S$ be a random variable representing any possible sample with $s$ being a realization (i.e., some specific sample), avoiding the use of \\(n\\) here since it is the size of each sample. Then, for a finite population, each sample has \\(\mathbb{P}[S=s] = 1/\binom{N}{n}\\), and this constant can be factored out. We'll let the "pretentious *S*", \\(\mathscr{S}\\), represent the universe of all possible samples. 
+By definition, the expectation of the sample mean, \\(\mathbb{E}[\hat{\mu}_Y]\\), is equal to the sum of the probability-weighted outcomes: \\(\mathbb{E}[\hat{\mu}_Y] = \sum_{y} \mathbb{P}[Y=y]y\\). With equal probability sampling, the expectation is equal to the simple average of all possible samples. Let's have \\(S\\) be a random variable representing any possible sample with \\(s\\) being a realization (i.e., some specific sample), avoiding the use of \\(n\\) here since it is the size of each sample. Then, for a finite population, each sample has \\(\mathbb{P}[S=s] = 1/\binom{N}{n}\\), and this constant can be factored out. We'll let the "pretentious *S*", \\(\mathscr{S}\\), represent the universe of all possible samples. 
 
 Then, we have ...
 
@@ -34,7 +34,7 @@ $$
 
 Note again that the \\(y\\)s in the second line are *abstract concepts of specific values*. They aren't actual observations.
 
-Each observation in the finite population, \\(y_i \in \mathscr{U}\\), appears in exactly \\(N-1 \choose n-1\\) samples. This is a combinatorial fact: if we insist on $i$'s inclusion in a given subset of samples, we can pick \\(n-1\\) people to appear in any given sample from a remaining neo-universe of \\(N-1\\) people. Thus, summing all values of all samples means multiplying each *concrete* person's score by \\(N-1 \choose n-1\\). Note that we're already abusing notation here a little bit since now our notation below shows the \\(y\\)s as referring actual members of the universe&mdash;carefully note that the final value is now \\(y_N\\) where it was before \\(y_n\\). Unfortunately, I think it just ends up being clunky to be too precise here. Sometimes a numbered subscript means a specific member of the sample (which itself could be different) and sometimes it means a specific member of the finite population (the numbering could be different, but the members are fixed). 
+Each observation in the finite population, \\(y_i \in \mathscr{U}\\), appears in exactly \\(N-1 \choose n-1\\) samples. This is a combinatorial fact: if we insist on \\(i\\)'s inclusion in a given subset of samples, we can pick \\(n-1\\) people to appear in any given sample from a remaining neo-universe of \\(N-1\\) people. Thus, summing all values of all samples means multiplying each *concrete* person's score by \\(N-1 \choose n-1\\). Note that we're already abusing notation here a little bit since now our notation below shows the \\(y\\)s as referring actual members of the universe&mdash;carefully note that the final value is now \\(y_N\\) where it was before \\(y_n\\). Unfortunately, I think it just ends up being clunky to be too precise here. Sometimes a numbered subscript means a specific member of the sample (which itself could be different) and sometimes it means a specific member of the finite population (the numbering could be different, but the members are fixed). 
 
 $$
 \begin{align*}
@@ -51,7 +51,7 @@ $$
 \end{align*}
 $$
 
-## The sampling variance of \\(\hat{\mu}_Y$ is $(1-f)\frac{\sigma_Y^2}{n}\\)
+## The sampling variance of \\(\hat{\mu}_Y\\) is \\((1-f)\frac{\sigma_Y^2}{n}\\)
 
 We can now derive the formula for the variance when sampling from a finite population, which involves the use of the finite population correction (fpc), \\(1 - f = 1 - \frac{n}{N}\\) (\\(f\\) is called the sampling fraction). 
 
@@ -117,7 +117,7 @@ $$
 \end{align*}
 $$
         
-Now, we simply plug in our expectations for the particular random variable $A$, letting \\(\pi\\) stand for the *probability of inclusion* (nothing directly to do with circles)\\(: \mathbb{E}[A^2] - \mathbb{E}[A]^2 = \pi - \pi^2 = \pi(1-\pi)\\). The first term remains simply $\pi$ because the expectation of the square of the random variable itself is the weighted mean ofthe square of every outcome, but squaring 0 and 1 leave them unchanged, so the value of every outcome of \\(A\\) is unchanged. But, squaring the expectation itself results in the square of \\(\pi\\). 
+Now, we simply plug in our expectations for the particular random variable \\(A\\), letting \\(\pi\\) stand for the *probability of inclusion* (nothing directly to do with circles)\\(: \mathbb{E}[A^2] - \mathbb{E}[A]^2 = \pi - \pi^2 = \pi(1-\pi)\\). The first term remains simply \\(\pi\\) because the expectation of the square of the random variable itself is the weighted mean ofthe square of every outcome, but squaring 0 and 1 leave them unchanged, so the value of every outcome of \\(A\\) is unchanged. But, squaring the expectation itself results in the square of \\(\pi\\). 
 
 ### The variance of a sum of random variables (Bienaymé's identity)
 
@@ -188,11 +188,11 @@ $$
 \end{align*}
 $$
 
-Intuitively enough, the probability of a given person $i$'s inclusion in the sample is slightly negatively related to the probability of person $j$'s inclusion with a finite population. 
+Intuitively enough, the probability of a given person \\(i\\)'s inclusion in the sample is slightly negatively related to the probability of person \\(j\\)'s inclusion with a finite population. 
 
 Finally, we can now simply realize that the variance of the sample mean is the variance of a sum of random variables.[^notation]
 
-[^notation]: Note that, below, I use the convention, different to Cochran and Lohr, of using $\sigma$ for the population standard deviation instead of $S$. I do so because, in my view, the use of Greek letters permits greater clarity in distinguishing parameters and random variables, and it is jarring in their texts to see Greek letters mostly eschewed but used in certain specific contexts (e.g. $\pi$ for "probability of inclusion"). On the rare occasions where the difference between $\frac{\sum_{i=1}^N (Y_i-\mu_Y)^2}{N-1}$ and $\frac{\sum_{i=1}^N (Y_i-\mu_Y)^2}{N}$ becomes important, I will denote these as $\sigma^2_{Y, \text{adjusted}}$ and $\sigma^2_{Y, \text{unadjusted}}$.
+[^notation]: Note that, below, I use the convention, different to Cochran and Lohr, of using \\(\sigma\\) for the population standard deviation instead of \\(S\\). I do so because, in my view, the use of Greek letters permits greater clarity in distinguishing parameters and random variables, and it is jarring in their texts to see Greek letters mostly eschewed but used in certain specific contexts (e.g. \\(\pi\\) for "probability of inclusion"). On the rare occasions where the difference between \\(\frac{\sum_{i=1}^N (Y_i-\mu_Y)^2}{N-1}\\) and \\(\frac{\sum_{i=1}^N (Y_i-\mu_Y)^2}{N}\\) becomes important, I will denote these as \\(\sigma^2_{Y, \text{adjusted}}\\) and \\(\sigma^2_{Y, \text{unadjusted}}\\).
 
 $$
 \begin{align*}
@@ -200,7 +200,7 @@ $$
     \cr 
 &2. = \frac{1}{n^2} \sum_{i=1}^n \sigma^2_{Y_i} 
     + 2\sum_{i>j}^n\sum_{j=1}^n \sigma^2_{Y_i, Y_j}
-    && \text{KH identity, factoring out $n$} \cr
+    && \text{KH identity, factoring out \\(n\\)} \cr
 &3. = \frac{1}{n^2} \sum_{i=1}^N \mathbb{V}[A_iy_i]
     + 2\sum_{i>j}^N\sum_{j=1}^N \mathbb{COV}[A_iy_i, A_jy_j]
     && \text{Cornfield approach} \cr
@@ -241,12 +241,12 @@ $$
     && \text{add/subtract a constant} \cr
 &15. = (1-f)\frac{1}{n} \left\{\frac{\sum_{i=1}^N y_i^2 
     -2\mu_Y\sum_{i=1}^N y_i + \sum_{i=1}^N \mu_Y^2}{N-1} \right\}
-    && \text{rewrite one $N\mu_Y$ as $\sum_{i=1}^N y_i$} \cr 
+    && \text{rewrite one \\(N\mu_Y\\) as \\(\sum_{i=1}^N y_i\\)} \cr 
 &16. = (1-f)\frac{1}{n} \left\{\frac{\sum_{i=1}^N (y_i
     -\mu_Y)^2}{N-1} \right\}
     && \text{reverse binomial expansion} \cr 
 &17. \mathbb{V}[\hat{\mu}_Y] = (1-f)\frac{1}{n} \sigma^2_{Y, \text{adjusted}}
-    && \text{recognizing $\sigma^2$} \cr 
+    && \text{recognizing \\(\sigma^2\\)} \cr 
 \end{align*}
 $$
 
@@ -290,19 +290,19 @@ $$
 
 ## Binomial variables 
 
-A variable is *binomially distributed* if it is a count of some outcome which can be broken down into the sum of one binary or Bernoulli trial repeated many times. For example, the count of people in a sample who are married is the result of drawing $n$ people who could each be married or not (notice that here I am using the traditional conception of an infinite population and, relatedly, one where someone's status is not considered fundamentally a constant as in the Cornfield model above). The count of heads in $n$ flips of a fair coin is a simpler, if less interesting, example. 
+A variable is *binomially distributed* if it is a count of some outcome which can be broken down into the sum of one binary or Bernoulli trial repeated many times. For example, the count of people in a sample who are married is the result of drawing \\(n\\) people who could each be married or not (notice that here I am using the traditional conception of an infinite population and, relatedly, one where someone's status is not considered fundamentally a constant as in the Cornfield model above). The count of heads in \\(n\\) flips of a fair coin is a simpler, if less interesting, example. 
 
 Note that the binomial distribution is thus, for the most part, a sampling distribution: it describes group-level outcomes (although it is often true that we can telescope statistics in both directions: we might consider groups to be elements or consider even someone's age to be a binomial variable counting their number of birthdays). 
 
 ## The binomial distribution: PMF, expectation, variance
 
-If we denote by the random variable \\(X\\) the number of successes in \\(n\\) trials, the probability mass function (pmf) is given by \\(\mathbb{P}[X=k] = \binom{n}{k}\pi^k(1-\pi)^{(n-k)}\\). The reasoning is as follows. The probability of any specific arrangement of independent trials resulting in \\(k\\) successes and \\(n-k\\) failures (e.g., \\(HHHHTTTTTT\\) to get four heads in 10 flips) is written in easiest form as \\(\pi^k(1-\pi)^{(n-k)}\\). That specific probability is the same for any other arrangement; so, to sum up the probabilities, we simply ask "how many ways can $n$ trials result in \\(k\\) successes?", and the answer is, of course, \\(\binom{n}{k}\\). 
+If we denote by the random variable \\(X\\) the number of successes in \\(n\\) trials, the probability mass function (pmf) is given by \\(\mathbb{P}[X=k] = \binom{n}{k}\pi^k(1-\pi)^{(n-k)}\\). The reasoning is as follows. The probability of any specific arrangement of independent trials resulting in \\(k\\) successes and \\(n-k\\) failures (e.g., \\(HHHHTTTTTT\\) to get four heads in 10 flips) is written in easiest form as \\(\pi^k(1-\pi)^{(n-k)}\\). That specific probability is the same for any other arrangement; so, to sum up the probabilities, we simply ask "how many ways can \\(n\\) trials result in \\(k\\) successes?", and the answer is, of course, \\(\binom{n}{k}\\). 
 
-The expected value of a binomially-distributed variable is simple: we sum together \\(n\\) Bernoullis, each with expected value $\pi$ (discussed in the main text), so it is \\(n\pi\\). The variance of such a variable is also simple; per the KH formula above, we merely have the sum of the individual variances (as the trial outcomes have no covariance), i.e. \\(n \pi(1-\pi)\\), where the variance of a single Bernoulli has been discussed above.  
+The expected value of a binomially-distributed variable is simple: we sum together \\(n\\) Bernoullis, each with expected value \\(\pi\\) (discussed in the main text), so it is \\(n\pi\\). The variance of such a variable is also simple; per the KH formula above, we merely have the sum of the individual variances (as the trial outcomes have no covariance), i.e. \\(n \pi(1-\pi)\\), where the variance of a single Bernoulli has been discussed above.  
 
 ### Covariance between any two sums of binomials derived from a random vector \\(\mathbf{Y}\\)
 
-In the situation at hand, we are considering \\(N\\) binomial random variables representing the number of times that each person in our universe of \\(N\\) people is included in a sample with replacement. Each of those \\(N\\) variables is the sum of $n$ binary random variables, each representing whether some specific person was selected into the sample for some specific trial; all such \\(Nn\\) binary variables are independent of one another. 
+In the situation at hand, we are considering \\(N\\) binomial random variables representing the number of times that each person in our universe of \\(N\\) people is included in a sample with replacement. Each of those \\(N\\) variables is the sum of \\(n\\) binary random variables, each representing whether some specific person was selected into the sample for some specific trial; all such \\(Nn\\) binary variables are independent of one another. 
 
 However, the covariance of two binomial random variables representing the number of times persons \\(i\\) and \\(j\\) respectively were selected is *not* zero: intuitively, the more times a set of \\(n\\) trials results in person \\(i\\) being selected, the fewer times that it results in person \\(j\\) being selected.
 
@@ -326,7 +326,7 @@ $$
 \end{align*}
 $$
 
-Now we can resume the proof of the covariance of two binomial variables which each represent the number of times persons $1$ and $2$ are selected. Again, I'm using the subscripts \\(1\\) and \\(2\\) for the sake of not having multiple abstract indices.
+Now we can resume the proof of the covariance of two binomial variables which each represent the number of times persons \\(1\\) and \\(2\\) are selected. Again, I'm using the subscripts \\(1\\) and \\(2\\) for the sake of not having multiple abstract indices.
 
 $$
 \begin{align*}
@@ -335,12 +335,12 @@ $$
 &2. = \sum_{i=1}^n \sum_{j=1}^n \mathbb{COV}[T_{ik}, T_{jr}] 
     && \text{see above} \cr
 &3. =\sum_{k=r}^n \mathbb{COV}[T_{1i}, T_{2j}]  
-    && \text{trials are independent, so no cov. for $k\neq r$} \cr
+    && \text{trials are independent, so no cov. for \\(k\neq r\\)} \cr
 &4. =\sum_{k=1}^n \mathbb{E}[T_{ik} T_{jk}] - \mathbb{E}[T_{ik}]\mathbb{E}[T_{jk}] 
     && \text{definition of covariance, simplification of summation index} \cr
 &5. = -\mathbb{E}[T_{ik}]\mathbb{E}[T_{jk}] 
     && \text{outcomes of trials are mutually exclusive, 
-    so $\mathbb{E}[T_{ik} T_{jk}]=0$} \cr
+    so \\(\mathbb{E}[T_{ik} T_{jk}]=0\\)} \cr
 &6. = -n \pi_i\pi_j = -n \left\{ \frac{1}{N} \right\}^2
     && \text{expectation of a Bernoulli; last equality true with epsem} \cr
 \end{align*}
@@ -381,7 +381,7 @@ $$
 
 At each step of selecting some specific \\(k_m\\), we divide by \\(k_m!\\) to get rid of the spurious permutations of identical items within that class, and we also divide by \\((n - \sum_{j=1}^{m} k_j)!\\) so that the permutation of the \\((n - \sum_{j=1}^{m-1} k_j)\\) available objects only goes through the first \\(k_m\\) steps (just like how we derive the binomial). 
 
-Finally, we can quickly extend the binomial coefficient \\(\rightarrow\\) binomial PMF analogy. Recall the binomial PMF, i.e. \\(\mathbb{P}[Y=k] = \binom{n}{k} \pi^k (1-\pi)^{n-k}\\). This says that the probability that a random count variable \\(Y\\) takes on \\(k\\) successes is the probability of success to the \\(k\\), multiplied by the probability of failure to the \\(n - k\\), mulitplied the number of ways to select \\(k\\) of the \\(n\\) trials to be successes. We basically find the probability of a specific permutation of trials that are successes and failures (the probability of any such permutation is identical, so we simplify and find the probability that the first $k$ were successes); there are actually \\(\binom{n}{k}\\) ways for that to occur, so we just multiply the probability of one way by \\(\binom{n}{k}\\). 
+Finally, we can quickly extend the binomial coefficient \\(\rightarrow\\) binomial PMF analogy. Recall the binomial PMF, i.e. \\(\mathbb{P}[Y=k] = \binom{n}{k} \pi^k (1-\pi)^{n-k}\\). This says that the probability that a random count variable \\(Y\\) takes on \\(k\\) successes is the probability of success to the \\(k\\), multiplied by the probability of failure to the \\(n - k\\), mulitplied the number of ways to select \\(k\\) of the \\(n\\) trials to be successes. We basically find the probability of a specific permutation of trials that are successes and failures (the probability of any such permutation is identical, so we simplify and find the probability that the first \\(k\\) were successes); there are actually \\(\binom{n}{k}\\) ways for that to occur, so we just multiply the probability of one way by \\(\binom{n}{k}\\). 
 
 ## The multinomial distribution's PMF
 
@@ -393,4 +393,4 @@ $$
 \end{align*}
 $$
 
-We read this as saying that the probability that the random vector \\(\mathbf{Y}\\), with $m$ outcomes, has \\(k_1\\) successes for outcome 1, \\(k_2\\) successes for outcome two, ... \\(k_m\\) successes for outcome \\(m\\) (note that each of these outcomes is a marginally-binomial RV) probability of any specific sequence of \\(k_1\\) successes on the first outcome, ... times the number of ways to pick \\(k_1\\) outcomes to take the first outcome, ... and \\(k_m\\) outcomes to be outcome \\(m\\). Again, we basically have the task of finding the probability of any particular sequence of the \\(m\\) different counts of successes times the number of ways that this specific probability could come about. 
+We read this as saying that the probability that the random vector \\(\mathbf{Y}\\), with \\(m\\) outcomes, has \\(k_1\\) successes for outcome 1, \\(k_2\\) successes for outcome two, ... \\(k_m\\) successes for outcome \\(m\\) (note that each of these outcomes is a marginally-binomial RV) probability of any specific sequence of \\(k_1\\) successes on the first outcome, ... times the number of ways to pick \\(k_1\\) outcomes to take the first outcome, ... and \\(k_m\\) outcomes to be outcome \\(m\\). Again, we basically have the task of finding the probability of any particular sequence of the \\(m\\) different counts of successes times the number of ways that this specific probability could come about. 

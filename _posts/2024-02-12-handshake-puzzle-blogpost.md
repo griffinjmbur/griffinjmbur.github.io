@@ -1,3 +1,12 @@
+---
+title: 'The handshake puzzle: introduction to counting'
+date: \date
+tags:
+  - dissertation math
+  - category1
+  - category2
+---
+
 Here is my inaugural blogpost. This is written in a way so that a talented middle-school student could make sense of it, but this might be useful to people who haven't needed to use this beautiful math in the long interval between high school and graduate school.
 
 How many ways can $n$ people shake hands at a party, if \\(n\\) represents any old number? It is pretty obvious that if we have a small party of two people, the answer is \\(1\\), and if we have three people, a bit of careful counting&mdash;maybe we call the people \\(A, B\\), and \\(C\\)&mdash;shows that we have three ways: A&B, A&C, and B&C. Note that we don't count the handshakes twice; I didn't list, for example, B&A. It's just the same handshake. Anyways, this puzzle is interesting because the answer is not obvious if we have \\(n=30\\). 
