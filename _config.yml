@@ -21,7 +21,7 @@ repository               : "griffinjmbur/griffinjmbur.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "/Users/griffinjmbur/Desktop/github-blog/images/github_pages_profile.jpg"
+  avatar           : "profile.png"
   name             : ""
   pronouns         : # example: "she/her"
   bio              : "PhD candidate in at UW-Madison with an interest in statistics and social class"
