@@ -205,15 +205,28 @@ Now we can move to the demonstration that this is an improvement on simple rando
     && \text{combining steps 1-4} \cr
 \end{align*}
 
-Now, finally, note that when we have proportional allocation, $n_h = \frac{nN_h}{N}$, meaning that the variance of the mean is $\sum_{h=1}^L (1 - f_h) \omega^2_h \frac{\hat{\sigma}_{Y, h}}{n} = \sum_{h=1}^L (1 - f_h) \frac{N_h^2}{N^2} \frac{N\hat{\sigma}_{Y, h}}{nN_h}= \sum_{h=1}^L (1 - f_h) \frac{N_h}{N} \frac{\hat{\sigma}_{Y, h}}{n}= \sum_{h=1}^L (1 - f) \omega_h \frac{\hat{\sigma}_{Y, h}}{n}$. 
+Now, finally, note that when we have proportional allocation, the following holds trues. 
+
+$$
+\begin{align*}
+n_h &= \frac{nN_h}{N} \cr 
+\text{variance of the mean} &=  \sum_{h=1}^L (1 - f_h) 
+    \omega^2_h \frac{\hat{\sigma}_{Y, h}}{n_h} \cr
+&= \sum_{h=1}^L (1 - f_h) \frac{N_h^2}{N^2} \frac{N\hat{\sigma}_{Y, h}}{nN_h} \cr
+&= \sum_{h=1}^L (1 - f_h) \frac{N_h}{N} \frac{\hat{\sigma}_{Y, h}}{n} \cr
+&= \sum_{h=1}^L (1 - f) \omega_h \frac{\hat{\sigma}_{Y, h}}{n}
+\end{align*}
+$$
 
 Thus, from 5) above, we have ... 
+$$
 \begin{align*}
 \mathbb{V}[\hat{\mu}_\text{Y, SRS}] &= \frac{1-f}{n} \left\{ \sum_{h=1}^L \omega_h \sigma^2_{Y, h} + 
     \sum_{h=1}^L \omega_h (\hat{\mu}_\text{Y, h} - \hat{\mu}_\text{Y})^2\right\} \cr
 &= \mathbb{V}[\hat{\mu}_\text{Y, prop}] + \frac{1-f}{n} \left\{
     \sum_{h=1}^L \omega_h (\hat{\mu}_\text{Y, h} - \hat{\mu}_\text{Y})^2\right\}
 \end{align*}
+$$
 
 ## Optimal allocation 
 
