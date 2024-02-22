@@ -192,6 +192,7 @@ N_h \sum_{h=1}^L (\hat{\mu}_\text{Y, h} - \hat{\mu}_\text{Y})^2\\) since the sum
 
 Now we can move to the demonstration that this is an improvement on simple random sampling. We'll start by writing \\(SS_T\\) as a scalar multiple of the population standard deviation. 
 
+$$
 \begin{align*} 
 &1. (N-1)\sigma^2_\text{Y, adj.} = \sum_{h=1}^L \sum_{i=1}^{N_h} (y_{ih} - \hat{\mu}_\text{Y, h})^2 + 
     \sum_{h=1}^L \sum_{i=1}^{N_h} (\hat{\mu}_\text{Y, h} - \hat{\mu}_\text{Y})^2 && \text{definition} \cr
@@ -206,6 +207,7 @@ Now we can move to the demonstration that this is an improvement on simple rando
     \sum_{h=1}^L \omega_h (\hat{\mu}_\text{Y, h} - \hat{\mu}_\text{Y})^2\right\} 
     && \text{combining steps 1-4} \cr
 \end{align*}
+$$
 
 Now, finally, note that when we have proportional allocation, the following holds trues. 
 
