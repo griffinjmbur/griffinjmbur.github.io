@@ -3,10 +3,12 @@ title: "Complex surveys II: stratified random sampling"
 date: 2024-02-21
 ---
 
+In the next couple of posts, I will introduce the general concepts of stratified and cluster random sampling. 
+
+
 # Stratified random sampling
 
-In the next couple of posts, I will introduce the general concepts of stratified and cluster random sampling. Rather than begin with the difference in definitions&mdash;in fact, I have never seen a generalist textbook which answers this question precisely (e.g. the sloppy Bryman 2012)&mdash;let me start with the problems that these approaches solve. 
-
+Rather than begin with the difference in definitions&mdash;in fact, I have never seen a generalist textbook which answers this question precisely (e.g. the sloppy Bryman 2012)&mdash;let me start with the problems that these approaches solve. 
 
 ## Stratifying vs. clustering: two very different approaches
 
