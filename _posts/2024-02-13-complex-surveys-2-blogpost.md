@@ -43,7 +43,7 @@ $$
 \end{align*} 
 $$
 
-This becomes less trivial and more resembles the expectation formula if we have repeat values. For example, if we have a sample of size \\(n=10\\) where every observed value happens to occur twice, we could, rather than counting all ten values when calculating the mean, simply write \\(\hat{\mu}_Y = \sum_{j=1}^5 \frac{1}{5} y_j \\), where \\(j\\) indexes the *unique* values. This is more obviously a form of the expected value formula (for discrete variables). That said, for a simple random sample, the computational advantage of the expected value is moot: we would have to first catalogue repeat values before actually applying this, which would waste time rather than save it. 
+This becomes less trivial and more resembles the expectation formula if we have repeat values. For example, if we have a sample of size \\(n=10\\) where every observed value happens to occur twice, we could, rather than counting all ten values when calculating the mean, simply write \\(\sum_{j=1}^5 \frac{1}{5} y_j \\), where \\(j\\) indexes the *unique* values. This is more obviously a form of the expected value formula (for discrete variables). That said, for a simple random sample, the computational advantage of the expected value is moot: we would have to first catalogue repeat values before actually applying this, which would waste time rather than save it. 
 
 **However**, applying these probabilities is extremely important *if* we know that we have sampled people with different probabilities, depending on their group membership. In general, if the *simple* sample mean formula is (in pseudo-algebra) \\(\sum_{\text{unique outcomes}} \text{\{estimated probability of outcome}\} \text{\{value of outcome}\}\\), a stratified random sample with different sampling probabilities needs to be adjusted so that we have an unbiased estimate of the expected value of the random variable. In other words, if we treat a stratified random sample like a simple one, what we really have is \\(\sum_{\text{unique outcomes}} \text{\{biased probability of outcome}\} \text{\{value of outcome}\}\\). 
 
@@ -185,8 +185,16 @@ $$
 \end{align*}
 $$
 
-We often see this simplied to \\(SS_T = \sum_{h=1}^L \sum_{i=1}^{N_h} (y_{ih} - \hat{\mu}_\text{Y, h})^2 + 
-N_h \sum_{h=1}^L (\hat{\mu}_\text{Y, h} - \hat{\mu}_\text{Y})^2\\) since the sum over \\(i\\) of the second expression is a sum over a constant (from the perspective of \\(i\\), which does not index any term in the expression). 
+We often see this simplied to the following equation...
+
+$$
+\begin{align*}
+SS_T = \sum_{h=1}^L \sum_{i=1}^{N_h} (y_{ih} - \hat{\mu}_\text{Y, h})^2 + 
+N_h \sum_{h=1}^L (\hat{\mu}_\text{Y, h} - \hat{\mu}_\text{Y})^2 
+\end{align*}
+$$
+
+...since the sum over \\(i\\) of the second expression is a sum over a constant (from the perspective of \\(i\\), which does not index any term in the expression). 
 
 ### Stratified random sampling as an improvement on simple random sampling
 
