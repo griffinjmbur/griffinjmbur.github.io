@@ -210,7 +210,7 @@ Now, finally, note that when we have proportional allocation, the following hold
 $$
 \begin{align*}
 n_h &= \frac{nN_h}{N} \cr 
-\text{variance of the mean} &=  \sum_{h=1}^L (1 - f_h) 
+\mathbb{V}[\hat{\mu}_\text{Y, prop}] &=  \sum_{h=1}^L (1 - f_h) 
     \omega^2_h \frac{\hat{\sigma}_{Y, h}}{n_h} \cr
 &= \sum_{h=1}^L (1 - f_h) \frac{N_h^2}{N^2} \frac{N\hat{\sigma}_{Y, h}}{nN_h} \cr
 &= \sum_{h=1}^L (1 - f_h) \frac{N_h}{N} \frac{\hat{\sigma}_{Y, h}}{n} \cr
