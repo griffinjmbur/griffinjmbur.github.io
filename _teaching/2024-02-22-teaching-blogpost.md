@@ -13,7 +13,7 @@ My lectures on introductory statistics, written for SOC360, "Statistics for Soci
 
 I've also lectured SOC357, a course in quantitative and qualitative research methods, a couple of times. Since the quantitative part of the course is quite short, I eschewed a textbook and simply wrote my own (very short) textbook [here](https://griffinjmbur.github.io/soc357su23onlinebook/intro.html). 
 
-I have also lectured a course in computing for social science. I wrote substantial Stata lecture notes for the course, which you can find [here](https://github.com/griffinjmbur/codebackup/tree/main/soc365sp22%20excerpts/final%20lectures%20from%20Canvas). These notes are based on Mitchell's excellent *Data Management Using Stata*, but they include a large number of original examples and my commentary on discrete mathematics. 
+I have also lectured a course in computing for social science. I wrote substantial Stata lecture notes for the course, which you can find [here](https://github.com/griffinjmbur/soc365sp22). These notes are based on Mitchell's excellent *Data Management Using Stata*, but they include a large number of original examples and my commentary on discrete mathematics. 
 
 In a (slightly) past life, I did teach substantial sociology courses in the two fields that represent my primary interests. I taught all of these courses as a TA; my lecture experience is exclusively in methodological courses, but I generally find teaching substantial sociology completely effortless.
 
