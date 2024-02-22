@@ -76,6 +76,8 @@ $$
     = {N-1 \choose n-1} && \text{see above} \cr
 &3. \mathbb{P}(\text{select element} j) = \frac{\text{step 2}}{\text{step 1}} \
     && \text{probability =} \frac{n_{\text{ways to succeed}}}{n_{\text{outcomes}}} \cr
+&4. \mathbb{P}(\text{select element} j) = \frac{\binom{N-1}{n-1}}{\binom{N}{n}} \
+    && \text{substitution} \cr
 &5. = \frac{\frac{(N-1)!}{(n-1)!(N-1 - [n-1])!}}{\frac{N!}{n! (N-n)!}} \
     && \text{definition} \cr
 &6. = \frac{\frac{(N-1)!}{(n-1)! (N-n)!}}{\frac{N!}{n!(N-n)!}} \
