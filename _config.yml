@@ -21,12 +21,12 @@ repository               : "griffinjmbur/griffinjmbur.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "./images/github_pages_profile.jpg"
   name             : ""
   pronouns         : # example: "she/her"
   bio              : "PhD candidate in at UW-Madison with an interest in statistics and social class"
   location         : "Madison, WI, US"
-  employer         : ""
+  employer         : "UW-Madison"
   uri              : # URL
   email            : "gjmbteaching@gmail.com"
 
@@ -41,7 +41,6 @@ author:
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")
 
   # Social media
-  bluesky          : "" # Replace this with you Bluesky username
   facebook         : # Username
   flickr           : # Username
   foursquare       : # Username
