@@ -1,5 +1,5 @@
 ---
-title: Complex surveys II: stratified random sampling 
+title: "Complex surveys II: stratified random sampling"
 date: 2024-02-21
 ---
 
@@ -95,8 +95,9 @@ $$
 
 This alternative definition of weights is somewhat complex for the formulation of the sample estimate of the mean. Fortunately, it is simple for the estimate of the population total: we simply omit the denominator, leaving \\(\hat{\tau}_Y = \sum_{h=1}^{L} \sum_{i=1}^{n_h} \omega_{\text{prob.},h} y_{ih}\\). Correspondingly, the formula involving the "expected value" weights needs to be modified to be multiplied by \\(N : \hat{\tau}_Y = N \sum_{h=1}^{L} \omega_h \hat{\mu}_{Y, h}\\). 
 
-Note an important fact: when the sampling fraction is the same in all groups (i.e., we use the stratification method to simply ensure an exactly proportional sample), we have a *self-weighting* sample. The standard error, to be derived momentarily, should still be calculated with weights, but the point estimate is the simple random sample mean. The basic idea is that with proportional sampling, the overall sampling fraction $\frac{n}{N}$ is also the sampling fraction for every group, $\frac{n_h}{N_h}$. If this is true, $\frac{n}{N}=\frac{n_h}{N_h}$, and so $\frac{N_h}{N}=\frac{n_h}{n}$: because the sampling fraction is the same for each group, the fraction that a group is of the population is also the fraction that it is of the sample. 
+Note an important fact: when the sampling fraction is the same in all groups (i.e., we use the stratification method to simply ensure an exactly proportional sample), we have a *self-weighting* sample. The standard error, to be derived momentarily, should still be calculated with weights, but the point estimate is the simple random sample mean. The basic idea is that with proportional sampling, the overall sampling fraction \\(\frac{n}{N}\\) is also the sampling fraction for every group, \\(\frac{n_h}{N_h}\\). If this is true, \\(\frac{n}{N}=\frac{n_h}{N_h}\\), and so \\(\frac{N_h}{N}=\frac{n_h}{n}\\): because the sampling fraction is the same for each group, the fraction that a group is of the population is also the fraction that it is of the sample. 
 
+$$
 \begin{align*}
 &1. \hat{\mu}_\text{Y, prop} = \sum_{h=1}^{L} \frac{N_h}{N} \hat{\mu}_{Y, h} 
     && \text{proportional sampling is a subset of stratified sampling} \cr
@@ -109,10 +110,13 @@ Note an important fact: when the sampling fraction is the same in all groups (i.
 &5. = \frac{1}{n} \sum_{i=1}^{n} y_{i}
     && \text{definition of summation} \cr
 \end{align*}
+$$
 
 ## The variance of the stratified random sample and its improvement on the simple random sample
 
 The sampling variance of a stratified random sample mean is easy to find from the above, fortunately. 
+
+$$
 \begin{align*}
 &1. \mathbb{V}[\hat{\mu}_\text{Y, str.}] = \sum_{h=1}^L \mathbb{V}[\omega_h \hat{\mu}_{Y, h}]
     + 2\sum_{h>j}^L \sum_{j=1}^L \mathbb{COV} 
@@ -126,11 +130,13 @@ The sampling variance of a stratified random sample mean is easy to find from th
     \frac{\sigma^2_{Y, h}}{n_h}
     && \text{fpc applied to each subpopulation}
 \end{align*}
+$$
 
 ### The ANOVA proof
 
 Before going further, it is important to have the analysis of variance (ANOVA) decomposition results handy. What the ANOVA decomposition tells us is essentially that the variance of a variable can be partitioned cleanly into variation within groups and variation between groups. This is true at both the population- and sample-level; here, I show the decomposition at the population level. 
 
+$$
 \begin{align*} 
 &1. SS_T = \sum_{h=1}^L \sum_{i=1}^{N_h} (y_{ih} - \mu_\text{Y})^2 
         && \text{definition, summation} \cr
@@ -147,8 +153,11 @@ Before going further, it is important to have the analysis of variance (ANOVA) d
     \sum_{h=1}^L \sum_{i=1}^{N_h} (\text{between deviation})^2 + &&  \text{binomial expansion} \cr
     & 2\sum_{h=1}^L \sum_{i=1}^{N_h} (\text{between deviation} * \text{within deviation})
 \end{align*} 
+$$
+
 The rightmost term disappears because, while we sum within a group (within deviation), the group deviation is constant. So, we treat it as a constant, and the within-deviations from the group-level mean sum to zero for any group as proved earlier. Then...
 
+$$
 \begin{align*}
 &6. = \sum_{h=1}^L \sum_{i=1}^{N_h} (y_{ih} - \hat{\mu}_\text{Y, h})^2 + 
     \sum_{h=1}^L \sum_{i=1}^{N_h} (\hat{\mu}_\text{Y, h} 
@@ -157,9 +166,10 @@ The rightmost term disappears because, while we sum within a group (within devia
     \hat{\mu}_\text{Y, h})^2}_\text{within-groups variation}  + 
     \underbrace{\sum_{h=1}^L \sum_{i=1}^{N_h}  (\hat{\mu}_\text{Y, h} - \hat{\mu}_\text{Y})^2 }_\text{between-groups variation} \cr
 \end{align*}
+$$
 
-We often see this simplied to $SS_T = \sum_{h=1}^L \sum_{i=1}^{N_h} (y_{ih} - \hat{\mu}_\text{Y, h})^2 + 
-N_h \sum_{h=1}^L (\hat{\mu}_\text{Y, h} - \hat{\mu}_\text{Y})^2$ since the sum over $i$ of the second expression is a sum over a constant (from the perspective of $i$, which does not index any term in the expression). 
+We often see this simplied to \\(SS_T = \sum_{h=1}^L \sum_{i=1}^{N_h} (y_{ih} - \hat{\mu}_\text{Y, h})^2 + 
+N_h \sum_{h=1}^L (\hat{\mu}_\text{Y, h} - \hat{\mu}_\text{Y})^2\\) since the sum over \\(i\\) of the second expression is a sum over a constant (from the perspective of \\(i\\), which does not index any term in the expression). 
 
 ### Stratified random sampling as an improvement on simple random sampling
 
