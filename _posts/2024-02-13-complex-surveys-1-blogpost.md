@@ -78,8 +78,6 @@ $$
     && \text{probability =} \frac{n_{\text{ways to succeed}}}{n_{\text{outcomes}}} \cr
 &4. \mathbb{P}(\text{select element} j) = \frac{{N-1 \choose n-1}}{{N \choose n}} \
     && \text{substitution} \cr
-&5. = \frac{\frac{(N-1)!}{(n-1)!(N-1 - [n-1])!}}{\frac{N!}{n! (N-n)!}} \
-    && \text{definition} \cr
 \end{align*}
 $$
 
