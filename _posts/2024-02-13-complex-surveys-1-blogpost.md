@@ -1,8 +1,11 @@
+---
+title: "Complex surveys I: introduction to finite population statistics"
+date: 2024-02-21
+---
+
+In the following series of posts, I want to provide a short introduction to complex survey design. I have not found, anywhere on the internet, a short (\\(\leq 30\\) page) document that introduces the concepts of stratified and cluster random sampling from a finite population clearly and which derives point estimators for the mean and true and estimated sampling variance of the mean. In principle, all of this can be developed without need of much advanced math, and Kish (1965); Cochran (1977); Särndal, Swensson, and Wretman (SSW) (1992); and Lohr (1999) all provide accessible, good treatments. That said, each graduate-level textbook requires most of its 300 or 400 pages to get users to the point of being able to fully understand a complex survey. For many users, this is simply too much detail, and I have found that each of the textbooks above, while individually useful, typically omits certain important assumptions that one only finds fully spelled out in one of the others. 
+
 # Finite population statistics
-
-In the following series of posts, I want to provide a short introduction to complex survey design. 
-
-I have not found, anywhere on the internet, a short (\\(\leq 30\\) page) document that introduces the concepts of stratified and cluster random sampling from a finite population clearly and which derives point estimators for the mean and true and estimated sampling variance of the mean. In principle, all of this can be developed without need of much advanced math, and Kish (1965); Cochran (1977); Särndal, Swensson, and Wretman (SSW) (1992); and Lohr (1999) all provide accessible, good treatments. That said, each graduate-level textbook requires most of its 300 or 400 pages to get users to the point of being able to fully understand a complex survey. For many users, this is simply too much detail, and I have found that each of the textbooks above, while individually useful, typically omits certain important assumptions that one only finds fully spelled out in one of the others. 
 
 I will start with finite population statistics generally, assuming simple random sampling. The big takeaways are relatively straightforward: our sample mean is still unbiased, and its sampling variance is actually reduced in a way that is proportional to the *sampling fraction*, the relative size of a sample to the finite population from which it is taken. 
 
