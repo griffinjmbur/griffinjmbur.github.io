@@ -1,3 +1,10 @@
+---
+title: "Teaching experience"
+collection: teaching
+type: "Undergraduate courses"
+venue: "University of Wisconsin-Madison, Sociology Department"
+---
+
 I've taught many courses as a graduate student . I generally get quite good reviews; you can see the public ones here (archived 2024-02-22). 
 
 
