@@ -258,7 +258,7 @@ $$
     && \text{add/subtract a constant} \cr
 &15. = (1-f)\frac{1}{n} \left\{\frac{\sum_{i=1}^N y_i^2 
     -2\mu_Y\sum_{i=1}^N y_i + \sum_{i=1}^N \mu_Y^2}{N-1} \right\}
-    && \text{rewrite one \\( N \mu_{Y} \\)} \cr 
+    && \text{rewrite one \\( N \mu_Y \\)} \cr 
 &16. = (1-f)\frac{1}{n} \left\{\frac{\sum_{i=1}^N (y_i
     -\mu_Y)^2}{N-1} \right\}
     && \text{reverse binomial expansion} \cr 
@@ -343,7 +343,7 @@ $$
 \end{align*}
 $$
 
-Now we can resume the proof of the covariance of two binomial variables which each represent the number of times persons \\(1\\) and \\(2\\) are selected. Again, I'm using the subscripts \\(1\\) and \\(2\\) for the sake of not having multiple abstract indices.
+Now we can resume the proof of the covariance of two binomial variables which each represent the number of times persons \\(1\\) and \\(2\\) are selected. Again, I'm using the subscripts \\(1\\) and \\(2\\) for the sake of not having multiple abstract indices. 
 
 $$
 \begin{align*}
@@ -352,12 +352,11 @@ $$
 &2. = \sum_{i=1}^n \sum_{j=1}^n \mathbb{COV}[T_{ik}, T_{jr}] 
     && \text{see above} \cr
 &3. =\sum_{k=r}^n \mathbb{COV}[T_{1i}, T_{2j}]  
-    && \text{trials are independent, so no cov. for \\(k\neq r\\)} \cr
+    && \text{trials are independent, so no covar.} \cr
 &4. =\sum_{k=1}^n \mathbb{E}[T_{ik} T_{jk}] - \mathbb{E}[T_{ik}]\mathbb{E}[T_{jk}] 
     && \text{definition of covariance, simplification of summation index} \cr
 &5. = -\mathbb{E}[T_{ik}]\mathbb{E}[T_{jk}] 
-    && \text{outcomes of trials are mutually exclusive, 
-    so \\(\mathbb{E}[T_{ik} T_{jk}]=0\\)} \cr
+    && \text{outcomes of trials are mutually exclusive} \cr
 &6. = -n \pi_i\pi_j = -n \left\{ \frac{1}{N} \right\}^2
     && \text{expectation of a Bernoulli; last equality true with epsem} \cr
 \end{align*}
