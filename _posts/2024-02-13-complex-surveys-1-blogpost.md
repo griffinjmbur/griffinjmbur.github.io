@@ -209,7 +209,7 @@ Intuitively enough, the probability of a given person \\(i\\)'s inclusion in the
 
 Finally, we can now simply realize that the variance of the sample mean is the variance of a sum of random variables.[^notation]
 
-[^notation]: Note that, below, I use the convention, different to Cochran and Lohr, of using \\(\sigma\\) for the population standard deviation instead of \\(S\\). I do so because, in my view, the use of Greek letters permits greater clarity in distinguishing parameters and random variables, and it is jarring in their texts to see Greek letters mostly eschewed but used in certain specific contexts (e.g. \\(\pi\\) for "probability of inclusion"). On the rare occasions where the difference between \\(\frac{\sum_{i=1}^N (Y_i-\mu_Y)^2}{N-1}\\) and \\(\frac{\sum_{i=1}^N (Y_i-\mu_Y)^2}{N}\\) becomes important, I will denote these as \\(\sigma^2_{Y, \text{adjusted}}\\) and \\(\sigma^2_{Y, \text{unadjusted}}\\).
+[^notation]: Note that, below, I use the convention, different to Cochran and Lohr, of using \\(\sigma\\) for the population standard deviation instead of \\(S\\). I do so because, in my view, the use of Greek letters permits greater clarity in distinguishing parameters and random variables, and it is jarring in their texts to see Greek letters mostly eschewed but used in certain specific contexts (e.g. \\(\pi\\) for "probability of inclusion"). On some occasions above, the difference between \\(\frac{\sum_{i=1}^N (Y_i-\mu_Y)^2}{N-1}\\) and \\(\frac{\sum_{i=1}^N (Y_i-\mu_Y)^2}{N}\\) becomes important, I will denote these as \\(\sigma^2_{Y, \text{adj.}} \\) and \\(\sigma^2_{Y, \text{unadj.}} \\).
 
 $$
 \begin{align*}
@@ -258,7 +258,7 @@ $$
     && \text{add/subtract a constant} \cr
 &15. = (1-f)\frac{1}{n} \left\{\frac{\sum_{i=1}^N y_i^2 
     -2\mu_Y\sum_{i=1}^N y_i + \sum_{i=1}^N \mu_Y^2}{N-1} \right\}
-    && \text{rewrite one \\( N \mu_Y \\)} \cr 
+    && \text{rewrite one $N \mu_Y$} \cr 
 &16. = (1-f)\frac{1}{n} \left\{\frac{\sum_{i=1}^N (y_i
     -\mu_Y)^2}{N-1} \right\}
     && \text{reverse binomial expansion} \cr 
