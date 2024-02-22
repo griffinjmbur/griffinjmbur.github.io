@@ -1,6 +1,6 @@
 ---
 title: "The handshake puzzle: introduction to counting"
-date: 2012-08-14
+date: \today
 ---
 
 Here is my inaugural blogpost. This was written in a way so that a talented middle-school student could make sense of it, but this might be useful to people who haven't needed to use this beautiful math in the long interval between high school and graduate school.
