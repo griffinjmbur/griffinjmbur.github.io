@@ -1,10 +1,5 @@
 ---
-title: 'The handshake puzzle: introduction to counting'
-date: \date
-tags:
-  - dissertation math
-  - category1
-  - category2
+title: "The handshake puzzle: introduction to counting"
 ---
 
 Here is my inaugural blogpost. This is written in a way so that a talented middle-school student could make sense of it, but this might be useful to people who haven't needed to use this beautiful math in the long interval between high school and graduate school.
