@@ -55,7 +55,7 @@ ICC = \frac{\sum_{i=1}^N \sum_{j=1}^M \sum_{k \neq j}^M (y_{ij}
 \end{align*}
 $$
 
-### The relationship of $\rho_{\text{cl.}}$ to the variance of the cluster sample mean
+### The relationship of \\(\rho_{\text{cl.}}\\) to the variance of the cluster sample mean
 
 Cochran gives an elegant proof of this formula. We need to introduce new notation here. First, let \\(\mu_{\text{pc}}\\) indicate the mean *per cluster*. This is the average score on our variable of interest divided by the number of clusters in our population. For example, if we are considering a population of all eight-packs of protein shakes in a refrigerated warehouse, \\(\mu_{\text{pc}}\\) would be the *protein content per pack*. Let us also simply note that, although it is not a new concept, the counterpart to the per-cluster mean is the regular per-element mean. Although it is not strictly necessary, let us use \\(\mu_\text{el.}\\) where necessary.
 
@@ -69,6 +69,7 @@ $$
 \hat{\mu}_{\text{el.}} = \frac{\sum_{i}^n \sum_{j}^M y_{ij}}{nM}
 \end{align*}
 $$
+
 ... and the mean *per cluster* is 
 
 $$
@@ -168,7 +169,7 @@ $$
 \end{align*}
 $$
 
-Notice that if \\(N\\) is quite large relative to \\(M\\)&mdash;and the two are inversely related, since \\(NM = |\mathscr{U}|\\)&mdash;this is approximately equal to... 
+Notice that if \\(N\\) is quite large relative to \\(M\\)&mdash;and the two are inversely related, since \\(NM\\) must be our total population size&mdash;this is approximately equal to... 
 
 $$
 \begin{align*}
@@ -180,7 +181,7 @@ In other words, all else equal, the sampling variance of a mean from a cluster r
 
 ## The intracluster correlation and the ANOVA decomposition
 
-A useful rewrite of the intracluster correlation coefficient uses the ANOVA population decomposition to show that the \\(ICC\\) is very close to the coefficient of determination for the regression of the outcome on the clusters as a set of binary predictors, \\(R^2 = \frac{SS_W}{SS_T}\\). 
+A useful rewrite of the intracluster correlation coefficient uses the ANOVA population decomposition to show that the \\(ICC\\) is closely related to the traditional mean squares calculated in ANOVA.  
 
 First, note that the population variance of the cluster totals found above is quite close to the mean square between groups in the population ANOVA decomposition with individual-level data. Since using Roman-letter acronyms in math has a potential to be extremely confusing&mdash;I have tried to limit myself to it in the case of the sums of squares since that is a pretty general convention even though details vary[^sumsq]&mdash;I will use \\(\sigma^2_B\\) and \\(\sigma^2_W\\)  to indicate the mean squares between and within since these are essentially variances anyways. 
 
@@ -255,6 +256,6 @@ And since \\(NM-1 \approx NM\\), we have...
 
 $$
 \begin{align*}
-\sigma^2_W \approx \sigma^2_Y(1 - (ICC))
+\sigma^2_W \approx \sigma^2_Y(1 - ICC)
 \end{align*}
 $$
