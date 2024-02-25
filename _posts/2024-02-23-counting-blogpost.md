@@ -3,11 +3,9 @@ title: "Counting for adults: introduction to combinatorics"
 date: 2024-02-22
 ---
 
-# Counting and the binomial theorem
-
 In this post, I introduce the basic combinatorics that anyone who is serious about statistics beyond the most basic level should know. This part of math also, I think, happens to be exceptionally beautiful. 
 
-## The lay of the land
+# The lay of the land
 
 The question "how many ways are there of choosing \\(k\\) items from a set of \\(n\\)" is a question that comes up *constantly* in mathematics.  
 
@@ -25,11 +23,11 @@ $$
 \end{array}
 $$
 
-## Counting without replacement
+# Counting without replacement
 
 To understand the two most important situations&mdash;where we do *not* have replacement&mdash;let's suppose that we are members of a hockey team with six members. 
 
-### Permutations without replacement
+## Permutations without replacement
 
 Let's suppose that we are first interested in a silly situation, taking the team's photo for promotional material. How many different orders can the team stand in? After a little reflection, we see that in the first slot, we could put any of six people, but once we do that, there are only five people available for the next slot, four for the next, and so on. We have \\(6! = 720\\) (which is mindblowingly large, I think). 
 
@@ -45,7 +43,7 @@ $$
 
 Let's build a bridge case to the next question. Let's say we now want to pick a first captain and second captain for our team. This is *also* solved in the same way, although it may not be obvious. However, to get the intuition, imagine writing "first captain" and "second captain" on slips of paper and putting them on chairs. Now, imagine all of ways you can pick two people to sit in these two *distinguishable* chairs. This is clearly \\(6P2\\): we have six people available to pick for first captain and five after that. 
 
-### Combinations (without replacement)
+## Combinations (without replacement)
 
 Now, let's change our question slightly. Let's examine the number of ways to select a *group* of, say, two captains from our team. There are several good ways to think about this question. The first is that we could reason as follows. Our old formula \(nPk\) works quite well to count the number of ways we could pick a first captain and a second captain" because, in that scenario, we distinguish the two. However, if we only care about the *group* of people who are captains, note that our formula overcounts! By what factor does it overcount? Well, we can reason that, because we'll eventually get every possible ordering of any distinct group of \\(k\\) people, it overcounts each *group* of people by however many ways that they can be rearranged, which is \\(k\\) as we saw from before.[^fac0]
 
@@ -63,11 +61,11 @@ Note, by the way, that we could also see the problem a bit more generally in a w
 
 Finally, note that the limit cases all do what we would expect. Logically, \\(\binom{n}{0} = \binom{n}{n} = 1\\) (verify this algebraically) since there is only one way to pick everyone or no one; \\(\binom{n}{1} = \binom{n}{n-1} = n\\) (verify this algebraically) since it is obvious that to pick one person, or everyone but one person (i.e., picking one person whom to leave out), we have \\(n\\) choices.
 
-#### Key facts about the binomial coefficient: symmetry
+### Key facts about the binomial coefficient: symmetry
 
  *Algebraically*, the binomial coefficient \\(\binom{n}{k} = \binom{n}{n-k}\\) (the reader can verify this). But, just as important, *conceptually* a binomial coefficient gives the number of ways to pick \\(k\\) items from a set of \\(n\\). But, if any way of choosing \(k\) items from a set of \\(n\\) leaves \\(n-k\\) left over, then every single way of picking of \\(k\\) items is a way of "picking" \\(n-k\\), so they logically have to hold up. After all, if you picture, say, an unsolved puzzle on the table, one way to "pick" \\(k\\) pieces is simply to lay a length of twine down the table, separating it into \\(k\\) and \\(n-k\\) parts (by definition since you must have \\(n\\) pieces for some appropriate choice of \\(n\\), e.g. 1000). 
  
-#### Key facts about the binomial coefficient: Pascal's triangle/paths
+### Key facts about the binomial coefficient: Pascal's triangle/paths
 
 Have you ever seen or constructed by hand Pascal's [^Pascal] triangle? This is easy to do by hand. We start with the arbitrary number one, a buoy floating atop a sea surface of zeros (not pictured below; I'm using the standard picture). Then, you can form any number in the triangle by adding together the two numbers directly above it. Remember that there are zeros everywhere outside the triangle. 
 
@@ -99,13 +97,34 @@ The first way is to reinterpret the "foundational numbers"&mdash;the initial \\(
 
 Then, we can interpret each of the other numbers as being additions of the *number of ways to get to that spot*, starting with the next row ("row \\(1\\)" since the first row is zero-indexed). After all, *if you took it for granted* that the two numbers above any number *were* the number of ways to get to those spots, then adding them is not only just the addition of two numbers but *the total number of ways to get to our spot*&mdash;after all, if all possible streets from the gym to my office at the corner of Observatory and Charter either end by coming down Observatory or down Charter, you can work how many ways there are to that corner so long as you know how many ways there are to get to the penultimate intersection on Observatory and the penultimate one on Charter. So, this is a recursive proof: it doesn't matter how we got the "parent numbers" (as in a family tree) for some arbitrary entry, as long as we know that they are the sums of ways to get to those two spots. Then, we just pursue this all the way back to the beginning and declare this true by fiat.
 
-#### Key facts about the binomial coefficient: Pascal's rule
+### Key facts about the binomial coefficient: Pascal's rule
 
 The second way is also very nice and works in the opposite direction using what is called "Pascal's law": \\(\binom{n-1}{k-1}+\binom{n-1}{k} = \binom{n}{k}\\). In words, this says that to find the number of ways to pick \\(k\\) items from a set of \\(n\\), we simply find the number of ways to pick one fewer item from a set of one fewer item and add this to the number of ways to pick fully \\(k\\) items from a set one size smaller. I'll prove this in a moment; for now, just notice that this means that the entries in the *binomial representation* of the triangle can be now interpreted as the sums of the "parent entries", at least before we get to the (arbitrary/mystical) first element. Once we pick that arbitrary first element to be one *and* to be \\(\binom{0}{0}\\) every element below that is interpretable as the sum of the two entries above it, whether they are numbers or binomial coefficients (you can understand the zeros as being \\(n\\) choose negative numbers or \\(k>n\\), both of which logically have to be zero). 
 
 So, why is Pascal's rule true? There is an algebraic proof, but it is far less interesting than the logical proof. Imagine that the Mystery Inc. gang&mdash;Fred, Daphne, Velma, Shaggy, and Scooby&mdash;decides to split up to go look for clues. They are trying to decide who will investigate the abandoned amusement park and decide to send three people no matter what. At first, Fred says "I'm reading on this map that there's some scrumptious kibble there!" Scooby perks up: "count me in for sure!" Velma reasons clearly that now they only need to pick two people out of the remaining four: \\(\binom{4}{2}\\). Then, however, she looks more carefully at Fred's map. "Fred, you dolt!" she exclaims. "It says that there's a **nefarious cabal** there!" "Zoinks!" says Scooby. "Count me *out* no matter what!" The gang now reasons that they now need to choose all three people from only four: \\(\binom{4}{3}\\). Then, however, Daphne takes a look at the map, and notices that the map is all smudged and it's not really clear what it says, so that they might as well stick with the original plan. "Jinkies", says Velma. "This is getting hard to count". Shaggy, in a rare moment of lucidity, points out that if they are considering all search parties of size three *with* Scooby definitely included (\\(\binom{4}{2} = \binom{n-1}{k-1}\\) from before) and all search parties of size three with Scooby *definitely **ex**cluded* (\\(\binom{4}{3}\( = \)\binom{n-1}{k}\\) from before), their sum can't possibly differ from the number of search parties that can be formed of size three using all five members (some include Scooby, some don't; all five members are candidates): \\(\binom{5}{3} = \binom{n}{k}\\). This completes the proof. 
 
-#### Key facts about the binomial coefficient: counting the sum of the first positive \\(n\\) integers
+### Key facts about the binomial coefficient: the hockey stick identity
+
+Now we can prove another cool fact about Pascal's triangle. Note that we can form a series of binomial coefficients through the triangle that resemble a hockey stick. The terms in the "handle" sum to the (short) "blade". 
+
+$$
+\begin{array}{cccccccccccc}
+& & & & & \binom{0}{0} & & & & \\
+& & & & \binom{1}{0} & & \binom{1}{1} & & \\
+& & & \binom{2}{0} & & \binom{2}{1} & & \mathbf{\binom{2}{2}} & \\
+& & \binom{3}{0} & & \binom{3}{1} & & \mathbf{\binom{3}{2}} & & \binom{3}{3} \\
+& \binom{4}{0} & & \binom{4}{1} & & \mathbf{\binom{4}{2}} & & \binom{4}{3} & & \binom{4}{4} \\
+\binom{5}{0} & & \binom{5}{1} & & \binom{5}{2} & & \mathbf{\binom{5}{3}} & & \binom{5}{4} & & \binom{5}{5} 
+\end{array}
+$$
+
+Why is this so? The key is to see this combinatorially (i.e., logically), rather than working through a tedious algebraic proof. Return to the Scooby Doo example. Suppose we want to split the gang up into a group of two and a disjoint group of three. 
+
+One way to do this is to line everyone in the group up and then pick people in every group who will be a leader. Suppose the gang all agrees that Shaggy and Scooby should not be trusted with this. They are placed at the start of the line. Then, the gang moves to the right from Daphne to Fred to Velma, forming each group possible involving that leader; this means, e.g., that Daphne will form six groups, but Velma will form only one (with her, Scooby, and Shaggy) because Fred and Daphne each already formed all groups involving her and each of them, respectively. Finally, there is no need for Shaggy and Scooby to count their groups because they can't form one without involving at least one of the leaders, and all the leaders have counted so far. Note that this is true even without the little narrative conceit of "leaders"; they are also not enough people!
+
+Generalizing what we've done, we first insisted on the inclusion of one member of the group in any sample of size \\(k\\), which is \\(\binom{n-1}{k-1}\\), using Pascal's rule (see above for a full justification). Then, we held out one *more* person, leaving \\(n-2\\) people from whom to choose the remaining \\(k-1\\) people needed to form a group of \\(k\\), \\(\binom{n-2}{k-1}\\). Note that the "population size" declines each time: we don't put the "first" person back in because we've already counted all groups involving them. We then did this until we got to the point where we held out the final person who is not in our "straggler group" of \(k-1\), which is \\(\binom{k-1}{k-1}\\). In formulae, we found that \\(\binom{n}{k} = \sum_{j=0}^{k} \binom{n-j-1}{k-1}\\). Note, by the way, that we did *not* use, here, the other intepretation of Pascal's rule, that going "up and to the right" means ensuring that one person is *not* in a group of the same size (there is a way to form this interpretation, but it is less direct). In other words, once we start on the "blade", we move up and to the right because we are reducing our population size by one each time and thereby ensuring that multiple successive people are included in the group. 
+
+### Key facts about the binomial coefficient: counting the sum of the first positive \\(n\\) integers
 
 Here is another beautiful connection that I don't see mentioned very often. How can you sum the first \\(n\\) positive integers? First, let's prove it in the standard way. 
 
@@ -134,10 +153,10 @@ Then, we realize that this formula overcounts by the number of ways to order the
 
 Here, we obtain \\(\frac{n(n-1)}{2}\\), which is the same formula we found above for the sum of the first \\(n-1\\) positive integers. To add the \\(n\\)th term, we simply add \\(n\\) to the formula (multiplying by two because the whole thing is divided by two), which we can do easily with multiplication by changing the \\((n-1)\\) to \\((n+1)\\). The answer follows. 
 
-### The binomial theorem 
+## The binomial theorem 
 A more general use of the binomial coefficient is in the binomial theorem. 
 
-#### Logic of binomial (and multinomial) expansion: the box method reviewed, "why FOIL works"
+### Logic of binomial (and multinomial) expansion: the box method reviewed, "why FOIL works"
 First, note that the binomial coefficient given above is helpful in writing the binomial expansion (after all, that is why it is has a special name that, at first, appears to be unrelated to its combinatorial meaning). 
 
 If we have the expansion \\((x+y)^n\\), we can write the product as \\((x+y)_1(x+y)_2...(x+y)_n\\). Based on the validity of the "box method" of multiplication, we can see that in two and three dimensions, to get the area or volume of a square (or cube) with each side partitioned into \((x+y)\), we start with the first dimension, denoted \\((x+y)_1\\) above, and find all the unique combinations of \\(x_1\\) with every element from the other sides (e.g., if we have three dimensions, we would need \\(x_1\cdot x_2 \cdot x_3\\) and \\(x_1\cdot x_2 \cdot y_3\\) and \\(x_1\cdot y_2 \cdot x_3\\) and \\(x_1\cdot y_2 \cdot y_3\\). To go further, you can either conceptually consider a box in \\(n\\) dimensions or simply work *iteratively* in two dimensions; e.g., after working out the rule for a square in two dimensions, write a new rectangle (not a square) with one side partitioned into \\(x^2 + xy + xy + y^2\\) and the other into \\(x + y\\) alone; this represents cubing. You can then write the result of the cube on the side of a new rectangle and the other as \\(x + y\\) alone, representing the power of 4, all without resorting to higher dimensions. 
@@ -146,7 +165,7 @@ The pattern that we find is that \\((x+y)^n\\) is formed by taking the product \
 
 For what it's worth, this is identical to saying that we want to let some index \\(k\\) vary from \\(0\\) to \\(n\\) and then find all combinations of \\(k\\) terms of \\(x\\) (or \\(n-k\\) terms of \\(y\\)) from the \\(n\\) buckets. That is, there are \\(\sum_{k=0}^n \binom{n}{k} = 2^n\\) terms formed in this way because this is also equal to the number of permutations with replacement from \\(n\\) repeatable "trials" on a coin labeled \\(x\\) and \\(y\\). 
 
-#### The binomial theorem: using the binomial coefficient to generalize the box method for taking a binomial to the \\(n\\)th power
+### The binomial theorem: using the binomial coefficient to generalize the box method for taking a binomial to the \\(n\\)th power
 
 All of that last paragraph is somewhat besides the point. All we need to do is realize that each term formed this way must be of the form \(x^ay^b\) for some \(a, b \geq 0\). Then, we realize that from \\(n\\) buckets, if we can choose \(k\) to be \(x\), this means that there are \\(\binom{n}{k}\) ways to select a term with \(x\) multiplied \(k\) times, i.e. \\(x^k\\). Note that we don't need to worry about the \(y\) term directly. This is because the binomial coefficient is symmetric (per the above), so the number of ways to pick \(k\) "x"s from \(n\) "buckets" is also the number of ways to pick \(n-k\) "y"s from \(n\) buckets. 
 
@@ -158,7 +177,7 @@ $$
 \end{align*}
 $$
 
-### A quick motivation for the binomial: proving the power rule
+## A quick motivation for the binomial theorem: proving the power rule
 
 Let's learn a very easy and useful part of calculus. One of the two big ideas of calculus is that we care a lot about non-linear functions, but the "speed" of such a function, its slope, varies, unlike linear functions. We often want to find rules about the rate of change at some particular value \\(x\\) in the very immediate vicinity. This "instantaneous rate of change" or "instantaneous slope" is called the *derivative*. That's all there is to it! We define it (in modern terms) as \\(\lim_{d \rightarrow 0} \frac{f(x+h)-f(x)}{(x+h) - h}\\), the limit of our function's slope for a tiny change in \(x\), here denoted \\(h\\), as \\(h\\) gets infinitely small. The problem in evaluating this is that the denominator simplifies to \\(h\\), so our regular limit trick of plugging in \\(h=0\\) won't work directly. Fortunately, there are many fun workarounds. 
 
@@ -182,40 +201,19 @@ $$
 Now we can safely plug in \\(h=0\\) without fear of a zero in the denominator: \\(\frac{d(x^n)}{dx} = nx^{n-1}\\).
 
 
-## Permutations with replacement
+# Permutations with replacement
 
 These are pretty easy to describe. They typify certain cryptography problems. A good example is the number of ways that you can choose a code for your bike lock. Here, we can reuse digits. So, since we can have any one of 10 digits five times (if the lock is the standard length), we have \\(10^5\\). **More generally, we have \\(n^k\\)**. 
 
 Note that in this case, by the way, \\(n\\) and \\(k\\) shift their meaning subtly. We have \(n\) opportunities to choose \\(k\\) outcomes, but it is not true any longer that \\(k \subset n\\), i.e. \\(k\\) does not have to be a subset of \\(n\\). Another classic example is the number of ways to flip a coin \\(n\\) times. Here, we have \\(k = 2\\) outcomes, but we could flip the coin once, twice, or three times; we do not require \\(n \geq k\\). 
 
-## Combinations with replacement
+# Combinations with replacement
 
 These are sometimes also called *multisets*. These are written as combinations, but they are not, strictly speaking, combination-style questions. Let's switch metaphors a bit. A concrete example is this: if I am at a barbecue joint and order a protein-packed dinner with \\(k = 4\\) servings of meat, which I can choose from \(n=3\) options (say, beef, chicken, and pork), the number of ways I can allocate my choices is given by \\(\binom{n+k-1}{k} = \binom{n+k-1}{n-1} = \binom{6}{2} = 15\\). 
 
 Here is why: imagine that I order by standing in front of each type of meat in the case and saying "a scoop, please" and then moving to the right, to the next meat, when I'm done. So, I'm taking two actions: saying "yes" and moving right. If I start at meat \(1\), I only need to move right \\(n-1\\) times to get to the end, and this means that there are \\(n + k - 1\\) actions to take, of which I can choose \(n-1\) to be rightward steps or \(k\) to be "yes"es. This type of explanation is sometimes called "stars and bars" after an older explanation in Fuller (1966), where the two classes of object were \\(\ast\\)s and \\(|\\)s. Notice that in this scenario, the size assigned to each class (the three options) is not fixed. Notice also that we don't distinguish the scoops themselves: what we pay attention to are *who* gets *how many* scoops.
 
-### Key facts about the binomial coefficient: the hockey stick identity
-
-Now we can prove another cool fact about Pascal's triangle. Note that we can form a series of binomial coefficients through the triangle that resemble a hockey stick. The terms in the "handle" sum to the (short) "blade". 
-
-$$
-\begin{array}{cccccccccccc}
-& & & & & \binom{0}{0} & & & & \\
-& & & & \binom{1}{0} & & \binom{1}{1} & & \\
-& & & \binom{2}{0} & & \binom{2}{1} & & \mathbf{\binom{2}{2}} & \\
-& & \binom{3}{0} & & \binom{3}{1} & & \mathbf{\binom{3}{2}} & & \binom{3}{3} \\
-& \binom{4}{0} & & \binom{4}{1} & & \mathbf{\binom{4}{2}} & & \binom{4}{3} & & \binom{4}{4} \\
-\binom{5}{0} & & \binom{5}{1} & & \binom{5}{2} & & \mathbf{\binom{5}{3}} & & \binom{5}{4} & & \binom{5}{5} 
-\end{array}
-$$
-
-Why is this so? The key is to see this combinatorially (i.e., logically), rather than working through a tedious algebraic proof. Return to the Scooby Doo example. Suppose we want to split the gang up into a group of two and a disjoint group of three. 
-
-One way to do this is to line everyone in the group up and then pick people in every group who will be a leader. Suppose the gang all agrees that Shaggy and Scooby should not be trusted with this. They are placed at the start of the line. Then, the gang moves to the right from Daphne to Fred to Velma, forming each group possible involving that leader; this means, e.g., that Daphne will form six groups, but Velma will form only one (with her, Scooby, and Shaggy) because Fred and Daphne each already formed all groups involving her and each of them, respectively. Finally, there is no need for Shaggy and Scooby to count their groups because they can't form one without involving at least one of the leaders, and all the leaders have counted so far. Note that this is true even without the little narrative conceit of "leaders"; they are also not enough people!
-
-Generalizing what we've done, we first insisted on the inclusion of one member of the group in any sample of size \\(k\\), which is \\(\binom{n-1}{k-1}\\), using Pascal's rule (see above for a full justification). Then, we held out one *more* person, leaving \\(n-2\\) people from whom to choose the remaining \\(k-1\\) people needed to form a group of \\(k\\), \\(\binom{n-2}{k-1}\\). Note that the "population size" declines each time: we don't put the "first" person back in because we've already counted all groups involving them. We then did this until we got to the point where we held out the final person who is not in our "straggler group" of \(k-1\), which is \\(\binom{k-1}{k-1}\\). In formulae, we found that \\(\binom{n}{k} = \sum_{j=0}^{k} \binom{n-j-1}{k-1}\\). Note, by the way, that we did *not* use, here, the other intepretation of Pascal's rule, that going "up and to the right" means ensuring that one person is *not* in a group of the same size (there is a way to form this interpretation, but it is less direct). In other words, once we start on the "blade", we move up and to the right because we are reducing our population size by one each time and thereby ensuring that multiple successive people are included in the group. 
-
-## The multinomial coefficient 
+# The multinomial coefficient 
 
 Don't confuse the multi*set* coefficient, the number of ways to pick \\(k\\) items from a set of \\(n\\) choices when we can repeat, with the multi*nomial* coefficient. Multinomials are similar only in a very general way, that they involve the distribution of a set of choices into different classes. However, in the multinomial scenario, the distribution is *fixed*, or *assumed*, whereas the whole purpose of the multiset *is to let it vary and count all such variations*. Both problems are often described with "ball and urn" scenarios, whereas simple permutations and combinations without replacement often use more palatable examples involving people, maybe causing the two to be confused. 
 
@@ -238,11 +236,13 @@ At each step of selecting some specific \\(k_r\\), we divide by \\(k_r!\\) to ge
 
 [^Pascal]: Pascal was also a religious scholar, by the way, and one of his more famous quips (mangled a bit by Louis Althusser) serves as a good motto for learning math: "we must not misunderstand ourselves; we are as much automatic as intellectual; and hence it comes that the instrument by which conviction is attained is not demonstrated alone. How few things are demonstrated? Proofs only convince the mind. Custom is the source of our strongest and most believed proofs." In other words, practice makes perfect; drill, drill, drill. 
 
-[^wrongturn]: Let me first point out a fact which is interesting and sometimes cited as the connection but which does *not* actually show their connection. This is that the binomial coefficient (obviously) supplies us with the number of ways to to a particular destination if we must go \(n\) blocks total, with \(k\) being right turns and \((n-k)\) being straight ahead (or north, or whatever; the coordinate system doesn't matter). Thus, if we pretend that the different numbers in the pyramid are actually lily-pads that a frog is going to hop to, then each binomial coefficient gives the number of ways to get there. This is all true, but it does not actually show *why* this way of seeing the Triangle has anything to do with the normal derivation with simple addition. This connection requires either 
+[^wrongturn]: Let me first point out a fact which is interesting and sometimes cited as the connection but which does *not* actually show their connection. This is that the binomial coefficient (obviously) supplies us with the number of ways to to a particular destination if we must go \(n\) blocks total, with \(k\) being right turns and \((n-k)\) being straight ahead (or north, or whatever; the coordinate system doesn't matter). Thus, if we pretend that the different numbers in the pyramid are actually lily-pads that a frog is going to hop to, then each binomial coefficient gives the number of ways to get there. This is all true, but it does not actually show *why* this way of seeing the Triangle has anything to do with the normal derivation with simple addition.
 
-# Binomial appendix
+# The uses of combination in statistics
 
-## Binomial variables 
+In probability and statistics, we often deal with distributions of variables that are hard to summarize. However, the binomial and multinomial coefficients allow us to directly characterize some very important probability distributions without even needing calculus. By the way, note that there are plenty of situations, not that directly relevant here, where we *do* use these counting techniques to work out probabilities.
+
+## Binomial random variables 
 
 A variable is *binomially distributed* if it is a count of some outcome which can be broken down into the sum of one binary or Bernoulli trial repeated many times. For example, the count of people in a sample who are married is the result of drawing \\(n\\) people who could each be married or not (notice that here I am using the traditional conception of an infinite population and, relatedly, one where someone's status is not considered fundamentally a constant as in the Cornfield model above). The count of heads in \\(n\\) flips of a fair coin is a simpler, if less interesting, example. 
 
@@ -299,7 +299,7 @@ $$
 \end{align*}
 $$
 
-# Multinomial appendix
+## Multinomial random variables
 
 The remaining material here is not necessary to what comes above, but it is a case where we "might as well" round out some useful remaining properties. 
 
@@ -309,32 +309,7 @@ More sociologically, we might be interested in the PMF of the number of occurren
 
 ## The multinomial coefficient
 
-The multinomial distribution is essentially an extension of the binomial distribution, and we should similarly derive the multinomial PMF by first motivating the multinomial *coefficient*, namely: 
-
-$$
-\begin{align*}
-\binom{n}{k_1, k_2, ... k_p} = \frac{n!}{\prod_{j=1}^p k_j!}
-\end{align*}
-$$
-
-What does the multinomial coefficient actually tell us? It essentially gives the number of ways to partition a set of \\(n\\) items into \\(p\\) distinct buckets where the order of items in the buckets are not relevant. A classic example is the question "how many *unique* anagrams are there of a word?" For example, the word *naan* has four letters, but it should be obvious that it does not have \\(4! = 24\\) (linguistically) unique arrangements. In fact, simple hand inspection would tell us that it has only six: nnaa, nana, naan, aann, anan, anna. This is also equal to \\(\frac{4!}{2!2!}\\), which is what our formula tells us to count. 
-
-The reason that our formula gives the correct answer is that we can consider the problem like so: what if all four letters *were* different? Then, our formula would work: we would have a pure permutation, given by the formula \\(\frac{n!}{(n-k)!}\\), where \\(n = k\\) and so we simply have \\(n!\\). Now, all we have to do is deflate this answer by the number of ways that our old formula overcounts things. This is simply, for each class of letter \\(k_i\\) (e.g., the \\(a\\)s), the number of spurious rearrangements of the repeat letters, which is \\(k_i!\\) (this is actually, in itself, a question of how many ways we can permute the items in each group \\(k_j\\)). 
-
-In general, we are simply extending the binomial coefficient to cover more than two groups. Note that the *naan* case actually just *is* the binomial coefficient since we only have two groups; the binomial formula, \\(\frac{n!}{(n-k)!k!}\\) somewhat sneakily hides the fact that we could call our two groups \\(k = k_1\\) and \\((n-k) = k_2\\), plug them into the multinomial formula, and get the same answer. The reason is simple: if we only have two groups, every way of picking \\(k\\) items is also a way of picking the other \\(n - k\\) items; it is a way of partitioning the set. So, instead of thinking about the binomial as a way of ordering \\(k\\) items of a set of \\(n\\), then undoing the spurious rearrangements of any group of \\(k\\), we can think about it as the number of ways to permute all the items, then undoing two spurious rearrangements within groups. Then, the multinomial follows simply: what if we have more than two groups? 
-
-Conversely, the multinomial can also be derived as the product of multiple binomials. Let's try a harder word like *barbell*. We first ask how many ways we can choose \\(k_1\\) slots from a set of \\(n\\) to be, say, \\(l\\)s. Then, we ask how many ways from a set of \\(n - k_1\\) we can let be the \\(k_2 b\\) s. In general, the pattern looks like this (eschewing the formal statement)... 
-
-$$
-\begin{align*}
-\binom{n}{k_1}\binom{n-k_1}{k_2}...\binom{n-{(k_1 + k_2 + ... k_{p-1})}}{k_p} \cr
-= \frac{n!}{k_1!(n-k_1)!} \cdot \frac{(n-k_1)!}{k_2!(n-[k_1+k_2])!} \cdot \frac{n-(k_1+k_2)!}{k_3!(n-[k_1+k_2+k_3])!}...
-\end{align*}
-$$
-
-At each step of selecting some specific \\(k_m\\), we divide by \\(k_m!\\) to get rid of the spurious permutations of identical items within that class, and we also divide by \\((n - \sum_{j=1}^{m} k_j)!\\) so that the permutation of the \\((n - \sum_{j=1}^{m-1} k_j)\\) available objects only goes through the first \\(k_m\\) steps (just like how we derive the binomial). 
-
-Finally, we can quickly extend the binomial coefficient \\(\rightarrow\\) binomial PMF analogy. Recall the binomial PMF, i.e. \\(\mathbb{P}[Y=k] = \binom{n}{k} \pi^k (1-\pi)^{n-k}\\). This says that the probability that a random count variable \\(Y\\) takes on \\(k\\) successes is the probability of success to the \\(k\\), multiplied by the probability of failure to the \\(n - k\\), mulitplied the number of ways to select \\(k\\) of the \\(n\\) trials to be successes. We basically find the probability of a specific permutation of trials that are successes and failures (the probability of any such permutation is identical, so we simplify and find the probability that the first \\(k\\) were successes); there are actually \\(\binom{n}{k}\\) ways for that to occur, so we just multiply the probability of one way by \\(\binom{n}{k}\\). 
+The multinomial distribution is essentially an extension of the binomial distribution. We can quickly extend the binomial coefficient \\(\rightarrow\\) binomial PMF analogy. Recall the binomial PMF, i.e. \\(\mathbb{P}[Y=k] = \binom{n}{k} \pi^k (1-\pi)^{n-k}\\). This says that the probability that a random count variable \\(Y\\) takes on \\(k\\) successes is the probability of success to the \\(k\\), multiplied by the probability of failure to the \\(n - k\\), mulitplied the number of ways to select \\(k\\) of the \\(n\\) trials to be successes. We basically find the probability of a specific permutation of trials that are successes and failures (the probability of any such permutation is identical, so we simplify and find the probability that the first \\(k\\) were successes); there are actually \\(\binom{n}{k}\\) ways for that to occur, so we just multiply the probability of one way by \\(\binom{n}{k}\\). 
 
 ## The multinomial distribution's PMF
 
