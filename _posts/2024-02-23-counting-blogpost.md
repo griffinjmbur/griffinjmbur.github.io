@@ -236,7 +236,7 @@ $$
 \end{align*}
 $$
 
-At each step of selecting some specific \\(k_r\\), we divide by \\(k_r!\\) to get rid of the spurious permutations of identical items within that class, and we also divide by \\((n - \sum_{j=1}^{r} k_j)\\) so that the permutation of of the \\((n - \sum_{j=1}^{r-1} k_j)\\) available objects only goes through the first \\(k_r\\) steps (just like how we derive the binomial).
+At each step of selecting some specific \\(k_r\\), we divide by \\(k_r!\\) to get rid of the spurious permutations of identical items within that class, and we also divide by \\((n - \sum_{j=1}^{r} k_j)!\\) so that the permutation of of the \\((n - \sum_{j=1}^{r-1} k_j)\\) available objects only goes through the first \\(k_r\\) steps (just like how we derive the binomial).
 
 [^Pascal]: Pascal was also a religious scholar, by the way, and one of his more famous quips (mangled a bit by Louis Althusser) serves as a good motto for learning math: "we must not misunderstand ourselves; we are as much automatic as intellectual; and hence it comes that the instrument by which conviction is attained is not demonstrated alone. How few things are demonstrated? Proofs only convince the mind. Custom is the source of our strongest and most believed proofs." In other words, practice makes perfect; drill, drill, drill. 
 
