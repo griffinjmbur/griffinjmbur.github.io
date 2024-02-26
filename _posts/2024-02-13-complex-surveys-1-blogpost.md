@@ -23,9 +23,43 @@ Note, by the way, that the idea of an *abstract representation* of a *specific r
 
 Let's first prove that the sample mean, \\(\hat{\mu}_Y\\), of a sample from a finite population is unbiased. We can use a new type of proof here (relative to what you might have seen before). 
 
+### An interlude on mathematical expectations and notation
+
 Let's begin with the fact that by definition, the expectation of the sample mean, denoted by \\(\mathbb{E}[\hat{\mu}_Y]\\), is equal to the sum of probability-weighted possible outcomes: \\(\mathbb{E}[\hat{\mu}_Y] = \sum_y \mathbb{P}[Y=y]y \\).
 
-With equal probability sampling, the expectation is equal to the simple average of all possible samples. Let's have \\(S\\) be a random variable representing any possible sample with \\(s\\) being a realization (i.e., some specific sample), avoiding the use of \\(n\\) here since it is the size of each sample. Then, for a finite population, each sample has \\(\mathbb{P}[S=s] = 1/\binom{N}{n}\\), and this constant can be factored out. We'll let the "pretentious *S*", \\(\mathscr{S}\\), represent the universe of all possible samples. 
+And, while we're at it, we should show a simple but incredibly useful property, that the expectation of the sum of two random variables (or more; extending the proof below by induction is so trivial that it is not worth showing), whether they are dependent or not, is the sum of their expectations, without the need for any kind of fancy convolutions (which we need in order to work out the probability mass function of their sum). In other words, while summing together two random variables might cause the values of the composite variable to become more and less probable in ways that aren't immediately obvious, their expectation is immediately obvious.
+
+For the sake of complete clarity of notation, note that \\(X\\), a capital Roman letter, means a random variable, i.e. a function from outcomes of an experiment to some set of numbers (often the naturals or the reals, \\(\mathbb{N}\\) or \\(\mathbb{R}\\)). The tricky concept of "specific but unspecified values of a random variable"&mdash;the abstract concept of a specific realization of the variable, "some specific outcome that I actually do not find useful to specify here"&mdash;is denoted by the lowercase Roman letter \\(x\\). This represents *some* outcome of \\(X\\) that is possible. An expression such as \\(X=x\\) means "\\(X\\) takes on, in this specific case, the value \\(x\\)". Then, \\(\mathbb{P}[X = x]\\) is the probability of that occurring, while \\(\mathbb{P}[X = x \cap Y = y]\\) is the probability that \\(X = x\\) *and*  that \\(Y= y\\) (the symbol \\(\cap\\) means "intersection of two outcomes"). 
+
+Writing \\(\sum_x\\) without an upper index or a starting value simply means "sum over *all* \\(x\\)", where \\(x\\), again, means "a value of \\(X\\)". I try to be diligent about summation notation and to be as explicit as possible. Smarter people than me argue (e.g. Knuth *et al.*) that the value of summation notation is that it can be made very flexible, but I dislike conventions such as \\(\sum_{X=x, Y=y}\\) since they are only superficially more convenient; the discerning reader will eventually have to work out that this implies a double sum (usually the apparent point of such notation is avoiding things like double or triple summation). At some point soon, I will upload a post going through sums in some detail, but for now, just note that something like \\(\sum_x \sum_y (x+y) \\) simply means "sum over every possible sum of \\(x\\) and \\(y\\)". 
+
+You can visualize this in two ways that are both useful. First, a way that I like to think of as "algorithmic" or "tallying up"&mdash;easier to understand but productive of fewer insights. Here, you fix the value of \\(x\\) and then run through all values of \\(y\\), and then you increment \\(x\\) and repeat until you go through all possible \\(x\\). The second method is more geometric: picture a three-dimensional space where the grid is a Cartesian plane with \\(x\\)- and \\(y\\)-values, and the height above any particular square on the grid is the sum of \\(x\\) and \\(y\\) at that point. Then, you can simply realize that because summing \\(x+y\\) over \\(y\\) doesn't directly involve the value of \\(x\\) (it just adds it to itself as a variable term), you can just do the sum over \\(y\\) and note how many times you add \\(x\\) to itself (this is given by the upper limit of the summation which I here omit). This is like looking "up" the grid at some specific value of \\(x\\), finding out what the \\(y\\)s sum to, and keeping track of how many times we add that fixed value of \\(x\\) to itself. Then, you multiply \\(x\\) by that number and take the sum of this quantity over \\(x\\), which represents looking "to the right" on the grid: we know what happened to \\(x\\) as we went up it and summarized that by multiplying, so now we just add that quantity to itself for however many values of \\(x\\) we have. Finally, we recall that when we do this "looking to the right", we are summing up the component of the height that comes from the \\(y\\)s. We already found out what that comes to when we looked "up", so now we just take that scaled value and multiply it by however many values of \\(x\\) we ran through (the upper index on \\(sum_x\\), assuming that it begins at \\(1\\)). 
+
+$$
+\begin{align*}
+\mathbb{E}[X+Y] &= \sum_{x} \sum_{y} \mathbb{P}[X = x \cap Y = y] (x + y)
+    && \text{definition} \cr
+&= \sum_{x} \sum_{y} 
+    \mathbb{P}[X = x \cap Y = y] x + \sum_{x} \sum_{y} \mathbb{P}[X = x \cap Y = y] y 
+    && \text{distributive rule of algebra} \cr
+&= \sum_{x} x \sum_{y} \mathbb{P}[X = x \cap Y = y]  + 
+    \sum_{y} y \sum_{x} \mathbb{P}[X = x \cap Y = y]  y 
+    && \text{see below} \cr
+&= \sum_{x}  x \mathbb{P}[X = x ]  +  \sum_{y} \mathbb{P}[ Y = y]  y 
+\end{align*}
+$$
+
+The last move is allowed because summing the joint probability of two specific outcomes of \\(X\\) and \\(Y\\) *over* all outcomes of \\(Y\\) (as we do in the first term) just leaves the probability of that specific value of \\(X\\). For example, if we are rolling two dice, one a regular six-sided die \\(X\\) and one a \\(20\\)-sided *D&D* geek \\(Y\\), \\(\sum_y \mathbb{P}[X = 1 \cap Y = y]\\) means summing over all joint probabilities where \\(X=1\\) and \\(Y\\) equals whatever, i.e. 
+
+$$
+\begin{align*}
+\mathbb{P}[X = 1 \cap Y = 1] +  \mathbb{P}[X = 1 \cap Y = 2] + ...  \mathbb{P}[X = 1 \cap Y = 20]
+\end{align*}
+$$ 
+
+This is obviously (I hope) just equal to the probability that \\(X=1\\) since there is no possible way to get that outcome outside of the joint outcomes \\([X = 1 \cap Y = 1] \cup [X = 1 \cap Y = 2] ... \cup [X = 1 \cap Y = 20]\\), where \\(\cup\\) means "union", basically a mathematical "inclusive or". Since our events are *disjoint* here (meaning, there is no overlap between each joint outcome, for obvious reasons: \\(X\\) cannot be both \\(1\\) and \\(2\\)), this just means "joint outcome \\(1\\) or \\(2\\) or...".
+
+Now, let's return to the topic at hand. With equal probability sampling, the expectation is equal to the simple average of all possible samples. Let's have \\(S\\) be a random variable representing any possible sample with \\(s\\) being a realization (i.e., some specific sample), avoiding the use of \\(n\\) here since it is the size of each sample. Then, for a finite population, each sample has \\(\mathbb{P}[S=s] = 1/\binom{N}{n}\\), and this constant can be factored out. We'll let "the pretentious *S*", \\(\mathscr{S}\\), represent the universe of all possible samples. 
 
 Then, we have ...
 
