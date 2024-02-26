@@ -91,7 +91,7 @@ $$
 \end{array}
 $$
 
-Now, *why* is this true? There are a few connections.[^wrongturn].
+Now, *why* is this true? There are a few connections.[^wrongturn]
 
 The first way is to reinterpret the "foundational numbers"&mdash;the initial \\(1\\) and the \\(0\\) outside the triangle&mdash;as ways to get to those spots. So, we take it for granted that the unity at the top of the pyramid is not *just* the number one but also the number of ways to get to that spot, a sort of *creatio ex nihilo*. Then, we recall that there are actually zeros outside of the triangle, representing the fact that there is no way to get to them (at least in this simple version of the triangle). 
 
@@ -165,13 +165,13 @@ First, note that the binomial coefficient given above is helpful in writing the 
 
 If we have the expansion \\((x+y)^n\\), we can write the product as \\((x+y)_1(x+y)_2...(x+y)_n\\). Based on the validity of the "box method" of multiplication, we can see that in two and three dimensions, to get the area or volume of a square (or cube) with each side partitioned into \\((x+y)\\), we start with the first dimension, denoted \\((x+y)_1\\) above, and find all the unique combinations of \\(x_1\\) with every element from the other sides (e.g., if we have three dimensions, we would need \\(x_1\cdot x_2 \cdot x_3\\) and \\(x_1\cdot x_2 \cdot y_3\\) and \\(x_1\cdot y_2 \cdot x_3\\) and \\(x_1\cdot y_2 \cdot y_3\\). To go further, you can either conceptually consider a box in \\(n\\) dimensions or simply work *iteratively* in two dimensions; e.g., after working out the rule for a square in two dimensions, write a new rectangle (not a square) with one side partitioned into \\(x^2 + xy + xy + y^2\\) and the other into \\(x + y\\) alone; this represents cubing. You can then write the result of the cube on the side of a new rectangle and the other as \\(x + y\\) alone, representing the power of 4, all without resorting to higher dimensions. 
 
-The pattern that we find is that \\((x+y)^n\\) is formed by taking the product \((x+y)_1(x+y)_2...(x+y)_n\), going "bucket by bucket", and selecting \\(x_i\\) or \\(y_i\\) from each bucket until we exhaust all possible combinations (note that order does not matter here; we *do* keep track of which bucket we pull an \\(x_i\\) from, hence the subscript, but we don't care about the difference between, e.g., \\(x_1y_1\\) and \\(y_1x_1\\)). 
+The pattern that we find is that \\((x+y)^n\\) is formed by taking the product \\((x+y)_1(x+y)_2...(x+y)_n\\), going "bucket by bucket", and selecting \\(x_i\\) or \\(y_i\\) from each bucket until we exhaust all possible combinations (note that order does not matter here; we *do* keep track of which bucket we pull an \\(x_i\\) from, hence the subscript, but we don't care about the difference between, e.g., \\(x_1y_1\\) and \\(y_1x_1\\)). 
 
 For what it's worth, this is identical to saying that we want to let some index \\(k\\) vary from \\(0\\) to \\(n\\) and then find all combinations of \\(k\\) terms of \\(x\\) (or \\(n-k\\) terms of \\(y\\)) from the \\(n\\) buckets. That is, there are \\(\sum_{k=0}^n \binom{n}{k} = 2^n\\) terms formed in this way because this is also equal to the number of permutations with replacement from \\(n\\) repeatable "trials" on a coin labeled \\(x\\) and \\(y\\). 
 
 ### The binomial theorem: using the binomial coefficient to generalize the box method for taking a binomial to the \\(n\\)th power
 
-All of that last paragraph is somewhat besides the point. All we need to do is realize that each term formed this way must be of the form \(x^ay^b\) for some \(a, b \geq 0\). Then, we realize that from \\(n\\) buckets, if we can choose \(k\) to be \(x\), this means that there are \\(\binom{n}{k}\) ways to select a term with \(x\) multiplied \(k\) times, i.e. \\(x^k\\). Note that we don't need to worry about the \(y\) term directly. This is because the binomial coefficient is symmetric (per the above), so the number of ways to pick \(k\) "x"s from \(n\) "buckets" is also the number of ways to pick \(n-k\) "y"s from \(n\) buckets. 
+All of that last paragraph is somewhat besides the point. All we need to do is realize that each term formed this way must be of the form \\(x^ay^b\\) for some \\(a, b \geq 0\\). Then, we realize that from \\(n\\) buckets, if we can choose \(k\) to be \\(x\\), this means that there are \\(\binom{n}{k}\\) ways to select a term with \\(x\\) multiplied \\(k\\) times, i.e. \\(x^k\\). Note that we don't need to worry about the \\(y\\) term directly. This is because the binomial coefficient is symmetric (per the above), so the number of ways to pick \\(k\\) \\(x\\)s from \\(n\\) "buckets" is also the number of ways to pick \\(n-k\\) \\(y\\)s from \\(n\\) buckets. 
 
 So, our general formula is ... 
 
