@@ -231,7 +231,7 @@ Conversely, the multinomial can also be derived as the product of multiple binom
 
 $$
 \begin{align*}
-\binom{n}{k_1}\binom{n-k_1}{k_2}...\binom{n-{(k_1 + k_2 + ... k_{p-1})}}{k_m} \cr
+\binom{n}{k_1}\binom{n-k_1}{k_2}...\binom{n-{(k_1 + k_2 + ... k_{m-1})}}{k_m} \cr
 = \frac{n!}{k_1!(n-k_1)!} \cdot \frac{(n-k_1)!}{k_2![n-(k_1+k_2)]!} \cdot \frac{[n-(k_1+k_2)]!}{k_3![n-(k_1+k_2+k_3)]!}...
 \end{align*}
 $$
