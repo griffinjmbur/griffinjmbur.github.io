@@ -171,7 +171,7 @@ For what it's worth, this is identical to saying that we want to let some index 
 
 ### The binomial theorem: using the binomial coefficient to generalize the box method for taking a binomial to the \\(n\\)th power
 
-All of that last paragraph is somewhat besides the point. All we need to do is realize that each term formed this way must be of the form \\(x^ay^b\\) for some \\(a, b \geq 0\\). Then, we realize that from \\(n\\) buckets, if we can choose \(k\) to be \\(x\\), this means that there are \\(\binom{n}{k}\\) ways to select a term with \\(x\\) multiplied \\(k\\) times, i.e. \\(x^k\\). Note that we don't need to worry about the \\(y\\) term directly. This is because the binomial coefficient is symmetric (per the above), so the number of ways to pick \\(k\\) \\(x\\)s from \\(n\\) "buckets" is also the number of ways to pick \\(n-k\\) \\(y\\)s from \\(n\\) buckets. 
+All of that last paragraph is somewhat besides the point. All we need to do is realize that each term formed this way must be of the form \\(x^ay^b\\) for some \\(a, b \geq 0\\). Then, we realize that from \\(n\\) buckets, if we can choose \\(k\\) to be \\(x\\), this means that there are \\(\binom{n}{k}\\) ways to select a term with \\(x\\) multiplied \\(k\\) times, i.e. \\(x^k\\). Note that we don't need to worry about the \\(y\\) term directly. This is because the binomial coefficient is symmetric (per the above), so the number of ways to pick \\(k\\) \\(x\\)s from \\(n\\) "buckets" is also the number of ways to pick \\(n-k\\) \\(y\\)s from \\(n\\) buckets. 
 
 So, our general formula is ... 
 
