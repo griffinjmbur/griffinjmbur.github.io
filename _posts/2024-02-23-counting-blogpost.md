@@ -57,7 +57,7 @@ $$
 
 [^fac0]: Note that this works even if we plug it into the formula. You might worry about the \\(0!\\) that occurs in the denominator, but note that this is defined to be \\(1\\). The reason is simple, but it is sometimes troubling since it forcefully impresses upon us the fact that many mathematical operations appear to be *descriptive* of the real world (e.g., the Greeks could show that squares and cubes of numbers corresponded to the finding of areas and volumes of figures), but only up to a point. Beyond that, we have some choice of how to define certain operations; there are sometimes choices that appear almost forced, but it is a choice. For example, \\(y^0\\) and \\(y^{-n} \forall n \in \mathbb{N}\\) are defined so that the subtraction rule works for all rational functions, not just \\(\frac{x^n}{x^m}\\) for \\(n>m\\) (where it is a simple consequence of arithmetic); the reason that fractional exponents \\(x^{\frac{p}{q}}\\) are defined to be the \\(q\\)th root of \\(x^p\\) is simply done so that, to pick a simple case, \\((x^{\frac{1}{q}})^q = 1\\), which is the multiplication rule that we *want* to be true becasue it is obvious when we have \\((x^a)^b\\) for \\(a, b \in \mathbb{N}\\). One simple case&mdash;pulled from Miklós Bóna's useful book on combinatorics and graph theory&mdash;is that if we have two rooms of people, one with \\(n\\) people and the other with \\(m\\), the total number of ways for everyone in both rooms to stand in a row is of couse \\(n!m!\\); but, if all the people in room two leave and we use a *naive* definition whereby \\(0!=0\\), this then means that the total number of arrangements is \\(0\\) (?!) even though it is clearly \\(n!\\). In general, by the way, it is important to distinguish *operators*, which are human devices for reasoning, from *operations* that are very close matches to the operation; the operations can have group traits (e.g. one-dimensional motions are commutative) that are inarguable, but the operators are defined to *match* those. Defining the factorial operator for the negatives, by the way, uses a similar logic and leads us to the important gamma function, \\(\Gamma(X)\\). 
 
-Note, by the way, that we could also see the problem a bit more generally in a way that will be useful later. Imagine that we simply mark our two captains chairs and put them together with four non-captain chairs. Now, we just find all the rearrangements of the team into the six chairs (\\(n!\\)) and deflate our count by the nuisance rearrangements of captains (\\(2!\\)) and non-captains (\\(4!\\)). This yields the same answer. In fact, the permutation coefficient can even be seen in this light, although we derived it differently above: we *do* care about order within our group of interest, just not in the "out group", so we simply count all orderings of the total (\\(n!\\) and then divide by the spurious permutations of the out-group, \\(k!\\).
+Note, by the way, that we could also see the problem a bit more generally in a way that will be useful later. Imagine that we simply mark our two captains chairs and put them together with four non-captain chairs. Now, we just find all the rearrangements of the team into the six chairs (\\(n!\\)) and deflate our count by the nuisance rearrangements of captains (\\(2!\\)) and non-captains (\\(4!\\)). This yields the same answer. In fact, the permutation coefficient can even be seen in this light, although we derived it differently above: we *do* care about order within our group of interest, just not in the "out group", so we simply count all orderings of the total (\\(n!\\) and then divide by the spurious permutations of the out-group, \\(k!\\). And, finally, you may want to realize that the binomial coefficient doesn't, strictly speaking, *ignore* order, but it instead simply ignores order *up to group membership*: it counts the number of ways that you could have a sequence of classes. You might want to keep the simple example in mind of a gym class with boys and girls, as those often line up "boy-girl-boy-girl" for activities. If your gym teacher is interested in all of the possible such *class permutations*, even the silliest ones (e.g., \\(10\\) boys, \\(2\\) girls, \\(2\\) boys, \\(10\\) girls, or something), this is what the binomial coefficient counts. 
 
 Finally, note that the limit cases all do what we would expect. Logically, \\(\binom{n}{0} = \binom{n}{n} = 1\\) (verify this algebraically) since there is only one way to pick everyone or no one; \\(\binom{n}{1} = \binom{n}{n-1} = n\\) (verify this algebraically) since it is obvious that to pick one person, or everyone but one person (i.e., picking one person whom to leave out), we have \\(n\\) choices.
 
@@ -254,7 +254,7 @@ Note that the binomial distribution is thus, for the most part, a sampling distr
 
 ## The binomial distribution: PMF, expectation, variance
 
-If we denote by the random variable \\(X\\) the number of successes in \\(n\\) trials, the probability mass function (pmf) is given by \\(\mathbb{P}[X=k] = \binom{n}{k}\pi^k(1-\pi)^{(n-k)}\\). The reasoning is as follows. The probability of any specific arrangement of independent trials resulting in \\(k\\) successes and \\(n-k\\) failures (e.g., \\(HHHHTTTTTT\\) to get four heads in 10 flips) is written in easiest form as \\(\pi^k(1-\pi)^{(n-k)}\\). The resulting probability is the same for any other arrangement with the same number of successes[^caution]; so, to sum up the probabilities, we simply ask "how many ways can \\(n\\) trials result in \\(k\\) successes?", and the answer is, of course, \\(\binom{n}{k}\\). 
+If we denote by the random variable \\(X\\) the number of successes in \\(n\\) trials, the probability mass function (pmf) is given by \\(\mathbb{P}[X=k] = \binom{n}{k}\pi^k(1-\pi)^{n-k}\\). The reasoning is as follows. The probability of any specific arrangement of independent trials resulting in \\(k\\) successes and \\(n-k\\) failures (e.g., \\(HHHHTTTTTT\\) to get four heads in 10 flips) is written in easiest form as \\(\pi^k(1-\pi)^{n-k}\\). The resulting probability[^caution] is the same for any other arrangement with the same number of successes; so, to sum up the probabilities, we simply ask "how many ways can \\(n\\) trials result in \\(k\\) successes?", and the answer is, of course, \\(\binom{n}{k}\\). 
 
 [^caution]:  Note that in this case, since the probability of success and failure are equal, *all* sequences are equiprobable, but this won't be true in general. 
 
@@ -327,4 +327,51 @@ $$
 \end{align*}
 $$
 
-We read this as saying that the probability that the random vector \\(\mathbf{Y}\\), with \\(m\\) outcomes, has \\(k_1\\) successes for outcome 1, \\(k_2\\) successes for outcome two, ... \\(k_m\\) successes for outcome \\(m\\) (note that each of these outcomes is a marginally-binomial RV) probability of any specific sequence of \\(k_1\\) successes on the first outcome, ... times the number of ways to pick \\(k_1\\) outcomes to take the first outcome, ... and \\(k_m\\) outcomes to be outcome \\(m\\). Again, we basically have the task of finding the probability of any particular sequence of the \\(m\\) different counts of successes times the number of ways that this specific probability could come about. 
+We read this as saying that the probability that the random vector \\(\mathbf{Y}\\), with \\(m\\) outcomes, has \\(k_1\\) successes for outcome \\(1\\), \\(k_2\\) successes for outcome \\(2\\), ... \\(k_m\\) successes for outcome \\(m\\) (note that each of these outcomes is a marginally-binomial RV) is the probability of any specific sequence of \\(k_1\\) successes on the first outcome ... and \\(k_m\\) successes on the \\(m\\)th outcome, multiplied by the the number of ways to pick \\(k_1\\) outcomes to take the first outcome, ... and \\(k_m\\) outcomes to be outcome \\(m\\). Again, we basically have the task of finding the probability of any particular sequence of the \\(m\\) different counts of successes times the number of ways that this specific distribution of successes could come about. 
+
+## Examples of multinomially-distributed variables
+
+Let's examine a couple of examples since the above discussion might be a little too abstract on its own. Suppose we draw a sample of \\(100\\) people and ask them their marital status. We are interested in the following set of outcomes \\(j\\) with population probabilities given on the right:
+
+
+$$
+\begin{array}{|c|c|c|}
+\hline
+j & {k_j} & \pi_j \\
+\hline
+\textbf{married} & 4 & 0.45 \\
+\hline
+\textbf{widowed} & 1 & 0.05\\
+\hline
+\hline
+\textbf{divorced} & 1 & 0.15 \\
+\hline
+\textbf{single} & 3 & 0.25\\
+\hline
+\textbf{separated} & 1 & 0.1 \\
+\hline
+\end{array}
+$$
+
+First, we calculate the probability of any specific set of trials resulting in this outcome. This specific way of calculating it implies that we observed all successes for each class in order: first, the four married people, then the one widowed person, etc. But, note that this calculation represents the probability of any sequence of independent trials that results in these *sums* of people in each class.
+
+$$
+\begin{align*}
+\prod_{j=1}^m \pi_j^{k_j} &= 0.45^{4} \cdot 0.05^1
+    \cdot 0.15^{1} \cdot 0.25^{3} \cdot 0.1^1
+\end{align*}
+$$
+
+This number is very small so we won't directly calculate it for the sake of precision. Now, we consider the following problem. What if we had observed the sequence in, say, exactly reverse order? In fact, most of the typical sequences we would observe could happen in more than one way (an exception would be a bizarre situation such as getting \\(10\\) widowers). 
+
+So, one way to think about this is to imagine that we have \\(10\\) marbles laid out which represent our ten people, colored so that each status is associated with a different color. The reason for this conceit is that since we are only interested in marital status here, we want it to be clear that people are interchangeable to the extent that they share a marital status here. Now, it is more obvious that we should find all the unique sequences of those \\(10\\) marbles but then divide by the number of spurious rearrangements in each group (e.g., swapping two red marbles; whether or not the human *could* distinguish them, we are here saying that *by construction* we do not wish to distinguish them). This is given by...
+
+$$
+\begin{align*}
+\frac{10!}{4!1!1!3!1!}
+\end{align*}
+$$
+
+Now, if we multiply the two together, we get the small but non-negligible probability of this outcome, \\(\mathbb{P}=0.012\\). 
+
+Finally, here is how this applies to the unusual situation of selecting people into the sample in the first place, a problem relevant to sampling design...
