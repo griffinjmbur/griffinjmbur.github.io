@@ -249,6 +249,7 @@ At each step of selecting some specific \\(k_r\\), we divide by \\(k_r!\\) to ge
 Finally, let me mention one property that will be very useful later on. 
 
 ![](./images/polynomial_expansion.png) 
+![](/images/polynomial_expansion.png) 
 
 # The uses of combination in statistics
 
