@@ -248,7 +248,7 @@ At each step of selecting some specific \\(k_r\\), we divide by \\(k_r!\\) to ge
 
 Finally, let me mention one property that will be very useful later on. 
 
-![multexp](./figures/polynomial_expansion.png) 
+![](./images/polynomial_expansion.png) 
 
 # The uses of combination in statistics
 
@@ -386,4 +386,4 @@ Finally, here is how this applies to the unusual situation of selecting people o
 
 First, let \\(T_i\\) be a random variable representing the number of times cluster \\(i\\) is selected and \\(t_i\\) be some specific number of times. To work out the probability of any particular configuration where \\(T_1 = t_1, T_2 = t_2, ... T_N = t-N\\), we multiply out the probability of selecting the first cluster \\(t_1\\) times, \\(\pi_1^{t_1}\\)..times the the probability of selecting the \\(N\\)th cluster \\(t_N\\) times, \\(\pi_N^{t_N}\\). *This provides the probability of drawing this exact sequence of clusters with replacement*. 
 
-Then, secondly, we consider the possibility of getting this exact number of successes
+Then, secondly, we consider the possibility of getting these exact numbers of successes for each cluster \\(1, 2, ... N\\). We consider all the possible ways of arranging the clusters, \\(N!\\), and then divide by the number of 
