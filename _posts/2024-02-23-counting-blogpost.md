@@ -57,6 +57,8 @@ $$
 
 [^fac0]: Note that this works even if we plug it into the formula. You might worry about the \\(0!\\) that occurs in the denominator, but note that this is defined to be \\(1\\). The reason is simple, but it is sometimes troubling since it forcefully impresses upon us the fact that many mathematical operations appear to be *descriptive* of the real world (e.g., the Greeks could show that squares and cubes of numbers corresponded to the finding of areas and volumes of figures), but only up to a point. Beyond that, we have some choice of how to define certain operations; there are sometimes choices that appear almost forced, but it is a choice. For example, \\(y^0\\) and \\(y^{-n} \forall n \in \mathbb{N}\\) are defined so that the subtraction rule works for all rational functions, not just \\(\frac{x^n}{x^m}\\) for \\(n>m\\) (where it is a simple consequence of arithmetic); the reason that fractional exponents \\(x^{\frac{p}{q}}\\) are defined to be the \\(q\\)th root of \\(x^p\\) is simply done so that, to pick a simple case, \\((x^{\frac{1}{q}})^q = 1\\), which is the multiplication rule that we *want* to be true becasue it is obvious when we have \\((x^a)^b\\) for \\(a, b \in \mathbb{N}\\). One simple case&mdash;pulled from Miklós Bóna's useful book on combinatorics and graph theory&mdash;is that if we have two rooms of people, one with \\(n\\) people and the other with \\(m\\), the total number of ways for everyone in both rooms to stand in a row is of couse \\(n!m!\\); but, if all the people in room two leave and we use a *naive* definition whereby \\(0!=0\\), this then means that the total number of arrangements is \\(0\\) (?!) even though it is clearly \\(n!\\). In general, by the way, it is important to distinguish *operators*, which are human devices for reasoning, from *operations* that are very close matches to the operation; the operations can have group traits (e.g. one-dimensional motions are commutative) that are inarguable, but the operators are defined to *match* those. Defining the factorial operator for the negatives, by the way, uses a similar logic and leads us to the important gamma function, \\(\Gamma(X)\\). 
 
+### Some subtleties in the permutation/combination relation
+
 Note, by the way, that we could also see the problem a bit more generally in a way that will be useful later. Imagine that we simply mark our two captains chairs and put them together with four non-captain chairs. Now, we just find all the rearrangements of the team into the six chairs (\\(n!\\)) and deflate our count by the nuisance rearrangements of captains (\\(2!\\)) and non-captains (\\(4!\\)). This yields the same answer. In fact, the permutation coefficient can even be seen in this light, although we derived it differently above: we *do* care about order within our group of interest, just not in the "out group", so we simply count all orderings of the total (\\(n!\\) and then divide by the spurious permutations of the out-group, \\(k!\\). And, finally, you may want to realize that the binomial coefficient doesn't, strictly speaking, *ignore* order, but it instead simply ignores order *up to group membership*: it counts the number of ways that you could have a sequence of classes. You might want to keep the simple example in mind of a gym class with boys and girls, as those often line up "boy-girl-boy-girl" for activities. If your gym teacher is interested in all of the possible such *class permutations*, even the silliest ones (e.g., \\(10\\) boys, \\(2\\) girls, \\(2\\) boys, \\(10\\) girls, or something), this is what the binomial coefficient counts. 
 
 Finally, note that the limit cases all do what we would expect. Logically, \\(\binom{n}{0} = \binom{n}{n} = 1\\) (verify this algebraically) since there is only one way to pick everyone or no one; \\(\binom{n}{1} = \binom{n}{n-1} = n\\) (verify this algebraically) since it is obvious that to pick one person, or everyone but one person (i.e., picking one person whom to leave out), we have \\(n\\) choices.
@@ -242,6 +244,24 @@ At each step of selecting some specific \\(k_r\\), we divide by \\(k_r!\\) to ge
 
 [^wrongturn]: Let me first point out a fact which is interesting and sometimes cited as the connection but which does *not* actually show their connection. This is that the binomial coefficient (obviously) supplies us with the number of ways to to a particular destination if we must go \\(n\\) blocks total, with \\(k\\) being right turns and \\((n-k)\\) being straight ahead (or north, or whatever; the coordinate system doesn't matter). Thus, if we pretend that the different numbers in the pyramid are actually lily-pads that a frog is going to hop to, then each binomial coefficient gives the number of ways to get there. This is all true, but it does not actually show *why* this way of seeing the Triangle has anything to do with the normal derivation with simple addition.
 
+# Multinomial expansion
+
+Finally, let me mention one property that will be very useful 
+
+![multexp]("./figures/polynomial_expansion.png") 
+
+
+```python
+pwd
+```
+
+
+
+
+    '/Users/griffinjmbur/Desktop/code/blogposts'
+
+
+
 # The uses of combination in statistics
 
 In probability and statistics, we often deal with distributions of variables that are hard to summarize. However, the binomial and multinomial coefficients allow us to directly characterize some very important probability distributions without even needing calculus. By the way, note that there are plenty of situations, not that directly relevant here, where we *do* use these counting techniques to work out probabilities.
@@ -374,4 +394,8 @@ $$
 
 Now, if we multiply the two together, we get the small but non-negligible probability of this outcome, \\(\mathbb{P}=0.012\\). 
 
-Finally, here is how this applies to the unusual situation of selecting people into the sample in the first place, a problem relevant to sampling design...
+Finally, here is how this applies to the unusual situation of selecting people or clusters into the sample in the first place, a problem relevant to sampling design.
+
+First, let \\(T_i\\) be a random variable representing the number of times cluster \\(i\\) is selected and \\(t_i\\) be some specific number of times. To work out the probability of any particular configuration where \\(T_1 = t_1, T_2 = t_2, ... T_N = t-N\\), we multiply out the probability of selecting the first cluster \\(t_1\\) times, \\(\pi_1^{t_1}\\)..times the the probability of selecting the \\(N\\)th cluster \\(t_N\\) times, \\(\pi_N^{t_N}\\). *This provides the probability of drawing this exact sequence of clusters with replacement*. 
+
+Then, secondly, we consider the possibility 
