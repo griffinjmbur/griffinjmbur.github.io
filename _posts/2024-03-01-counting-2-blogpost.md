@@ -3,9 +3,11 @@ title: "Counting for adults II: the binomial and multinomial distribution"
 date: 2024-03-01
 ---
 
+In this post, I introduce two very useful distributions in statistics, the binomial and multinomial distribution. What follows is not a full lecture on these topics; it merely introduces what is most important about these quantities for the ongoing series in survey statistics. 
+
 # The uses of combination in statistics
 
-In probability and statistics, we often deal with distributions of variables that are hard to summarize. However, the binomial and multinomial coefficients allow us to directly characterize some very important probability distributions without even needing calculus. By the way, note that there are plenty of situations, not that directly relevant here, where we *do* use these counting techniques to work out probabilities.
+In probability and statistics, we often deal with distributions of variables that are hard to summarize. However, the binomial and multinomial coefficients allow us to directly characterize some very important probability distributions without even needing calculus. By the way, note that there are plenty of situations, not that directly relevant here, where we *do* use these counting techniques to work out probabilities. 
 
 ## Binomial random variables 
 
@@ -41,8 +43,8 @@ $$
     (T_{j1} + T_{j2} + ... T_{jm} - \mu_{T_j})] \cr
 &= \mathbb{E} \left\{ (\sum_k T_{ik} - \sum_k\mu_{T_{ik}})
     (\sum_r T_{jr} - \sum_r\mu_{T_{jr}}) \right\} \cr
-&= \mathbb{E} \left\{ (\sum_k T_{ik} - \mu_{T_{ik}})
-    (\sum_r T_{jr} - \mu_{T_{jr}}) \right\} \cr
+&= \mathbb{E} \left\{ \sum_k (T_{ik} - \mu_{T_{ik}})
+    \sum_r (T_{jr} - \mu_{T_{jr}}) \right\} \cr
 &= \sum_k \sum_r \mathbb{COV}[T_{ik}, Z_{jr}]
 \end{align*}
 $$

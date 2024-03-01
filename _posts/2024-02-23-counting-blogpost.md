@@ -246,7 +246,9 @@ At each step of selecting some specific \\(k_r\\), we divide by \\(k_r!\\) to ge
 
 # Polynomial expansion or multinomial expansion
 
-Finally, let me mention one property that will be very useful later on. As mentioned before, you might have learned in school the "FOIL" property, which tells us 
+Finally, let me mention one property that will be very useful later on. As mentioned before, you might have learned in school the "FOIL" property, which tells us how to expand quantities such as \\((a+b)(c+d)\\). We then saw that an important situation occurs when we "FOIL" quantities such as \\((a+b)^2\\) because this can be expanded to quantities such as \\((a+b)^n\\), and we can describe these with the binomial theorem. 
+
+However, what if, instead, of incrementing the *power* of the binomial term, we tried squaring a *polynomial* term? For example, how do we multiply out a term such as \\(a+b+c)(d+e+f)\\)? Well, the solution, as it so often is in math, is to think geometrically about the problem. The graphic below makes quite clear, I think, how we ought to do this. 
 
 ![](./images/polynomial_expansion.png) 
 ![](/images/polynomial_expansion.png) 
