@@ -1,6 +1,6 @@
 ---
 title: "Counting for adults II: the binomial and multinomial distribution"
-date: \today
+date: 2024-03-01
 ---
 
 # The uses of combination in statistics

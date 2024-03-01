@@ -244,9 +244,9 @@ At each step of selecting some specific \\(k_r\\), we divide by \\(k_r!\\) to ge
 
 [^wrongturn]: Let me first point out a fact which is interesting and sometimes cited as the connection but which does *not* actually show their connection. This is that the binomial coefficient (obviously) supplies us with the number of ways to to a particular destination if we must go \\(n\\) blocks total, with \\(k\\) being right turns and \\((n-k)\\) being straight ahead (or north, or whatever; the coordinate system doesn't matter). Thus, if we pretend that the different numbers in the pyramid are actually lily-pads that a frog is going to hop to, then each binomial coefficient gives the number of ways to get there. This is all true, but it does not actually show *why* this way of seeing the Triangle has anything to do with the normal derivation with simple addition.
 
-# Multinomial expansion
+# Polynomial expansion or multinomial expansion
 
-Finally, let me mention one property that will be very useful later on. 
+Finally, let me mention one property that will be very useful later on. As mentioned before, you might have learned in school the "FOIL" property, which tells us 
 
 ![](./images/polynomial_expansion.png) 
 ![](/images/polynomial_expansion.png) 
