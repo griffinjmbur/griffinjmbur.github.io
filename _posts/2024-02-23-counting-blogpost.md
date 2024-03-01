@@ -248,7 +248,55 @@ At each step of selecting some specific \\(k_r\\), we divide by \\(k_r!\\) to ge
 
 Finally, let me mention one property that will be very useful later on. As mentioned before, you might have learned in school the "FOIL" property, which tells us how to expand quantities such as \\((a+b)(c+d)\\). We then saw that an important situation occurs when we "FOIL" quantities such as \\((a+b)^2\\) because this can be expanded to quantities such as \\((a+b)^n\\), and we can describe these with the binomial theorem. 
 
-However, what if, instead, of incrementing the *power* of the binomial term, we tried squaring a *polynomial* term? For example, how do we multiply out a term such as \\(a+b+c)(d+e+f)\\)? Well, the solution, as it so often is in math, is to think geometrically about the problem. The graphic below makes quite clear, I think, how we ought to do this. 
+However, what if, instead, of incrementing the *power* of the binomial term, we tried squaring a *polynomial* term? For example, how do we multiply out a term such as \\(a+b+c)(d+e+f)\\)? Well, the solution, as it so often is in math, is to think geometrically about the problem. The graphic below makes quite clear, I think, how we ought to do this (I alluded to this method above, but here I think it is important to show it). 
 
 ![](./images/polynomial_expansion.png) 
 ![](/images/polynomial_expansion.png) 
+
+Now, let's think about this quantity algebraically. It will often be convenient to write out multinomial expansion using summation notation. There are two useful ways to see this. First, imagine that we simply write out the product. Since we will often later want to refer to observations of a variable \\(Y\\) defined on a finite population, \\(y_1, y_2, ... y_N\\), I'll use that notation here.
+
+$$
+\begin{align*}
+& (y_1, y_2, ... y_N)(y_1, y_2, ... y_N) = \cr
+& y_1^2 + y_1y_2 + y_1y_3 ... + y_1y_N + y_2y_1 + y_2^2 + ... \cr
+& y_Ny_1 + y_Ny_2 + ... y_N^2
+\end{align*}
+$$
+
+Notice the following pattern. By starting with the left sum, picking a \\(y_i\\), and then moving through the second sum, we get \\(y_i^2\\) and then the product of \\(y_i\\) with every other \\(y_j\\). There is thus only one way to get any \\(y_i^2\\), but then any \\(y_iy_j : i \neq j\\) will appear twice, once when we start with \\(y_i\\) and once when we start with \\(y_j\\). We can write that in summation notation in two ways. First, we can just write that without mentioning the double-counting. We just say "sum all the squares from \\(i=1\\) to \\(n\\), then add all of the 'mixed products' \\(y_iy_j\\) for all values of \\(j\\) for any given \\(i\\) (skipping \\(i=j\\)), then do this for all values of \\(i\\)". Translated into algebra, that is...
+
+$$
+\begin{align*}
+(y_1, y_2, ... y_N)(y_1, y_2, ... y_N) &= \sum_{i=1}^n \sum_{j=1}^n y_i y_j \cr
+&= \sum_{i=1}^n y_i^2 + \sum_{i=1}^n \sum_{j\neq i}^n y_i y_j
+\end{align*}
+$$
+
+But, however, we can also include information on the repetition. one way to think about this is to say that we can just form all the unique products \\(y_iy_j : i \neq j\\) and notice that we have two of each. One way to do this when we use the notation of sums is to somehow "increment" our index variable for one of the sums (in the language of computer science"). What we would do is say "find all of the squares and set them aside", as we already know how to say; then, we would say "fix a value of \\(i=1\\) and go through the \\(j\\)s that aren't equal to \\(i\\), but for \\(i=2\\), start at \\(j=3\\) because we've already counted \\(y_2^2\\) when we counted the squares, and we already counted \\(y_2y_1\\) because we counted \\(y_1y_2\\) when we had \\(i=1\\); then, just multiply that double summation by two because we do in fact count it twice". The specific way in which we translate this into a sum is that we say that we only want to count values of \\(j\\) that are greater than the current value of \\(i\\). 
+
+Translating this into an equation, we have...
+
+$$
+\begin{align*}
+(y_1, y_2, ... y_N)(y_1, y_2, ... y_N) &= \sum_{i=1}^n \sum_{j=1}^n y_i y_j \cr
+&= \sum_{i=1}^n y_i^2 + \sum_{i=1}^n \sum_{j\neq i}^n y_i y_j \cr
+&= \sum_{i=1}^n y_i^2 + 2\sum_{i=1}^n \sum_{j>i}^n y_i y_j
+\end{align*}
+$$
+
+Finally, notice that we often want to sum up the elements of a matrix such as the (variance) covariance matrix. This also provides a very nice picture of how this expansion works. Note that in the diagram below, the off-diagonal are counted twice (e.g., I have labeled both \\(\sigma_{n1}\\) and \\(\sigma_{1n}\\)). Further, we can easily refer to the upper-half of the matrix by saying that it is a place where the column number is larger than the row number (so, \\(j>i\\) if we let \\(i\\) index rows and \\(j\\) index columns). So, then, we just sum over all rows and columns with the restriction that the column number is greater than the row number, then multiply by two. Finally, we have to remember to add up all the elements on the main diagonal as well. 
+
+$$
+\begin{bmatrix} 
+   \color{red}{\sigma^2_{11}} & \color{blue}\dots & \color{blue}{\sigma_{1j}} 
+   & \color{blue}\dots & \color{blue}{\sigma_{1n}} \\
+    \color{blue}\vert & \color{red}\ddots 
+    & \color{blue}\vert & \color{blue}\ddots & \color{blue}\vert\\
+\color{blue}{\sigma_{i1}} & \color{blue}\dots & \color{red}{\sigma^2_{ii}} 
+    & \color{blue}\dots & \color{red}{\sigma_{in}} \\
+   \color{blue}\vert & \color{blue}\ddots & \color{blue}\vert& \color{red}\ddots 
+   & \color{blue}\vert \\
+\color{blue}{\sigma_{n1}} & \color{blue}\dots 
+    & \color{blue}{\sigma_{nj}} & \color{blue}\dots & \color{red}{\sigma^2_{nn}}
+\end{bmatrix}
+$$
