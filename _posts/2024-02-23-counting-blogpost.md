@@ -393,7 +393,7 @@ Now, finally, we just need to work out what to do in the case of odd numbers. He
 
  $$ 
  \begin{aligned}
- \sum_{j=0}^{\lfloor{k}\rfloor} \binom{n-j}{j}
+ \sum_{j=0}^{\lfloor{\frac{n}{2}}\rfloor} \binom{n-j}{j}
  \end{aligned}
  $$
  
