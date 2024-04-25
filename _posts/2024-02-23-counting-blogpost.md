@@ -320,3 +320,81 @@ $$
     & \color{blue}{\sigma_{nj}} & \color{blue}\dots & \color{red}{\sigma^2_{nn}}
 \end{bmatrix}
 $$
+
+# Bonus: Fibonacci numbers in the triangle
+
+Edit 2024-04-25: I decided to add in the connection to Fibonacci numbers. 
+
+## Fibonacci numbers
+
+Fibonacci numbers are \\(1, 1, 2, 3, 5, 8, 13, 21 ... \\), and they are written \\(F_1, F_2, F_3...\\). They are defined by the formula \\(F_n = F_{n-1} + F_{n-2}\\), except that \\(F_1 = 1, F_2 = 1\\) by construction. The sums of Fibonacci numbers are easy to work out because of this *recursive* property. We can avoid ugly restrictions on the index of numbers and simply write that \\(F_{n+2} = F_{n+1} + F_{n}, n \in \mathbb{N}\\) (where I follow the convention that zero is *not* a member of this set). This conveniently works for all \\(n \geq 3\\) and allows us to just define the first two elements by fiat. 
+
+The diagonals of a left-justified version of Pascal's triangle sum to the Fibonacci numbers. 
+
+$$
+\begin{array}{cccccccccccc}
+1 & & & & \\
+1 & & 1 & & \\
+1 & & 2 & & 1 & \\
+1 & & 3 & & \mathbf{3} & & 1 \\
+1 & & \mathbf{4} & & 6 & & 4 & & 1 \\
+\mathbf{1} & & 5 & & 10 & & 10 & & 5 & & 1 \\
+\end{array}
+$$
+
+Below is how this looks on the regular triangle. 
+
+$$
+\begin{array}{cccccccccccc}
+& & & & & 1 & & & & \\
+& & & & 1 & & 1 & & \\
+& & & 1 & & 2 & & 1 & \\
+& & 1 & & 3 & & \mathbf{3} & & 1 \\
+& 1 & & \mathbf{4} & & 6 & & 4 & & 1 \\
+\mathbf{1} & & 5 & & 10 & & 10 & & 5 & & 1 \\
+\end{array}
+$$
+
+This property is actually relatively easy to explain. Here is an example. 
+
+On a trail I run, there are two loops, one coming to about a mile and the other about two. Suppose that I want to run five miles. How can we do this? I can run five of the one-mile loop, or a two-mile loop and then three of the one-mile loop (i.e. four total loops), or I can leave the two-mile loop for last, etc. In other words, there are many sequences of one- and two-mile loops that I can could run (we'll count them exactly soon). 
+
+But, there is another way to count all of those ways to run five miles which connects that to the Fibonacci numbers: every possible way I have of doing this starts with either a one-mile loop or a two-mile loop. If one mile, then the remaining number of loops must sum to four miles; if two miles, then the remaining loops must sum to three miles. Thus, any way of running \\(n\\) miles is a sum of the ways to run \\(n-2\\) and \\(n-1\\) miles, just like in the Fibonacci formula. To work out the exact connection, we can put all this information into a table. Following Arthur Benjamin's excellent book *Magic of Math*[^debt] (to which I owe some debt), I will denote the number of ways to run \\(n\\) miles \\(f_n\\) and use \\(F_n\\) to denote the \\(n\\)th Fibonacci number. As we can see clearly,  \\(F_n = f_{n-1}\\). 
+
+[^debt]: Most of this page was written before I encountered it; we turn out to have a very similar style of presentation).
+
+   $$
+   \begin{array}{|c|c|c|c|} \hline
+   n & \text{sequences} & f_n & F_n \cr \hline
+   1 & 1 & 1 & 1 \cr \hline
+   2 & 11, 2 & 2 & 1\cr \hline 
+   3 & 111, 12, 21 & 3 & 2\cr \hline
+   4 & 1111, 112, 121, 211, 22 & 5 & 3\cr \hline
+   5 & 11111, 1112, 1121, 1211, 2111, 221, 212, 122 & 8 & 5\cr 
+   \hline
+   \end{array}   
+   $$
+
+So, we have established the connection of our "sum of sequences comprised of \\(1\\)s and \\(2\\)s". How do these two relate to binomial coefficients?
+
+Well, working out the number of sequences that sum to \\(n\\) miles can also be understood as an exercise in asking "where do the \\(2\\)s, if any, go?" For example, for \\(n = 5\\), we can have \\(0, 1,\\) or \\(2\\) twos; the answer to "where do(es) the two(s) go?" is a binomial one, of course: asking about the number of ways to order \\(m\\) objects of type \\(k_1\\) and \\(k_2\\), where we don't distinguish objects of the same type, is a classic way to re-describe the binomial coefficient as a multinomial coefficient as described above. Since we already demonstrated that the number of ways to sum \\(1\\)s and \\(2\\)s to get the natural numbers \\(n\\) is a Fibonacci sequence shifted, we now have the basic connection in hand. 
+
+Now, we work on the details. How many binomial coefficients do we need to sum up? Let's start with the simplest scenario, which tells us where to begin the sum and also what our index variable should be: if we have no \\(2\\)s, we simply have \\(\binom{n}{0}\\). Then, if we just add in a \\(2\\), we *would* be incrementing the sum by by \\(1\\), so we have get rid of a \\(1\\); we have \\(\binom{n-1}{1}\\) places to put the single two. 
+
+Finally, where should we end our sum? Well, if we have an even number, we simply stop at \\(\frac{n}{2}\\), because \\(\frac{n}{2}2 = n\\). Then, the expression follows readily for even numbers: 
+
+ $$ 
+ \begin{aligned}
+ \sum_{j=0}^{\frac{n}{2}} \binom{n-j}{j} \forall n : n \mod 2 = 0
+ \end{aligned}
+ $$
+
+Now, finally, we just need to work out what to do in the case of odd numbers. Here, we can just use hand-inspection. If \\(n=5\\), we can have, at most, a pair of \\(5\\)s, so we want the integer part of \\(\frac{5}{2}\\). This is denoted, at least in computer science, the *floor* of \\(\frac{n}{2}\\) and written \\(\lfloor{\frac{5}{2}}\rfloor\\) (note the little "feet" on the "bars"). 
+
+ $$ 
+ \begin{aligned}
+ \sum_{j=0}^{\lfloor{k}\rfloor} \binom{n-j}{j}
+ \end{aligned}
+ $$
+ 
+Finally, if we pick a given \\(n\\) on the "binomial triangle" and then simply run our finger along the triangle, we'll see that this is always a diagonal of the triangle.
