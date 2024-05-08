@@ -287,7 +287,7 @@ $$
     \cr 
 &2. = \frac{1}{n^2} \sum_{i=1}^n \sigma^2_{Y_i} 
     + 2\sum_{i>j}^n\sum_{j=1}^n \sigma^2_{Y_i, Y_j}
-    && \text{KH identity, factoring out \\( n \\) } \cr
+    && \text{KH identity, factoring out $n$ } \cr
 &3. = \frac{1}{n^2} \sum_{i=1}^N \mathbb{V}[A_iy_i]
     + 2\sum_{i>j}^N\sum_{j=1}^N \mathbb{COV}[A_iy_i, A_jy_j]
     && \text{Cornfield approach} \cr

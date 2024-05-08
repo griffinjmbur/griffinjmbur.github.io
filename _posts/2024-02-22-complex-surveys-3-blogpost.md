@@ -11,29 +11,50 @@ In this post, I briefly discuss the benefits and drawbacks of cluster random sam
 
 Recall from the last post in this series that cluster sampling has two primary benefits, per Cochran. The first is *cost-effectiveness*: it is much easier to, for example, conduct the General Social Survey by drawing up a list of randomly-selected neighborhoods to canvas rather than doing the same thing for randomly-selected people. The second is just an extreme version of the first, that of *feasibility*: a list of the elements may not exist at all. 
 
-We have already noted above how cluster random sampling differs from stratified random sampling. **Let us begin with the simplest case, where every element in a cluster is surveyed (we have censuses within clusters) and all clusters are of equal sizes**. From here on out, we will use the variable \\(i\\) to index clusters and \\(j\\) and \\(k\\) to index individuals or *elements*, \\(\forall i \in \{1, 2, ... n\}, j \in \{1, 2, ... m\}\\). For now, the size \\(m\\) of our sample *from* any cluster \\(i\\) is \\(M\\), its size in the population, while \\(N\\) indicates the total number of clusters in the population.
+We have already noted above how cluster random sampling differs from stratified random sampling. **Let us begin with the simplest case, where every element in a cluster is surveyed (we have censuses within clusters) and all clusters are of equal sizes**. From here on out, we will use the variable \\(i\\) to index clusters and \\(j\\) and \\(k\\) to index individuals or *elements*, \\(\forall i \in \{1, 2, ... n\}, j \in \{1, 2, ... m\}\\). For now, the size \\(m_i\\) of our sample *from* any cluster \\(i\\) is \\(M_i \\), its size in the population, and since all population clusters are the same size for now, \\(m_i = M_i = m\\). Note that \\(N\\) indicates the total number of clusters in the population.
+
+Let's see how we might estimate the population mean and total in a cluster random sample. I will generally avoid second-order subscripting, so something that really "should" be, e.g. \\(\mu_{cl.}\\) refers to the *cluster method of estimating the individual-level or element mean*.
+
+First, let's get a useful example going that we'll use throughout the text and then define some key terms. Let's suppose that we are interested in college basketball. Suppose for simplicity that each team has a defined starting lineup of \\(5\\) players each. We'll call each team a cluster. We might be interested in estimating the average points scored by a player (over some time, say a season), which we could infer with a cluster sample. This is an element-level population mean, denoted simply \\(\mu\\) or sometimes \\(mu_{el.}\\) for clarity, whose estimate is \\(\hat{\mu}\\). At times, we might need to calculate the estimated cluster-level mean, which is the mean points per team (again, over some determinate amount of time), or the points for every five players (the size of each starting lineup), written \\(\hat{\mu}_{pc}\\). We might also want to make use of the estimated total points scored in the league, \\(\hat{\tau}\\). 
+
+Note that while we calculate quantities like the sample mean in basically the same way, the sampling variance is different, so I will write things like \\(\mathbb{V}[\hat{\mu}_{cl.}]\\). The sample mean can still be calculated in fundamentally the same way as before, but our notation will change and so will our sampling variances. 
+
+$$
+\begin{align*}
+\hat{\tau}_{cl.} &= N \frac{\sum_{i=1}^n \sum_{j=1}^{m_i} y_{ij}}{n} 
+    = N \hat{\mu}_{pc} \cr
+\hat{\mu}_{cl.} &= \frac{\sum_{i=1}^n \sum_{j=1}^{m_i} y_{ij}}{nm} 
+    = \frac{\hat{\mu}_{pc}}{m} = \frac{\hat{\tau}}{\sum_{i=1}^N M_i}
+\end{align*}
+$$
+
+Note that we will need to use different formulae at different moments. 
 
 The first point to note is that cluster sampling is typically less efficient than element sampling. The sampling variance for the sample mean of a cluster can be calculated as below. 
 
 ## Drawbacks of cluster sampling: increased sampling variance
 
-It is fairly easy to show that cluster sampling is inefficient relative to element sampling. Recall from post I in this series we saw that the finite sampling context only slightly modified our "naïve" sampling variance, the traditional formula \\(\frac{\sigma^2}{n}\\). We essentially just stick the fpc in front of whatever the correct formula would be for the infinite case. And, for the infinite case, the essence of the proof was that we were summing up the variances of independent random variables. 
+It is fairly easy to show that cluster sampling is inefficient relative to element sampling. Recall from post I in this series we saw that the finite sampling context only slightly modified our "naïve" sampling variance, the traditional formula \\(\frac{\sigma^2}{n}\\). We essentially just stick the *fpc* in front of whatever the correct formula would be for the infinite case, and, for the infinite case, the essence of the proof was that we were summing up the variances of independent random variables. 
 
-Now, note that in the cluster case, our actual random variables are the cluster means themselves. Since we take a census within each cluster, there is no actual variation at the individual level. And, to obtain the mean for the entire sample, we simply sum the cluster means and divide by the number of clusters, \\(n\\); you may remember the school rule to never take the average of average, but this is, in fact, allowed as long as the means are taken over the same size group, and here each cluster is indeed of size \\(m\\). So, we simply plug the variance of the cluster means in.
+Now, note that in the cluster case, our actual random variables are the cluster totals themselves. In other words, while some of our formulae above are written with summations over elements, we don't need actually need any individual-level information once we know the cluster total since we are, by construction, taking censuses within clusters. So, to find the variance of our cluster estimator of the element mean, we simply plug the population variance of the cluster totals into our formula for the variance of the sample mean. 
 
 $$
 \begin{align*}
-\mathbb{V}[\hat{\mu}_Y] &= \frac{(1-f)}{n} \sigma^2_{cl.} \cr
-&= \frac{(1-f)}{n} \sigma^2_{cl.} \hspace{0.1cm} \text{where...} \cr
-\sigma^2_{cl.} &= \frac{1}{N-1} \sum_{i=1}^N (\mu_{Y_i} - \mu_Y)^2
+\mathbb{V}[\hat{\mu}_{Y_{\text{pc}}}] &= \frac{(1-f)}{n} \sigma^2_{cl.} \cr
+& \text{...where...} \cr
+\sigma^2_{\text{cl.}} &= \frac{1}{N-1} \sum_{i=1}^N (\tau_{i} - \mu_{pc})^2 \cr
+&= \frac{1}{N-1} \sum_{i=1}^N (m\mu_{i} - m\mu)^2 = 
+    \frac{m^2}{N-1} \sum_{i=1}^N(\mu_{i} - \mu_{el.})^2
 \end{align*}
 $$
 
-Now, we can simply recall from the population ANOVA decomposition that the \\(SS_B\\) is equal to ...
+Note, in the last line, that we are able to write the population total of each cluster as \\(m\mu_i\\) since each cluster has the same size and has a total that is definitionally equal to the number of elements in it times the mean. Similarly, because each cluster is the same size here, the mean *per cluster* is just the mean *per element* divided by the size of each cluster. 
+
+Now, we can simply compare this to the population ANOVA decomposition for elements. Then, the \\(SS_B\\) is equal to...
 
 $$
 \begin{align*}
-&\sum_{i=1}^N\sum_{j=1}^M (\mu_{Y_i} - \mu_Y)^2 \cr
+&\sum_{i=1}^N\sum_{j=1}^{M_i} (\mu_{i} - \mu_{pc})^2 \cr
 &= \sum_{i}^N M (\mu_{Y_i} - \mu_Y)^2 \cr
 &\text{and so...} \cr
 &MS_B = \frac{M}{N-1} \sum_{i}^N  (\mu_{Y_i} - \mu_Y)^2
@@ -44,7 +65,7 @@ Note that the "mean square between" will often be larger than the "total mean sq
 
 ## The intracluster correlation coefficient 
 
-The *intracluster correlation coefficient* (\\(ICC\\)) (or intraclass corrrelation coefficient), $\rho_{\text{cl}}$, is often used to express the variance of the cluster mean. 
+The *intracluster correlation coefficient* (\\(ICC\\)) (or intraclass corrrelation coefficient), \\(\rho_{\text{cl}}\\), is often used to express the variance of the cluster mean. 
 
 By definition, the \\(ICC\\) is the correlation between all of the unique pairs of individuals *within* each cluster, summed over all clusters. The number of possible pairs is the number of possible pairs in each group times the number of groups, \\(N\cdot\binom{M}{2} = \frac{NM(M-1)}{2}\\). We will see that our formula below counts each *unique* pair twice; this explains the complex-looking denominator, which then simply becomes the number of "elements" here (we omit one degree of freedom from the total population size). 
 
