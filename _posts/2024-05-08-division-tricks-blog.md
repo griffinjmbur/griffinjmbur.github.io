@@ -17,7 +17,16 @@ ABC &= 100\cdot A + 10 \cdot B + C \cr
 \end{align*}
 $$
 
-But, generalizing, if an \\(n\\)-digit number \\((a_{n-1}a_{n-2}...a_0)_{b}\\) refers to a number written in base \\(b\\) with digits \\(a_j\\), we can write it as \\(\sum_{j=0}^{n-1} a_j b^j\\) (note that we only go up to \\(n-1\\) because in all bases, it is conventional to have a "ones place" where the "face value" of a number is its place value also). 
+But, let's generalize. We can write an \\(n\\)-digit number in base \\(b\\) as follows. 
+
+$$
+\begin{align*}
+a &= (a_{n-1}a_{n-2}...a_0)_{b} \cr
+&= \sum_{j=0}^{n-1} a_j b^j
+\end{align*}
+$$
+
+Note that we only go up to \\(n-1\\) because in all bases, it is conventional to have a "ones place" where the "face value" of a number is its place value also). 
 
 For example, in base or *radix* \\(2\\) and \\(10\\) below, we have...
 
@@ -152,7 +161,7 @@ a_j 10^j &\equiv -a_j^j \pmod 11 \cr
 \end{align*}
 $$
 
-For example, is \\(561\\) divisible by \\(11\)? Adding up, we have \\(1 - 6 + 5 = 0\\), which is, indeed, technically a multiple of \\(11\\) (and the answer is correct if we check by hand)&mdash;this case is actually not unusual. But, an example where the sum is a "regular" multiple of \\(11\\) might be \\(209,021,505\\), which has a sum of \\(22\\) when its digits are tallied (it is \\(11\\) multiplied by \\(19,001,955\\).
+For example, is \\(561\\) divisible by \\(11\\)? Adding up, we have \\(1 - 6 + 5 = 0\\), which is, indeed, technically a multiple of \\(11\\) (and the answer is correct if we check by hand)&mdash;this case is actually not unusual. But, an example where the sum is a "regular" multiple of \\(11\\) might be \\(209,021,505\\), which has a sum of \\(22\\) when its digits are tallied (it is \\(11\\) multiplied by \\(19,001,955\\).
 
 Finally, let's show the trick for dividing by \\(7\\). This one is a little complicated to state. For a number \\(a\\), lop off the units digit \\(a_0\\) and double it. Then, shift the remaining digits over to the right by one place; call this number \\(a_{\text{short}}\\). Subtract \\(a_{\text{short}} - 2a_0\\); if the resulting number is divisible by \\(7\\), our original number is, too. 
 
