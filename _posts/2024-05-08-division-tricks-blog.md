@@ -26,7 +26,7 @@ a &= (a_{n-1}a_{n-2}...a_0)_{b} \cr
 \end{align*}
 $$
 
-Note that we only go up to \\(n-1\\) because in all bases, it is conventional to have a "ones place" where the "face value" of a number is its place value also). 
+Note that we only go up to \\(n-1\\) because in all bases, it is conventional to have a "ones place" where the "face value" of a number is its place value also. 
 
 For example, in base or *radix* \\(2\\) and \\(10\\) below, we have...
 
