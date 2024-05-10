@@ -73,7 +73,7 @@ $$
 \end{align*}
 $$
 
-Note, in the last line, that we are able to write the population total of each cluster, \\(y_{i*}\\), as \\(m\mu_i\\) since each cluster has the same size and has a total that is definitionally equal to the number of elements in it times the mean. Similarly, because each cluster is the same size here, the mean *per cluster* is just the mean *per element* divided by the size of each cluster. 
+Note, in the last line, that we are able to write the population total of each cluster as \\(m\mu_i\\) since each cluster has the same size and has a total that is definitionally equal to the number of elements in it times the mean. Similarly, because each cluster is the same size here, the mean *per cluster* is just the mean *per element* divided by the size of each cluster. 
 
 Now, we can simply compare this to the population ANOVA decomposition for elements. Then, the \\(SS_B\\) is equal to...
 
@@ -82,7 +82,7 @@ $$
 &\sum_{i=1}^N \sum_{j=1}^{M_i} (\mu_i - \mu_{el.})^2 \cr
 &= m\sum_{i=1}^N (\mu_i - \mu_{el.})^2 \cr
 &\text{and so...} \cr
-&(MS)_B = \frac{m}{N-1} \sum_{i}^N  (\mu_i - \mu_{el.})^2 
+&\text{mean square between} = \frac{m}{N-1} \sum_{i}^N  (\mu_i - \mu_{el.})^2 
 \end{align*}
 $$
 
