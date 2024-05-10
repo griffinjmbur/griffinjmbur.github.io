@@ -237,7 +237,14 @@ $$
 \end{align*}
 $$
 
-...using the information from our last derivation. By the way, note in passing for later that this all implies that, since \\(SS_B = (N-1)\sigma^2_B\\) by definition, \\(SS_B = \frac{1}{M}\sum_{i=1}^N (y_{i*} - \mu_\text{pc})^2\\). 
+...using the information from our last derivation. By the way, note in passing for later that this all implies that, since...
+
+$$
+\begin{align*}
+SS_B = (N-1)\sigma^2_B && \text{by definition} \cr 
+SS_B = \frac{1}{M}\sum_{i=1}^N (y_{i*} - \mu_\text{pc})^2
+\end{align*}
+$$
 
 Finally, we can rearrange this last equation to get it resembling the ICC.
 
@@ -279,7 +286,7 @@ $$
     - \frac{(NM-1)\sigma_Y^2 \rho_{cl.}(M-1)}{M} = N(M-1)\sigma^2_W && \text{expansion/subtraction} \cr
 &(NM-1)\sigma^2_Y \left\{\frac{M - 1
     - \rho_{cl.}(M-1)}{M} \right\} = N(M-1)\sigma^2_W 
-    && \text{clever factoring; expand the LHS if in doubt} \cr
+    && \text{clever factoring; expand LHS} \cr
 &\frac{(NM-1)\sigma^2_Y}{M} [M - 1 - \rho_{cl.}(M-1)] = N(M-1)\sigma^2_W 
     && \text{factoring out $M$} \cr
 &\frac{(NM-1)\sigma^2_Y(M-1)}{M} [1 - \rho_{cl.}] = N(M-1)\sigma^2_W 
