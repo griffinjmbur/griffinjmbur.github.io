@@ -103,7 +103,11 @@ $$
 
 ### The variance of the element mean estimated from cluster random sampling is proportional to \\(\rho_{cl.}\\)
 
-An important fact is that \\(\mathbb{V}[\hat{\mu}_{cl.}] \approx \frac{(1-f)}{Mn} \sigma_Y^2[1 + \rho_{cl.}(M-1)] \\).
+An important fact is the following one: 
+
+$$
+\mathbb{V}[\hat{\mu}_{cl.}] \approx \frac{(1-f)}{Mn} \sigma_Y^2[1 + \rho_{cl.}(M-1)]
+$$
 
 Cochran gives an elegant proof of this formula. Recall, again, that with one-stage sampling, the cluster totals are the random variables (since we do not know which totals we will observe), rather than the element scores (which are non-random conditional on the presence of a cluster in the sample since we survey everyone). So, the population variance that we plug into the sampling variance formula is the variance of the group totals about the mean per cluster.
 
