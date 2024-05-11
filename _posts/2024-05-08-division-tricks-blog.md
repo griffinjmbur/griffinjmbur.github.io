@@ -63,7 +63,7 @@ A similar trick applies to \\(3\\) and \\(9\\). We simply rewrite our previous e
 $$
 \begin{align*}
 &= \sum_{j=0}^{n-1} a_j 10^j \cr
-&= \sum_{j=0}^{n-1} a_0 (10^j - 1) +  \sum_{j=0}^{n-1} a_0  \cr
+&= \sum_{j=0}^{n-1} a_j (10^j - 1) +  \sum_{j=0}^{n-1} a_j  \cr
 \end{align*}
 $$
 
