@@ -240,3 +240,9 @@ $$
 $$
 
 Notice that in the final expression, the floor operator can *only* produce integers, so we only need to look at the sum of the remainders of each term in the linear combination view to determine whether a number \\(a\\) is divisible by \\(d\\) or not. This means, importantly, that if we can somehow determine that each term in the expansion has a remainder of \\(0\\), the division works.
+
+# Further reading (AKA whence I swiped this)
+
+Arthur Benjamin's *Magic of Math* (a perfect review of all the math you forgot, had explained poorly, or never learned but should have, from arithmetic to single variable calculus)
+
+Martin Weissman's *Illustrated Theory of Numbers* (a beautiful text about number theory)
