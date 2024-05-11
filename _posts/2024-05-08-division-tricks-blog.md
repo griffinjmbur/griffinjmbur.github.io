@@ -152,25 +152,25 @@ So, this means that the remainder from dividing our number \\(a\\) by \\(3\\), i
 
 ## The tricks for seven and eleven
 
-I'll briefly show the trick for \\(11\\). First, note that \\(10 \equiv -1 \pmod {11} \\). Now, this creates a slight problem since the power rule is now \\(10^n \equiv -1^n\\), and the sign alternates. But, this isn't too bad. All we need to do is sum the digits of our number \\(a\\) but attached alternating signs, where the ones digit begins as positive (since \\(-1^0 =1\\). Then, if that number is divisible by \\(11\\), we are in the clear. 
+I'll briefly show the trick for \\(11\\). First, note that \\(10 \equiv -1 \pmod {11} \\). Now, this creates a slight problem since the power rule is now \\(10^n \equiv -1^n\\), and the sign alternates. But, this isn't too bad. All we need to do is sum the digits of our number \\(a\\) but attached to alternating signs, where the ones digit begins as positive (since \\(-1^0 =1\\)). Then, if that number is divisible by \\(11\\), we are in the clear. 
 
 $$
 \begin{align*}
-a_j 10^j &\equiv -a_j^j \pmod 11 \cr
-\sum_{j=0}^{n-1} a_j 10^j &\equiv \sum_{j=0}^{n-1} -a_j^j \pmod 11 \cr
+a_j 10^j &\equiv a_j(-1^j) \pmod {11} \cr
+\sum_{j=0}^{n-1} a_j 10^j &\equiv \sum_{j=0}^{n-1} a_j(-1^j) \pmod {11} \cr
 \end{align*}
 $$
 
-For example, is \\(561\\) divisible by \\(11\\)? Adding up, we have \\(1 - 6 + 5 = 0\\), which is, indeed, technically a multiple of \\(11\\) (and the answer is correct if we check by hand)&mdash;this case is actually not unusual. But, an example where the sum is a "regular" multiple of \\(11\\) might be \\(209,021,505\\), which has a sum of \\(22\\) when its digits are tallied (it is \\(11\\) multiplied by \\(19,001,955\\).
+For example, is \\(561\\) divisible by \\(11\\)? Adding up, we have \\(1 - 6 + 5 = 0\\), which is, indeed, technically a multiple of \\(11\\) (and the answer is correct if we check by hand)&mdash;this case is actually not unusual. But, an example where the sum is a "regular" multiple of \\(11\\) might be \\(209,021,505\\), which has a sum of \\(22\\) when its digits are tallied (it is \\(11\\) multiplied by \\(19,001,955\\)).
 
 Finally, let's show the trick for dividing by \\(7\\). This one is a little complicated to state. For a number \\(a\\), lop off the units digit \\(a_0\\) and double it. Then, shift the remaining digits over to the right by one place; call this number \\(a_{\text{short}}\\). Subtract \\(a_{\text{short}} - 2a_0\\); if the resulting number is divisible by \\(7\\), our original number is, too. 
 
-Although we can show this proof without modular arithmetic, the proof without them is just as "gnarly". Notably, this is the only trick that I think is probably slower than actually dividing unless the numbers are very big. Suppose our number *is* divisible by \\(7\\). Then...
+Although we can show this proof without modular arithmetic, the proof without it is just as "gnarly". Notably, this is the only trick that I think is probably slower than actually dividing unless the numbers are very big. Suppose our number *is* divisible by \\(7\\). Then...
 
 $$
 \begin{align*}
-a &= 10\sum_{j=1}^{n-1} a_{j} 10^{j} + a_0 \cr
-\sum_{j=1}^{n-1} a_{j} 10^{j} &:= a_{\text{short}} \cr
+a &= 10\sum_{j=1}^{n-1} a_{j} 10^{j-1} + a_0 \cr
+\sum_{j=1}^{n-1} a_{j} 10^{j-1} :&= a_{\text{short}} \cr
 a &= 10a_{\text{short}} + a_0 \cr
 -21 a_0 &\equiv 0 \pmod 7 \cr
 a &\equiv 10a_{\text{short}} - 20a_0 \pmod 7 \cr
