@@ -21,7 +21,7 @@ If we denote by the random variable \\(X\\) the number of successes in \\(n\\) t
 
 [^caution]:  Note that in this case, since the probability of success and failure are equal, *all* sequences are equiprobable, but this won't be true in general. 
 
-The expected value of a binomially-distributed variable is simple: we sum together \\(n\\) Bernoullis, each with expected value \\(\pi\\) (discussed in the main text), so it is \\(n\pi\\). The variance of such a variable is also simple; per the KH formula above, we merely have the sum of the individual variances (as the trial outcomes have no covariance), i.e. \\(n \pi(1-\pi)\\), where the variance of a single Bernoulli has been discussed above.  
+The expected value of a binomially-distributed variable is simple: we sum together \\(n\\) Bernoullis, each with expected value \\(\pi\\) (discussed in the main text), so it is \\(n\pi\\). The variance of such a variable is also simple; per the Köning-Huygens formula, we merely have the sum of the individual variances (as the trial outcomes have no covariance), i.e. \\(n \pi(1-\pi)\\), where the variance of a single Bernoulli has been discussed above.  
 
 ### Covariance between any two sums of binomials derived from a random vector \\(\mathbf{Y}\\)
 
@@ -72,7 +72,7 @@ $$
 
 The remaining material here is not necessary to what comes above, but it is a case where we "might as well" round out some useful remaining properties. 
 
-If we collect the results of multiple binomial variables into a single vector, we refer to this as a *multinomial* variable. For example, if we're considering rolling a six-sided die \\(n\\) times, the number of times each face is rolled can be represented by a binomial variable taking a value between between \\(0\\) and \\(n\\); the random vector \\(\mathbf{t} \in \mathbb{N}^6\\) collects these six random variables, each of which is a binomial random variable.
+If we collect the results of multiple binomial variables into a single vector, we refer to this as a *multinomial* variable. For example, if we're considering rolling a six-sided die \\(n\\) times, the number of times each face is rolled can be represented by a binomial variable taking a value between between \\(0\\) and \\(n\\); the random vector \\(\mathbf{T} \in \mathbb{N}^6\\) collects these six random variables, each of which is a binomial random variable.
 
 More sociologically, we might be interested in the PMF of the number of occurrences of married, divorced, separated, single, and widowed people; this yields a vector of five binomial random variables. Or, more technically, we might be interested in the number of times \\(N\\) people in the population show up in a sample, as noted above; this is a (massive) random vector of \\(N\\) binomial variables.
 
@@ -150,3 +150,29 @@ So, notice here that it is indeed, as mentioned in "Counting I", very often usef
 In fact, it is sometimes almost difficult to *avoid* this interpretation. E.g., when I teach the binomial distribution, talented students often balk at the use of the binomial coefficient to count the number of ways for \\(k\\) trials out of \\(n\\) to be successes because this appears to be using a *combination* to count a *permutation*. But, on the other hand, there is some confusion about the fact that we are, after all, numbering the trials, so perhaps a permutation *is* appropriate.
 
 Well, in fact, a permutation of classes is precisely one way to think about what combinations count. We care about *order* to the extent that trial \\(1\\) is not trial \\(2\\), but we do not care about any possible *re*-ordering of the trials, something like "what if trial \\(1\\) and trial \\(2\\) could swap places", which is what we would be counting if we did not divide by \\(k_1!k_2!...k_m!\\). In fact, we could just give the trials letter names, and there would be no difference in how we should count the quantity of interest. In other words, we care about order here to the extent that something like "trials \\(5, 8, 13\\)" is a *class* of objects. This provides the link between combinations as permutations of classes and combinations as assignments to classes. Sometimes a class can be thought of as a set of spots in a sequence. However, it is not a *true* permutation in that some possible permutations are not counted(swapping the order of items in the same class is not counted). 
+
+# Hypergeometric random variables
+
+Many times in sociology, we use the binomial distribution to model situations where we in fact sample people *without* replacement. This makes the use of the binomial pmf technically incorrect since the probability of a success changes with each draw, and the distribution is actually one known as the *hypergeometric*. However, this approximation is often a very useful shortcut. If we have a large population, removing one person from it hardly changes the probability of a success or failure. Furthermore, calculating exact probabilities is often challenging. 
+
+That said, I will show the formula for the hypergeometric. It is very simple. If we let \\(N\\) and \\(n\\) index the population and sample number of individuals and \\(K\\) and \\(k\\) index the population and sample number of successes, we simply find the number of ways to have \\(k\\) successes and \\(n-k\\) failures directly and then divide by the total number of events. 
+
+$$
+\begin{align*}
+\mathbb{P}[X=k] = \frac{\binom{K}{k} \binom{N-K}{n-k}}{\binom{N}{n}}
+\end{align*}
+$$
+
+It is instructive to compare this to our binomial pmf. In that setting, we calculate the probability of any possible sequence of successes on \\(n\\) trials and only directly count the number of possible group-level permutations of \\(k\\) successes and \\(n\\) failures, which usually is not prohibitive computationally. In the hypergeometric setting, however, we directly calculate the number of possible samples from populations of size \\(N, K\\) and \\(N-K\\), which is, of course, impossible computationally in most large populations. 
+
+
+```python
+import math
+
+binom = math.comb(20, 11) * (0.6)**11 * 0.4**9
+hypergeom = math.comb(60, 11) * math.comb(40,9) / math.comb(100, 20)
+print(f"The binomial probability is {binom}, while the hypergeometric probability is {hypergeom}")
+```
+
+    The binomial probability is 0.15973847800416832, while the hypergeometric probability is 0.1748329213409969
+
