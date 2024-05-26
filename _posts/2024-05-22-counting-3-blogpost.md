@@ -3,7 +3,7 @@ title: "Counting for adults III: balls/bins, partitions, inclusion-exclusion, St
 date: 2024-05-25
 ---
 
-In previous posts about counting, I have not directly tied these questions to the "balls into bins" framing that is ubiquitous. In this post, I u
+In previous posts about counting, I have not directly tied these questions to the "balls into bins" framing that is ubiquitous. In this post, I connect what I have discussed in past posts to this specific framing, which leads to a discussion of some important new (to this blog) ideas: the inclusion-exclusion principle, Stirling numbers of the second kind, and Bell numbers. 
 
 # Distinguishable balls into distinguishable bins
 
