@@ -151,7 +151,7 @@ Now, we use this to work out the number of ways to distribute \\(n\\) distinguis
 
 $$
 \begin{align*}
-&k^n  && \text{number of ways to distribute $n$ distinguishable items into $k$ distinguishable bins} \cr
+&k^n  && \text{# ways to distribute $n$ distinct items into $k$ distinct bins} \cr
 |A_j| &= \binom{k}{1} (k-1)^n 
     && \text{number of partitions with a single box empty} \cr
 |A_j \cap A_h| &= \binom{k}{2} (k-2)^n 
