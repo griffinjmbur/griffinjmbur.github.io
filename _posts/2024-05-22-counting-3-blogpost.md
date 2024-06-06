@@ -13,18 +13,15 @@ This is pretty straightforward; it is just a variety of the coin-flip sequence p
 
 ## Fixed sizes
 
-If we require that each bin have a certain *number* of items in it, but we distinguish the items, this is just a multinomial problem. 
+If we require that each bin have a certain *number* of items in it, but we distinguish the items, this is just a multinomial problem. To use our ongoing metaphor involving selecting meats at a barbeque counter, if we put the scoops of meat into a distinct pattern on our plate (say, a ring), then they *are* distinguishable scoops in virtue of their order. Since we only distinguish order up to the type of meat, though, we divide by the spurious orders within each scoops, \\(\Pi_{j=1} k_j!\\). 
 
 # Indistinguishable balls into distinguishable bins
 
 This is a multiset problem. Here, the difference is that we are here focused on *allocation* to distinct groups. Note that this problem and the last problem are often called problems of combinations *with* and *without* replacement. When we set up the multiset problem as one of selecting \\(k-1\\) "barriers" between otherwise indistinguishable groups of items, this reflects that fact. 
 
-To use our ongoing metaphor involving selecting meats at a barbeque counter, our scoops of meat are the indistinguishable balls (the scoops themselves are not different except by virtue of which meat they select) and the type of meat is the literal bin. If we put the scoops of meat into a distinct pattern on our plate (say, a ring), then they *are* distinguishable scoops in virtue of their order. Since we only distinguish order up to the type of meat, though, we divide by the spurious orders within each scoops, \\(\Pi_{j=1} k_j!\\). 
+Our scoops of meat are the indistinguishable balls (the scoops themselves are not different except by virtue of which meat they select) and the type of meat is the literal bin. 
 
 # Distinguishable balls into indistinguishable bins
-
-
-## Bell numbers
 
 This is the problem of partitions, i.e. the unique groups of distinguishable objects that can be formed. In general, the *Stirling numbers of the second type*, count the number of ways to partition a group of \\(n\\) objects into \\(k\\) groups; the *Bell numbers*, \\(B(n)\\), sum the Stirling numbers for fixed \\(n\\) and variable \\(k : k=1, 2, ... n\\). 
 
@@ -38,12 +35,13 @@ Fortunately, there is a systematic way to work this out indirectly. First, we'll
 
 Now, the problem is to work out how many partitions involve \\(2, 3, ... k\\) empty bins and then substract that from the number of partitions total. We can use a bit of set notation here to help us out. 
 
-Let \\(A_1\\) be a set of sets with one box empty. For each box \\(j\\), this size is the same number. Now...
+Let \\(A_1\\) represent the set of of all sets with box \\(1\\) empty. For each box \\(j\\), this size is the same number. Now...
 
 $$
 \begin{align*} |A_j \cup A_h|
 \end{align*}
 $$
+
 is the number of ways to partition the \\(n\\) objects into \\(k\\) sets where one or the other or both of two boxes, \\(j, h\\) are empty. We could extend the pattern to cases where any of three bins are empty are empty. Counting this directly is a little bit hard, so let us work out how to do so in a more general case. If our \\(A_j\\)s are sets whose size represents the number of ways to partition a set of size \\(n\\) into \\(k\\) bins with bin \\(j\\) empty, the size of their union ... 
 
 $$ 
