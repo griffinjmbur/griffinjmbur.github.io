@@ -7,11 +7,11 @@ In previous posts about counting, I have not directly tied these questions to th
 
 # Distinguishable balls into distinguishable bins
 
-## Variable sizes
+## Variable sizes of bins
 
-This is pretty straightforward; it is just a variety of the coin-flip sequence problem. We have \\(k\\) bins to pick, and we pick \\(n\\) times, so this is just \\(k^n\\). Some sources write this as \\(n^k\\), where \\(n\\) is the number of options and \\(k\\) the number of choices to make, which makes the bins the objects and the balls the choices. This is somewhat counterintuitive, but it keeps the notation clean by always making \\(n\\) the set from which to choose and \\(k\\) the set of things chosen. 
+This is pretty straightforward; it is just a variety of the coin-flip sequence problem or a "permutation without repetition". We have \\(k\\) bins to pick, and we pick \\(n\\) times, so this is just \\(k^n\\). Some sources write this as \\(n^k\\), where \\(n\\) is the number of options and \\(k\\) the number of choices to make, which makes the bins the objects and the balls the choices. I think this latter convention is misleading, but more on that another time. In general, I think one appeal of the balls-into-bins approach is that all of the basic metaphors for the different combinatorial identities use the same fundamental physical set-up of distributing \\(n\\) (labeled or unlabeled) objects into \\(k\\) (labeled or unlabeled) bins, so we will stick with that. 
 
-## Fixed sizes
+## Fixed sizes of bins
 
 If we require that each bin have a certain *number* of items in it, but we distinguish the items, this is just a multinomial problem. To use our ongoing metaphor involving selecting meats at a barbeque counter, if we put the scoops of meat into a distinct pattern on our plate (say, a ring), then they *are* distinguishable scoops in virtue of their order. Since we only distinguish order up to the type of meat, though, we divide by the spurious orders within each scoops, \\(\Pi_{j=1} k_j!\\). 
 
@@ -33,12 +33,16 @@ Things get more complicated with Stirling numbers for more than two partitions. 
 
 Fortunately, there is a systematic way to work this out indirectly. First, we'll consider how to do this for distinguishable bins where we allow some bins to be empty. Then, we'll use the principle of the complement and subtract the number of ways that this ends up with at least one bin zero, and divide by the number of spurious rearrangements of bins (generally, \\(k!\\)). In the case of just one bin empty, things are pretty simple: if we have one bin empty, this leaves \\(k-1\\) bins left to distribute \\(n\\) balls to. We could leave any of the \\(k\\) bins empty, so we just subtract out \\(k(k-1)^n\\). 
 
-Now, the problem is to work out how many partitions involve \\(2, 3, ... k\\) empty bins and then substract that from the number of partitions total. We can use a bit of set notation here to help us out. 
+Now, the problem is to work out how many partitions involve \\(2, 3, ... k\\) empty bins and then substract that from the number of partitions total. We can use a bit of set notation here to help us out. First, note that on this view of combinatorics&mdash;again, where we are generally distributing \\(n\\) (labeled or unlabeled) objects into \\(k\\) (labeled or unlabeled) bins&mdash;we are *generally* doing things like finding proper disjoint subsets of our set of objects, which we can call \\(S\\). 
 
-Let \\(A_1\\) represent the set of of all sets with box \\(1\\) empty. For each box \\(j\\), this size is the same number. Now...
+Various combinatorial identities can be seen as finding the number of sets \\(\mathcal{A}_r\\) of disjoint and exhaustive labeled subsets \\(A_{1r}, A_{2r}, ... A_{kr}\\) of \\(S\\), with \\(r\\) indexing the "round" we are on and the numbers simply keeping track of the subsets. For example, the "permutation with repetition" coefficient, although we usually think about it as counting sequences, is also a way of finding each possible set of \\(k\\) disjoint, exhaustive, variable-size subsets of \\(S\\) (to see this, consider that we can represent every possible sequence of \\(n\\) things with \\(k\\) outcomes possible at each go as every way to take the \\(n\\) trials and place them into various "bins" representing the possible outcomes). The "combination without repetition" coefficient just fixes the size of the sets, and the multinomial is a simple extension.[^notation] Permutations even can be fit into this context: they represent all exhaustive, dijoint possible subsets where \\(k\\) of the sets must be singletons and all other elements must go into a \\(k+1\\)th set. Combinations with repetition count all possible exhaustive, disjoint subsets of variable size where we do not distinguish the objects. 
+
+[^notation]: Unfortunately, the standard notation for multinomials (where \\(k\\) is the number of things to put in a bin) violates the meaning we otherwise give to \\(k\\) in these problems, where it indicates the *number of bins*. This is really only a problem with the standard way of writing the binomial, since \\(k_1, k_2, ... k_k\\) in the multinomial case isn't entirely execrable notation, but the slightly awkward \\(\binom{n}{n_1, n_2, ... n_k}\\) used by *WolframAlpha* is much preferable if we want to be eact. 
+
+Now, let's consider the sets of subsets of \\(S\\) with at least one box empty. Technically, this is a set of qualifying-sets-of-subsets, which we should write something like \\(\mathscr{S}_1\\), representing the set of of all sets with subset \\(1\\) empty.  For each labeled set \\(j\\), this size is the same number. Writing this fancy \\(S\\) over and over is a bit of a distraction, so let's now just prove a *general* result about sets. We'll let let \\(B\\) stand in for any set; this result extends to sets of subsets or whatever other kind of object. Now...
 
 $$
-\begin{align*} |A_j \cup A_h|
+\begin{align*} |B_j \cup B_h|
 \end{align*}
 $$
 
@@ -46,7 +50,7 @@ is the number of ways to partition the \\(n\\) objects into \\(k\\) sets where o
 
 $$ 
 \begin{align*}
-|A_1 \cup A_2 \cup ... A_k|
+|B_1 \cup B_2 \cup ... B_k|
 \end{align*}
 $$
 
@@ -54,7 +58,7 @@ represents the situation that at least one bin, possibly more, is empty. We ther
 
 $$
 \begin{align*}
-\neg|(A_1 \cup A_2 \cup ... A_k)|
+\neg|(B_1 \cup B_2 \cup ... B_k)|
 \end{align*}
 $$
 
@@ -66,9 +70,10 @@ One way to think about this is to take the typical image of sets as Venn diagram
 
 $$
 \begin{align*}
-\bigcup_{j=1}^2 A_j &= A_1 + A_2 - (A_1 \cap A_2) \cr
-\bigcup_{j=1}^3 A_j &= A_1 + A_2 + A_3 - 
-    (A_1 \cap A_2) - (A_2 \cap A_3) - (A_1 \cap A_3) + (A_1 \cap A_2 \cap A_3) \cr
+\bigcup_{j=1}^2 B_j &= B_1 + B_2 - (B_1 \cap B_2) \cr
+\bigcup_{j=1}^3 B_j &= B_1 + B_2 + B_3 - 
+    (B_1 \cap B_2) - (B_2 \cap B_3) - 
+    (B_1 \cap B_3) + (B_1 \cap B_2 \cap B_3) \cr
 \end{align*}
 $$
 
@@ -76,9 +81,10 @@ Further, if we are only interested in the size of the sets, it is obvious that w
 
 $$
 \begin{align*}
-|\bigcup_{j=1}^2 A_j| &= |A_1| + |A_2| - |A_1 \cap A_2| \cr
-|\bigcup_{j=1}^3 A_j| &= |A_1| + |A_2| + |A_3| - 
-    |A_1 \cap A_2| - |A_2 \cap A_3| - |A_1 \cap A_3| + |A_1 \cap A_2 \cap A_3| \cr
+|\bigcup_{j=1}^2 B_j| &= |B_1| + |B_2| - BA_1 \cap B_2| \cr
+|\bigcup_{j=1}^3 B_j| &= |B_1| + |B_2| + |B_3| - 
+    |B_1 \cap B_2| - |B_2 \cap B_3| - 
+    |B_1 \cap B_3| + |B_1 \cap B_2 \cap B_3| \cr
 \end{align*}
 $$
 
@@ -86,9 +92,9 @@ Now, to generalize about this process, let us think about what is really happeni
 
 $$
 \begin{align*}
-|\bigcup_{j=1}^n A_j| &= \sum_{i} |A_i| 
-    - \sum_{i\neq j} |A_i \cap A_j | 
-        + \sum_{i\neq j \neq h} |A_i \cap A_j \cap A_h| ... \cr
+|\bigcup_{j=1}^n B_j| &= \sum_{i} |B_i| 
+    - \sum_{i\neq j} |B_i \cap B_j | 
+        + \sum_{i\neq j \neq h} |B_i \cap B_j \cap B_h| ... \cr
 \end{align*}
 $$
 
@@ -96,10 +102,13 @@ This is in fact the correct algorithm. Let us show why. First, let \\(m\\) indic
 
 $$
 \begin{align*}
-| \bigcup_{j=1}^3 A_j | &= \underbrace{|A_1| + |A_2| + |A_3|}_{\text{$\epsilon$ counted $\binom{m}{1}$ times}}
-    - \underbrace{|A_1 \cap A_2| - |A_2 \cap A_3| - |A_1 \cap A_3|}_
+| \bigcup_{j=1}^3 B_j | &= \underbrace{|B_1| + |B_2| + |B_3|}_
+    {\text{$\epsilon$ counted $\binom{m}{1}$ times}}
+    - \underbrace{|B_1 \cap B_2| - |B_2 \cap B_3| - 
+        |B_1 \cap B_3|}_
         {\text{$\epsilon$ counted $\binom{m}{2}$ times}} 
-    + \underbrace{|A_1 \cap A_2 \cap A_3|}_{\text{$\epsilon$ counted $\binom{m}{3}$ times}} \cr
+    + \underbrace{|B_1 \cap B_2 \cap B_3|}_
+        {\text{$\epsilon$ counted $\binom{m}{3}$ times}} \cr
 \end{align*}
 $$
 
@@ -160,12 +169,12 @@ Summarizing our findings in words, we found that the size of the union of \\(n\\
 
 $$
 \begin{align*}
-|\bigcup_{j=1}^n A_j| &= \sum_{j=1}^n (-1)^{j-1} \sum_{1 \leq h_1 < h_2 < ... h_j \leq n} 
-    | A_{h_1} \cap A_{h_2} ... \cap A_{h_j}|
+|\bigcup_{j=1}^n B_j| &= \sum_{j=1}^n (-1)^{j-1} \sum_{1 \leq h_1 < h_2 < ... h_j \leq n} 
+    | B_{h_1} \cap B_{h_2} ... \cap B_{h_j}|
 \end{align*}
 $$
 
-The notation here is gnarly. If we were just trying to sum over all possible \\(w\\)-way intersection for a fixed \\(w\\), we could omit the first summation and simply write the second sum as a sum over several dummy indices \\(\alpha, \beta, \gamma\\), etc.&mdash;summing over sets \\(A_\alpha, A_\beta, A_\gamma\\) indexed by \\(1 \leq \alpha < \beta < \gamma \leq n \\) is another way of saying "find all combinations (strict sense) of these sets and sum them". This could be written as multiple sums if we want; it is really a triplet of sums, after all. However, in the actual case under consideration, we do not even have a fixed number of intersections, and there is not a natural way to explicitly write the growing number of summations using multiple summation sigmas. 
+The notation here is gnarly. If we were just trying to sum over all possible \\(w\\)-way intersection for a fixed \\(w\\), we could omit the first summation and simply write the second sum as a sum over several dummy indices \\(\alpha, \beta, \gamma\\), etc.&mdash;summing over sets \\(B_\alpha, B_\beta, B_\gamma\\) indexed by \\(1 \leq \alpha < \beta < \gamma \leq n \\) is another way of saying "find all combinations (strict sense) of these sets and sum them". This could be written as multiple sums if we want; it is really a triplet of sums, after all. However, in the actual case under consideration, we do not even have a fixed number of intersections, and there is not a natural way to explicitly write the growing number of summations using multiple summation sigmas. 
 
 # Applying the principle of inclusion-exclusion
 
@@ -174,11 +183,11 @@ Now, we use this to work out the number of ways to distribute \\(n\\) distinguis
 $$
 \begin{align*}
 &k^n  && \text{# ways to distribute $n$ distinct items into $k$ distinct bins} \cr
-|A_j| &= \binom{k}{1} (k-1)^n 
+|B_j| &= \binom{k}{1} (k-1)^n 
     && \text{number of partitions with a single box empty} \cr
-|A_j \cap A_h| &= \binom{k}{2} (k-2)^n 
+|B_j \cap B_h| &= \binom{k}{2} (k-2)^n 
     && \text{number of partitions with two boxes both empty} \cr
-| \bigcup_{j=1}^k A_j | &= 
+| \bigcup_{j=1}^k B_j | &= 
     \sum_{j=1}^k (-1)^{j-1} \binom{k}{j} (k-j)^n
         && \text{number of partitions with any of $k$ boxes empty} \cr
 & k^n -  
