@@ -39,14 +39,14 @@ Various combinatorial identities can be seen as finding the number of sets \\(\m
 
 [^notation]: Unfortunately, the standard notation for multinomials (where \\(k\\) is the number of things to put in a bin) violates the meaning we otherwise give to \\(k\\) in these problems, where it indicates the *number of bins*. This is really only a problem with the standard way of writing the binomial, since \\(k_1, k_2, ... k_k\\) in the multinomial case isn't entirely execrable notation, but the slightly awkward \\(\binom{n}{n_1, n_2, ... n_k}\\) used by *WolframAlpha* is much preferable if we want to be eact. 
 
-Now, let's consider the sets of subsets of \\(S\\) with at least one box empty. Technically, this is a set of qualifying-sets-of-subsets, which we should write something like \\(\mathscr{S}_1\\), representing the set of of all sets with subset \\(1\\) empty.  For each labeled set \\(j\\), this size is the same number. Writing this fancy \\(S\\) over and over is a bit of a distraction, so let's now just prove a *general* result about sets. We'll let let \\(B\\) stand in for any set; this result extends to sets of subsets or whatever other kind of object. Now...
+Now, let's consider the sets of subsets of \\(S\\) with at least one box empty. Technically, this is a set of qualifying-sets-of-subsets, which we should write something like \\(\mathscr{S}_1\\), representing the set of of all sets with subset \\(1\\) empty.  For each labeled set \\(j\\), this size is the same number. Writing this fancy \\(S\\) over and over is a bit of a distraction, especially since we'll consider not just any such set but a set of the union of all comparable sets, so let's now just prove a *general* result about sets using simpler notation. We'll let let \\(B\\) stand in for any set; this result extends to sets of subsets or whatever other kind of object. Generally, we will let \\(B_j\\) stand in for the set of of all sets of subsets where labeled set \\(j\\) is empty. Now...
 
 $$
 \begin{align*} |B_j \cup B_h|
 \end{align*}
 $$
 
-is the number of ways to partition the \\(n\\) objects into \\(k\\) sets where one or the other or both of two boxes, \\(j, h\\) are empty. We could extend the pattern to cases where any of three bins are empty are empty. Counting this directly is a little bit hard, so let us work out how to do so in a more general case. If our \\(A_j\\)s are sets whose size represents the number of ways to partition a set of size \\(n\\) into \\(k\\) bins with bin \\(j\\) empty, the size of their union ... 
+is the number of ways to partition the \\(n\\) objects into \\(k\\) sets where one or the other or both of two boxes, \\(j, h\\) are empty. We could extend the pattern to cases where any of three bins are empty are empty. Counting this directly is a little bit hard, so let us work out how to do so in a more general case. If our \\(B_j\\)s are sets whose size represents the number of ways to partition a set of size \\(n\\) into \\(k\\) bins with bin \\(j\\) empty, the their union is the set of all sets with any combinations of the labeled set empty, and the size of this union... 
 
 $$ 
 \begin{align*}
@@ -54,7 +54,7 @@ $$
 \end{align*}
 $$
 
-represents the situation that at least one bin, possibly more, is empty. We therefore want to find the size of the complement of the size of that set...
+is the number of the situation that at least one bin, possibly more, is empty. We therefore want to find the size of the complement of the size of that set...
 
 $$
 \begin{align*}
@@ -66,7 +66,7 @@ Counting this requires the very useful principle of inclusion-exclusion (AKA the
 
 ## The principle of inclusion-exclusion
 
-One way to think about this is to take the typical image of sets as Venn diagram circles into three dimensions by imagining them as stacked pancakes. We want to find the area of a complex shape formed by overlapping discs. If the pancakes were totally non-overlapping (disjoint), we could just sum up the areas; but, the areas will likely overlap. If we have two pancakes, it is very straightfoward: we add the areas of the two pancakes, which counts their intersection twice, and then subtract the intersection once, so that is is only counted once. With three pancakes, it is still pretty straightforward to figure this out: we add the three pancakes' areas and take out the pairwise intersections. This second move removes any area that is an intersection of just two pancakes exactly one time, which we want, but it subtracts any intersection of the three pancakes three times, which actually nets out that intersection. So, we add it back in. Using set theory notation (I follow Kenneth Rosen's notation here)...
+One way to think about this is to take the typical image of sets as Venn diagram circles into three dimensions by imagining them as stacked pancakes. We want to find the area of a complex shape formed by overlapping discs. If the pancakes were totally non-overlapping (disjoint), we could just sum up the areas; but, the areas will likely overlap. If we have two pancakes, it is very straightfoward: we add the areas of the two pancakes, which counts their intersection twice, and then subtract the intersection once, so that is is only counted once. With three pancakes, it is still pretty straightforward to figure this out: we add the three pancakes' areas and take out the pairwise intersections. This second move removes any area that is an intersection of just two pancakes exactly one time, which we want, but it subtracts any intersection of the three pancakes three times, which actually nets out that intersection. So, we add it back in. Using set theory notation...
 
 $$
 \begin{align*}
