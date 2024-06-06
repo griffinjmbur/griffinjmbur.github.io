@@ -38,7 +38,7 @@ Fortunately, there is a systematic way to work this out indirectly. First, we'll
 
 Now, the problem is to work out how many partitions involve \\(2, 3, ... k\\) empty bins and then substract that from the number of partitions total. We can use a bit of set notation here to help us out. 
 
-Let \\(|A_1|\\) be the number of ways to put \\(n\\) objects into \\(k\\) bins with bin \\(1\\) empty. For each box \\(j\\), this size is the same number. Now...
+Let \\(A_1\\) be a set of sets with one box empty. For each box \\(j\\), this size is the same number. Now...
 
 $$
 \begin{align*} |A_j \cup A_h|
