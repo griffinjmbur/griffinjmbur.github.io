@@ -36,7 +36,31 @@ Things get more complicated with Stirling numbers for more than two partitions. 
 
 Fortunately, there is a systematic way to work this out indirectly. First, we'll consider how to do this for distinguishable bins where we allow some bins to be empty. Then, we'll use the principle of the complement and subtract the number of ways that this ends up with at least one bin zero, and divide by the number of spurious rearrangements of bins (generally, \\(k!\\)). In the case of just one bin empty, things are pretty simple: if we have one bin empty, this leaves \\(k-1\\) bins left to distribute \\(n\\) balls to. We could leave any of the \\(k\\) bins empty, so we just subtract out \\(k(k-1)^n\\). 
 
-Now, the problem is to work out how many partitions involve \\(2, 3, ... k\\) empty bins and then substract that from the number of partitions total. We can use a bit of set notation here to help us out. Let \\(|A_1|\\) be the number of ways to put \\(n\\) objects into \\(k\\) bins with bin \\(1\\) empty. For each box \\(j\\), this size is the same number. Now, \\(|A_j \cup A_h|\\) is the number of ways to partition the \\(n\\) objects into \\(k\\) sets where one or the other or both of two boxes, \\(j, h\\) are empty. We could extend the pattern to cases where \\(A_j \cup A_h \cup A_r\\) are empty. Counting this directly is a little bit hard, so let us work out how to do so in a more general case. If our \\(A_j\\)s are sets whose size represents the number of ways to partition a set of size \\(n\\) into \\(k\\) bins with bin \\(j\\) empty, the size of their union \\(|A_1 \cup A_2 \cup ... A_k|\\) represents the situation that at least one bin, possibly more, is empty. We therefore want to find the size of the complement of the size of that set, \\(\neg|(A_1 \cup A_2 \cup ... A_k)|\\). Counting this requires the very useful principle of inclusion-exclusion (AKA the "sieve"). 
+Now, the problem is to work out how many partitions involve \\(2, 3, ... k\\) empty bins and then substract that from the number of partitions total. We can use a bit of set notation here to help us out. 
+
+Let \\(|A_1|\\) be the number of ways to put \\(n\\) objects into \\(k\\) bins with bin \\(1\\) empty. For each box \\(j\\), this size is the same number. Now...
+
+$$
+\begin{align*} |A_j \cup A_h|
+\end{align*}
+$$
+is the number of ways to partition the \\(n\\) objects into \\(k\\) sets where one or the other or both of two boxes, \\(j, h\\) are empty. We could extend the pattern to cases where any of three bins are empty are empty. Counting this directly is a little bit hard, so let us work out how to do so in a more general case. If our \\(A_j\\)s are sets whose size represents the number of ways to partition a set of size \\(n\\) into \\(k\\) bins with bin \\(j\\) empty, the size of their union ... 
+
+$$ 
+\begin{align*}
+|A_1 \cup A_2 \cup ... A_k|
+\end{align*}
+$$
+
+represents the situation that at least one bin, possibly more, is empty. We therefore want to find the size of the complement of the size of that set...
+
+$$
+\begin{align*}
+\neg|(A_1 \cup A_2 \cup ... A_k)|
+\end{align*}
+$$
+
+Counting this requires the very useful principle of inclusion-exclusion (AKA the "sieve"). 
 
 ## The principle of inclusion-exclusion
 
