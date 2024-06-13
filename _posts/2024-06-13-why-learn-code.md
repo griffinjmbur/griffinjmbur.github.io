@@ -46,5 +46,5 @@ New users of those languages often experience initial frustration in learning th
     
     Here's an example: I got back into running outside during the pandemic and tracked most of my runs. I also 
     
-!["test"](./images/running.png)
+!["test"](/images/running.png)
 
