@@ -8,7 +8,7 @@ New users of those languages often experience initial frustration in learning th
     
     There is a direct relationship between having the data in front of you in a way that makes them *effortless* to manipulate and embarrassing blunders such as these. Data manipulation should be *easy*, not *effortless*. 
     
-    Beyond that, there aren't just *data-management* goofs. People also tend to forget 
+    Beyond that, there aren't just *data-management* goofs. People also tend to forget how they produced these analyses in the first place. 
     
 1. **Excel and similar programs (e.g. Sheets) are extremely inefficient**. 
 
@@ -30,7 +30,7 @@ New users of those languages often experience initial frustration in learning th
 
     Before we even talk about AI, we need to discuss something a little uncomfortable: many people *in the technical sciences* don't even understand the basics of how computers work, even if they are very proficient users of the internet or certain software,[^twt] and that's (at least potentially) a problem. 
     
-    [^twt]: A PhD student in computer science recently had a tweet go viral, with some $8000$ likes and $1000$ times as many views, that they "didn't know that the entire internet is literally wired physically with undersea cables". This actually isn't as absurd as it seems; a big part of computer science is "black box" thinking, where you can be proficient at one level of technical abstraction while not needing to know the details of another. But, predictably, this can get you into trouble at some points.
+    [^twt]: A PhD student in computer science recently had a tweet go viral, with some \\(8000\\) likes and \\(1000\\) times as many views, that they "didn't know that the entire internet is literally wired physically with undersea cables". This actually isn't as absurd as it seems; a big part of computer science is "black box" thinking, where you can be proficient at one level of technical abstraction while not needing to know the details of another. But, predictably, this can get you into trouble at some points.
     
     I'm not talking about understanding deeply, like knowing exactly how programming statements in a language (like Python or C) get turned into binary which gets turned into a bunch of tiny little switches flipping on and off. By the way, if you do care about that, this [series](https://www.youtube.com/watch?v=tpIctyqH29Q&list=PL8dPuuaLjXtNlUrzyH5r6jN9ulIgZBpdo&ab_channel=CrashCourse) produced by Carrie Anne Philbin is an excellent introduction, and for the brave, see Nisan and Schocken's *Elements of Computing Systems*. 
     
@@ -46,5 +46,5 @@ New users of those languages often experience initial frustration in learning th
     
     Here's an example: I got back into running outside during the pandemic and tracked most of my runs. I also 
     
-![""](./images/running.png)
-![""]("./images/running.png")
+!["test"](./images/running.png)
+
