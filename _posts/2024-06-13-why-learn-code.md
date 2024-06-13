@@ -6,13 +6,15 @@ New users of those languages often experience initial frustration in learning th
 
     The flexibility of these "point-and-click" languages is also their downside. It is *very* easy to modify data in them&mdash;too easy! The horror stories are legion. The most famous is the Reinhart-Rogoff disaster, a tale that has been told many times. You can read good write-ups many places (I suggest [here](https://archive.ph/OGzrG)), but TL;DR: Nobel Prize-winning economists made a disastrously-wrong analysis of the relationship between debt-load and GDP growth that changed global policy. The culprit? Simple Excel mistakes. Are you more interested in clinical research? Head [here](https://www.youtube.com/watch?v=64paAOI17rc&t=413s) (timestamped) to hear about a major scandal in cancer research cause, in part, by Excel errors. Matthew Zeitlin catalogued a very entertaining [list](https://archive.ph/cLyX5) of "data disasters" *more embarrassing than Reinhart and Rogoff*!
     
-    There is a direct relationship between having the data in front of you in a way that makes them *effortless* to manipulate and embarrassing blunders such as these. Data manipulation should be *easy*, not *effortless*. 
+    There is a direct relationship between having the data in front of you in a way that makes them *effortless* to manipulate and embarrassing blunders such as these. Data manipulation should be *easy*, not *effortless*. Using a script *forces you to record the changes you make to the data*, which is an extremely positive thing. 
     
     Beyond that, there aren't just *data-management* goofs. People also tend to forget how they produced these analyses in the first place. 
     
 1. **Excel and similar programs (e.g. Sheets) are extremely inefficient**. 
 
-    Even if you are an excellent typist and don't make many data-entry errors, script based languages are vastly more efficient. Once you figure out a procedure that you want to carry out, you just add it to your script. At a basic level, you may not have much need to use custom statistical procedures, but at a minimum, correctly titling and scaling graphs is usually something that your software won't do well without some explicit guidance. *Handling this with a point-and-click interface is a surefire way to make sure that you do a lot of repetitive work.*
+    Even if you are an excellent typist and don't make many data-entry errors, script based languages are vastly more efficient. Once you figure out a procedure that you want to carry out, you just add it to your script. If you want to tweak your analysis, changing out the variables in your set of predictors or re-running everything with a pesky outlier dropped, this is extremely simple with a script, and a giant pain in the butt working with point-and-click or with the command line. 
+    
+    At a basic level, you may not have much need to use a large number of statistical procedures, but at a minimum, correctly titling and scaling graphs is usually something that your software won't do well without some explicit guidance. *Handling this with a point-and-click interface is a surefire way to make sure that you do a lot of repetitive work.* 
     
 2. **Script-based languages teach logical thinking useful in many jobs**. 
 
@@ -44,7 +46,7 @@ New users of those languages often experience initial frustration in learning th
     
     Information is *everywhere*. This is a double-edged sword; the presence of "big data" in some ways corrodes our folkways. At the same time, you can make the most of it. Your phone, for example, records all kinds of data on your movements, and many of you may use watches or other biometric feedback devices. Perhaps you track your macros, map your runs and walks, or track your sleep. Perhaps your phone automatically counts your steps without you even *realizing*. Now, again, there are some Foucauldian reasons to be very fearful of all of this, but if you can't fully opt out...why not have some fun with it? Of course, actually manipulating these data with any facility beyond just what you can do in the app (typically extremely limited) requires programming. 
     
-    Here's an example: I got back into running outside during the pandemic and tracked most of my runs. I have
+    Here's an example: I got back into running outside during the pandemic and tracked most of my runs.
     
 ![""](./images/running.png)
 ![""](/images/running.png)
