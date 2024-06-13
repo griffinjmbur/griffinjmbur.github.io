@@ -12,7 +12,7 @@ New users of those languages often experience initial frustration in learning th
     
 1. **Excel and similar programs (e.g. Sheets) are extremely inefficient**. 
 
-    Even if you are an excellent typist and don't make many data-entry errors, script based languages are vastly more efficient. Once you figure out a procedure that you want to carry out, you just add it to your script. At a basic level, you may not have much need to use custom statistical procedures, but at a minimum, correctly titling and scaling graphs is usually something that your software won't 
+    Even if you are an excellent typist and don't make many data-entry errors, script based languages are vastly more efficient. Once you figure out a procedure that you want to carry out, you just add it to your script. At a basic level, you may not have much need to use custom statistical procedures, but at a minimum, correctly titling and scaling graphs is usually something that your software won't do well without some explicit guidance. *Handling this with a point-and-click interface is a surefire way to make sure that you do a lot of repetitive work.*
     
 2. **Script-based languages teach logical thinking useful in many jobs**. 
 
@@ -46,5 +46,5 @@ New users of those languages often experience initial frustration in learning th
     
     Here's an example: I got back into running outside during the pandemic and tracked most of my runs. I have
     
-!["test"](./images/running.png)
-!["test"](/images/running.png)
+![""](./images/running.png)
+![""](/images/running.png)
