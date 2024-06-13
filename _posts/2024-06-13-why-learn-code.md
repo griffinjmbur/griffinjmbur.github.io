@@ -12,7 +12,7 @@ New users of those languages often experience initial frustration in learning th
     
 1. **Excel and similar programs (e.g. Sheets) are extremely inefficient**. 
 
-    Even if you are an excellent typist and don't make many data-entry errors, script based languages are vastly more efficient. Once you figure out a procedure that you want to carry out, you just add it to your script. At a basic level, you may not have much need to use custom statistical procedures, but at a minimum, correctly titling and scaling graphs
+    Even if you are an excellent typist and don't make many data-entry errors, script based languages are vastly more efficient. Once you figure out a procedure that you want to carry out, you just add it to your script. At a basic level, you may not have much need to use custom statistical procedures, but at a minimum, correctly titling and scaling graphs is usually something that your software won't 
     
 2. **Script-based languages teach logical thinking useful in many jobs**. 
 
@@ -44,7 +44,7 @@ New users of those languages often experience initial frustration in learning th
     
     Information is *everywhere*. This is a double-edged sword; the presence of "big data" in some ways corrodes our folkways. At the same time, you can make the most of it. Your phone, for example, records all kinds of data on your movements, and many of you may use watches or other biometric feedback devices. Perhaps you track your macros, map your runs and walks, or track your sleep. Perhaps your phone automatically counts your steps without you even *realizing*. Now, again, there are some Foucauldian reasons to be very fearful of all of this, but if you can't fully opt out...why not have some fun with it? Of course, actually manipulating these data with any facility beyond just what you can do in the app (typically extremely limited) requires programming. 
     
-    Here's an example: I got back into running outside during the pandemic and tracked most of my runs. I also 
+    Here's an example: I got back into running outside during the pandemic and tracked most of my runs. I have
     
 !["test"](./images/running.png)
 !["test"](/images/running.png)
