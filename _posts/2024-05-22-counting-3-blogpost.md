@@ -39,7 +39,7 @@ Various combinatorial identities can be seen in this set-theoretic light. Let's 
 
 So, let's use some slightly differentiated notation. First, let's call our bins \\(b_1, b_2...b_k\\). Then, let's call any assignment of \\(n\\) items to the bins (that is, some possible grouping of items into bins) a **collection** \\(B_j\\). Next, the **set of collections that satisfy some criterion** is \\(\mathcal{B}_j\\); we'll focus here on criteria such as "bin \\(j\\) is empty". Finally, then, \\(\mathscr{B}\\) is the set of those criterion-sets. 
 
-Note that all of our standard combinatorial identities can be seen this way. For example, the "permutation with repetition" coefficient, although we usually think about it as counting sequences, is also a way of subsetting a set. To see this, consider that we can represent every possible sequence of \\(n\\) things with \\(k\\) outcomes possible at each go as every way to take the \\(n\\) trials and place them into various "bins" representing the possible outcomes. We are, therefore, finding each possible assignment of \\(n\\) items to our bins \\(b_1, b_2, ... b_k\\). Any such sequence is an assignment of assignments to sets \\(B_j\\), and we count all of them, finding \\(|\mathcal{B}|\\). 
+Note that all of our standard combinatorial identities can be seen this way. For example, the "permutation with repetition" coefficient, although we usually think about it as counting sequences, is also a way of subsetting a set. To see this, consider that we can represent every possible sequence of \\(n\\) things with \\(k\\) outcomes possible at each go as every way to take the \\(n\\) trials and place them into various "bins" representing the possible outcomes. We are, therefore, finding each possible assignment of \\(n\\) items to our bins \\(b_1, b_2, ... b_k\\). Any such sequence is an assignment of assignments to sets \\(B_j\\), and we count all of them. This notion of the size of a set would *normally* be represented using "pipe" operators, but Jekyll (the platform I use to post these weblogs) has a violent dislike of them, so I will simply use the computer science notation, `len` (for "length"). Thus, we are finding \\(len(\mathcal{B})\\). 
 
 The "combination without repetition" coefficient just fixes the size of the bins \\(b_j\\) and forces \\(k=2\\).[^notation] The multinomial is a simple extension where \\(k\\) can be anything. Permutations even can be fit into this context: they represent all exhaustive, dijoint possible subsets where \\(k\\) of the sets must be singletons and all other elements must go into a \\(k+1\\)th set. Combinations with repetition count all possible exhaustive, disjoint subsets of variable size where we do not distinguish the objects. 
 
@@ -47,7 +47,7 @@ The "combination without repetition" coefficient just fixes the size of the bins
 
 Now, let's consider a sets of collections such \\(\mathcal{B_1}\\) that satisfy criteria such as "\\(b_1\\) is empty". 
 
-Then, a quantity such as \\(|\mathcal{B_1}|\\) is the number of collections \\(B_1, B_2...\\) with \\(b_1\\) empty. A quantity such as... 
+Then, a quantity such as \\(len(\mathcal{B_1})\\) is the number of collections \\(B_1, B_2...\\) with \\(b_1\\) empty. A quantity such as... 
 
 $$
 \begin{align*} 
