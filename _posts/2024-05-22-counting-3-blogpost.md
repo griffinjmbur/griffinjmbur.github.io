@@ -39,7 +39,7 @@ Various combinatorial identities can be seen in this set-theoretic light. Let's 
 
 So, let's use some slightly differentiated notation. First, let's call our bins \\(b_1, b_2...b_k\\). Then, let's call any assignment of \\(n\\) items to the bins (that is, some possible grouping of items into bins) a **collection** \\(B_j\\). Next, the **set of collections that satisfy some criterion** is \\(\mathcal{B}_j\\); we'll focus here on criteria such as "bin \\(j\\) is empty". Finally, then, \\(\mathscr{B}\\) is the set of those criterion-sets. 
 
-Note that all of our standard combinatorial identities can be seen this way. For example, the "permutation with repetition" coefficient, although we usually think about it as counting sequences, is also a way of subsetting a set. To see this, consider that we can represent every possible sequence of \\(n\\) things with \\(k\\) outcomes possible at each go as every way to take the \\(n\\) trials and place them into various "bins" representing the possible outcomes. We are, therefore, finding each possible assignment of \\(n\\) items to our bins \\(b_1, b_2, ... b_k\\). Any such sequence is an assignment of assignments to sets \\(B_j\\), and we count all of them. This notion of the size of a set would *normally* be represented using "pipe" operators, but Jekyll (the platform I use to post these weblogs) has a violent dislike of them, so I will simply use the computer science notation, `len` (for "length"). Thus, we are finding \\(len(\mathcal{B})\\). 
+Note that all of our standard combinatorial identities can be seen this way. For example, the "permutation with repetition" coefficient, although we usually think about it as counting sequences, is also a way of subsetting a set. To see this, consider that we can represent every possible sequence of \\(n\\) things with \\(k\\) outcomes possible at each go as every way to take the \\(n\\) trials and place them into various "bins" representing the possible outcomes. We are, therefore, finding each possible assignment of \\(n\\) items to our bins \\(b_1, b_2, ... b_k\\). Any such sequence is an assignment of assignments to sets \\(B_j\\), and we count all of them. This notion of the size of a set would *normally* be represented using "pipe" operators, but Jekyll (the platform I use to post these weblogs) has a violent dislike of them when they are used in paragraphs, so I will simply use the computer science notation, `len` (for "length"). Thus, we are finding \\(len(\mathcal{B})\\) (I use pipes in the indented blocks). 
 
 The "combination without repetition" coefficient just fixes the size of the bins \\(b_j\\) and forces \\(k=2\\).[^notation] The multinomial is a simple extension where \\(k\\) can be anything. Permutations even can be fit into this context: they represent all exhaustive, dijoint possible subsets where \\(k\\) of the sets must be singletons and all other elements must go into a \\(k+1\\)th set. Combinations with repetition count all possible exhaustive, disjoint subsets of variable size where we do not distinguish the objects. 
 
@@ -84,7 +84,7 @@ Further, if we are only interested in the size of the sets, it is obvious that w
 
 $$
 \begin{align*}
-|\bigcup_{j=1}^2 A_j| &= |A_1| + |A_2| - BA_1 \cap A_2| \cr
+|\bigcup_{j=1}^2 A_j| &= |A_1| + |A_2| - |A_1 \cap A_2| \cr
 |\bigcup_{j=1}^3 A_j| &= |A_1| + |A_2| + |A_3| - 
     |A_1 \cap A_2| - |A_2 \cap A_3| - 
     |A_1 \cap A_3| + |A_1 \cap A_2 \cap A_3| \cr
@@ -182,6 +182,8 @@ The notation here is gnarly. If we were just trying to sum over all possible \\(
 # Applying the principle of inclusion-exclusion
 
 Now, we use this to work out the number of ways to distribute \\(n\\) distinguishable items into \\(k\\) indistinguishable bins.
+
+*Here, our sets are actually sets of collections*. So, the intersection of, say, \\(\mathcal{B}_1\\) and \\(\mathcal{B}_2\\) would be all collections \\(B_p, B_q, B_r...\\) that have both bin \\(b_1\\) and bin \\(b_2\\) empty.
 
 $$
 \begin{align*}
