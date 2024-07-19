@@ -31,34 +31,31 @@ Stirling numbers for two groups are closely related to binomial coefficients. Th
 
 Things get more complicated with Stirling numbers for more than two partitions. This is because, in short, with, say, four partitions, working out how many repeats there are gets tricky. Just as a quick example, if we were to try to sum over the multinomial coefficient (itself a complicated expression), we would have to consider how to undercount the number of partitions that involve two groups of fixed size and composition while the other two groups change their size and composition. 
 
-Fortunately, there is a systematic way to work this out indirectly. First, we'll consider how to do this for distinguishable bins where we allow some bins to be empty. Then, we'll use the principle of the complement and subtract the number of ways that this ends up with at least one bin zero, and divide by the number of spurious rearrangements of bins (generally, \\(k!\\)). In the case of just one bin empty, things are pretty simple: if we have one bin empty, this leaves \\(k-1\\) bins left to distribute \\(n\\) balls to. We could leave any of the \\(k\\) bins empty, so we just subtract out \\(k(k-1)^n\\). 
+Fortunately, there is a systematic way to work this out indirectly. First, we'll consider how to allocate \\(n\\) objects to distinguishable bins where we allow some bins to be empty. Then, we'll use the principle of the complement and subtract the number of ways that this ends up with at least one bin zero, and divide by the number of spurious rearrangements of bins (generally, \\(k!\\)). In the case of just one bin empty, things are pretty simple: if we have one bin empty, this leaves \\(k-1\\) bins left to distribute \\(n\\) balls to. We could leave any of the \\(k\\) bins empty, so we just subtract out \\(k(k-1)^n\\). 
 
-Now, the problem is to work out how many partitions involve \\(2, 3, ... k\\) empty bins and then substract that from the number of partitions total. We can use a bit of set notation here to help us out. First, note that on this view of combinatorics&mdash;again, where we are generally distributing \\(n\\) (labeled or unlabeled) objects into \\(k\\) (labeled or unlabeled) bins&mdash;we are *generally* doing things like finding proper disjoint subsets of our set of objects, which we can call \\(S\\). 
+Now, the task is to work out how many assignments involve \\(2, 3, ... k\\) empty bins and then to substract that from the number of "unadjusted assignments". We can use a bit of set notation here to help us out. First, note that on this view of combinatorics&mdash;again, where we are generally distributing \\(n\\) (labeled or unlabeled) objects into \\(k\\) (labeled or unlabeled) bins&mdash;we are *generally* doing things like finding proper disjoint subsets of our set of objects. 
 
-Various combinatorial identities can be seen as finding the number of sets \\(\mathcal{A}_r\\) of disjoint and exhaustive labeled subsets \\(A_{1r}, A_{2r}, ... A_{kr}\\) of \\(S\\), with \\(r\\) indexing the "round" we are on and the numbers simply keeping track of the subsets. For example, the "permutation with repetition" coefficient, although we usually think about it as counting sequences, is also a way of finding each possible set of \\(k\\) disjoint, exhaustive, variable-size subsets of \\(S\\) (to see this, consider that we can represent every possible sequence of \\(n\\) things with \\(k\\) outcomes possible at each go as every way to take the \\(n\\) trials and place them into various "bins" representing the possible outcomes). The "combination without repetition" coefficient just fixes the size of the sets, and the multinomial is a simple extension.[^notation] Permutations even can be fit into this context: they represent all exhaustive, dijoint possible subsets where \\(k\\) of the sets must be singletons and all other elements must go into a \\(k+1\\)th set. Combinations with repetition count all possible exhaustive, disjoint subsets of variable size where we do not distinguish the objects. 
+Various combinatorial identities can be seen in this set-theoretic light. Let's establish some notation; this will get a little thorny, but that is OK. Note that we have "sets" all over the place here, so technically these bins are a set, any particular grouping of some of the \\(n\\) items into a given bin is a set, a total grouping of the items into the bins is a set of sets, a set of relevant groupings is (of course) a set, and a set of all relevant groupings is again of course a set. Heady! 
 
-[^notation]: Unfortunately, the standard notation for multinomials (where \\(k\\) is the number of things to put in a bin) violates the meaning we otherwise give to \\(k\\) in these problems, where it indicates the *number of bins*. This is really only a problem with the standard way of writing the binomial, since \\(k_1, k_2, ... k_k\\) in the multinomial case isn't entirely execrable notation, but the slightly awkward \\(\binom{n}{n_1, n_2, ... n_k}\\) used by *WolframAlpha* is much preferable if we want to be eact. 
+So, let's use some slightly differentiated notation. First, let's call our bins \\(b_1, b_2...b_k\\). Then, let's call any assignment of \\(n\\) items to the bins (that is, some possible grouping of items into bins) a **collection** \\(B_j\\). Next, the **set of collections that satisfy some criterion** is \\(\mathcal{B}_j\\); we'll focus here on criteria such as "bin \\(j\\) is empty". Finally, then, \\(\mathscr{B}\\) is the set of those criterion-sets. 
 
-Now, let's consider the sets of subsets of \\(S\\) with at least one box empty. Technically, this is a set of qualifying-sets-of-subsets, which we should write something like \\(\mathscr{S}_1\\), representing the set of of all sets with subset \\(1\\) empty.  For each labeled set \\(j\\), this size is the same number. Writing this fancy \\(S\\) over and over is a bit of a distraction, especially since we'll consider not just any such set but a set of the union of all comparable sets, so let's now just prove a *general* result about sets using simpler notation. We'll let let \\(B\\) stand in for any set; this result extends to sets of subsets or whatever other kind of object. Generally, we will let \\(B_j\\) stand in for the set of of all sets of subsets where labeled set \\(j\\) is empty. Now...
+Note that all of our standard combinatorial identities can be seen this way. For example, the "permutation with repetition" coefficient, although we usually think about it as counting sequences, is also a way of subsetting a set. To see this, consider that we can represent every possible sequence of \\(n\\) things with \\(k\\) outcomes possible at each go as every way to take the \\(n\\) trials and place them into various "bins" representing the possible outcomes. We are, therefore, finding each possible assignment of \\(n\\) items to our bins \\(b_1, b_2, ... b_k\\). Any such sequence is an assignment of assignments to sets \\(B_j\\), and we count all of them, finding \\(|\mathcal{B}|\\).. The "combination without repetition" coefficient just fixes the size of the bins \\(b_j\\) and forces \\(k=2\\).[^notation] The multinomial is a simple extension where \\(k\\) can be anything. Permutations even can be fit into this context: they represent all exhaustive, dijoint possible subsets where \\(k\\) of the sets must be singletons and all other elements must go into a \\(k+1\\)th set. Combinations with repetition count all possible exhaustive, disjoint subsets of variable size where we do not distinguish the objects. 
+
+[^notation]: Unfortunately, the standard notation for binomials (where \\(k\\) is the number of things to put in one of two bins) violates the meaning we otherwise give to \\(k\\) in these problems, where it indicates the *number of bins*. This is really only a problem with the standard way of writing the binomial, since \\(k_1, k_2, ... k_k\\) in the multinomial case isn't entirely execrable notation, but the slightly awkward \\(\binom{n}{n_1, n_2, ... n_k}\\) used by *WolframAlpha* is much preferable if we want to be eact. 
+
+Now, let's consider a sets of collections such \\(\mathcal{B_1}\\) that satisfy criteria such as "\\(b_1\\) is empty". Then, a quantity such as \\(|\mathcal{B_1}|\\) is the number of collections \\(B_1, B_2...\\) with \\(b_1\\) empty. A quantity such as... 
 
 $$
-\begin{align*} |B_j \cup B_h|
+\begin{align*} 
+\mathcal{B}_1 \cup \mathcal{B}_2
 \end{align*}
 $$
 
-is the number of ways to partition the \\(n\\) objects into \\(k\\) sets where one or the other or both of two boxes, \\(j, h\\) are empty. We could extend the pattern to cases where any of three bins are empty are empty. Counting this directly is a little bit hard, so let us work out how to do so in a more general case. If our \\(B_j\\)s are sets whose size represents the number of ways to partition a set of size \\(n\\) into \\(k\\) bins with bin \\(j\\) empty, the their union is the set of all sets with any combinations of the labeled set empty, and the size of this union... 
-
-$$ 
-\begin{align*}
-|B_1 \cup B_2 \cup ... B_k|
-\end{align*}
-$$
-
-is the number of the situation that at least one bin, possibly more, is empty. We therefore want to find the size of the complement of the size of that set...
+is the union of sets with both bin \\(1\\) and bin \\(2\\) empty.  **Our goal is going to be to count the size of the union of sets that contain all collections where a given bin is empty**. The complement of this number with the total number of ways to chuck \\(n\\) balls into \\(k\\) bins, no restrictions, is what we are after.  We therefore want to find the size of the complement of the size of that set of sets of collections...
 
 $$
 \begin{align*}
-\neg|(B_1 \cup B_2 \cup ... B_k)|
+\neg|\mathcal{B}_1 \cup \mathcal{B}_2...\mathcal{B}_k| = \neg | \mathscr{B} |
 \end{align*}
 $$
 
@@ -66,14 +63,16 @@ Counting this requires the very useful principle of inclusion-exclusion (AKA the
 
 ## The principle of inclusion-exclusion
 
-One way to think about this is to take the typical image of sets as Venn diagram circles into three dimensions by imagining them as stacked pancakes. We want to find the area of a complex shape formed by overlapping discs. If the pancakes were totally non-overlapping (disjoint), we could just sum up the areas; but, the areas will likely overlap. If we have two pancakes, it is very straightfoward: we add the areas of the two pancakes, which counts their intersection twice, and then subtract the intersection once, so that is is only counted once. With three pancakes, it is still pretty straightforward to figure this out: we add the three pancakes' areas and take out the pairwise intersections. This second move removes any area that is an intersection of just two pancakes exactly one time, which we want, but it subtracts any intersection of the three pancakes three times, which actually nets out that intersection. So, we add it back in. Using set theory notation...
+One way to think about this is to take the typical image of sets as Venn diagram circles into three dimensions by imagining them as stacked pancakes. We want to find the area of a complex shape formed by overlapping discs. If the pancakes were totally non-overlapping (disjoint), we could just sum up the areas; but, the areas will likely overlap. If we have two pancakes, it is very straightfoward: we add the areas of the two pancakes, which counts their intersection twice, and then subtract the intersection once, so that is is only counted once. With three pancakes, it is still pretty straightforward to figure this out: we add the three pancakes' areas and take out the pairwise intersections. This second move removes any area that is an intersection of just two pancakes exactly one time, which we want, but it subtracts any intersection of the three pancakes three times, which actually nets out that intersection. So, we add it back in. 
+
+I'll now write this with set notation. This is a very *general* principle; it works if our elements are truly atomic sorts of things or if they are themselves sets. I want to use separate notation so that we can just see the general principle before we use it in this somewhat-special use-case. 
 
 $$
 \begin{align*}
-\bigcup_{j=1}^2 B_j &= B_1 + B_2 - (B_1 \cap B_2) \cr
-\bigcup_{j=1}^3 B_j &= B_1 + B_2 + B_3 - 
-    (B_1 \cap B_2) - (B_2 \cap B_3) - 
-    (B_1 \cap B_3) + (B_1 \cap B_2 \cap B_3) \cr
+\bigcup_{j=1}^2 A_j &= A_1 + A_2 - (A_1 \cap A_2) \cr
+\bigcup_{j=1}^3 A_j &= A_1 + A_2 + A_3 - 
+    (A_1 \cap A_2) - (A_2 \cap A_3) - 
+    (A_1 \cap A_3) + (A_1 \cap A_2 \cap A_3) \cr
 \end{align*}
 $$
 
@@ -81,10 +80,10 @@ Further, if we are only interested in the size of the sets, it is obvious that w
 
 $$
 \begin{align*}
-|\bigcup_{j=1}^2 B_j| &= |B_1| + |B_2| - BA_1 \cap B_2| \cr
-|\bigcup_{j=1}^3 B_j| &= |B_1| + |B_2| + |B_3| - 
-    |B_1 \cap B_2| - |B_2 \cap B_3| - 
-    |B_1 \cap B_3| + |B_1 \cap B_2 \cap B_3| \cr
+|\bigcup_{j=1}^2 A_j| &= |A_1| + |A_2| - BA_1 \cap A_2| \cr
+|\bigcup_{j=1}^3 A_j| &= |A_1| + |A_2| + |A_3| - 
+    |A_1 \cap A_2| - |A_2 \cap A_3| - 
+    |A_1 \cap A_3| + |A_1 \cap A_2 \cap A_3| \cr
 \end{align*}
 $$
 
@@ -92,9 +91,9 @@ Now, to generalize about this process, let us think about what is really happeni
 
 $$
 \begin{align*}
-|\bigcup_{j=1}^n B_j| &= \sum_{i} |B_i| 
-    - \sum_{i\neq j} |B_i \cap B_j | 
-        + \sum_{i\neq j \neq h} |B_i \cap B_j \cap B_h| ... \cr
+|\bigcup_{j=1}^n A_j| &= \sum_{i} |A_i| 
+    - \sum_{i\neq j} |A_i \cap A_j | 
+        + \sum_{i\neq j \neq h} |A_i \cap A_j \cap A_h| ... \cr
 \end{align*}
 $$
 
@@ -102,12 +101,12 @@ This is in fact the correct algorithm. Let us show why. First, let \\(m\\) indic
 
 $$
 \begin{align*}
-| \bigcup_{j=1}^3 B_j | &= \underbrace{|B_1| + |B_2| + |B_3|}_
+| \bigcup_{j=1}^3 A_j | &= \underbrace{|A_1| + |A_2| + |A_3|}_
     {\text{$\epsilon$ counted $\binom{m}{1}$ times}}
-    - \underbrace{|B_1 \cap B_2| - |B_2 \cap B_3| - 
-        |B_1 \cap B_3|}_
+    - \underbrace{|A_1 \cap A_2| - |A_2 \cap A_3| - 
+        |A_1 \cap A_3|}_
         {\text{$\epsilon$ counted $\binom{m}{2}$ times}} 
-    + \underbrace{|B_1 \cap B_2 \cap B_3|}_
+    + \underbrace{|A_1 \cap A_2 \cap A_3|}_
         {\text{$\epsilon$ counted $\binom{m}{3}$ times}} \cr
 \end{align*}
 $$
@@ -169,12 +168,12 @@ Summarizing our findings in words, we found that the size of the union of \\(n\\
 
 $$
 \begin{align*}
-|\bigcup_{j=1}^n B_j| &= \sum_{j=1}^n (-1)^{j-1} \sum_{1 \leq h_1 < h_2 < ... h_j \leq n} 
-    | B_{h_1} \cap B_{h_2} ... \cap B_{h_j}|
+|\bigcup_{j=1}^n A_j| &= \sum_{j=1}^n (-1)^{j-1} \sum_{1 \leq h_1 < h_2 < ... h_j \leq n} 
+    | A_{h_1} \cap A_{h_2} ... \cap A_{h_j}|
 \end{align*}
 $$
 
-The notation here is gnarly. If we were just trying to sum over all possible \\(w\\)-way intersection for a fixed \\(w\\), we could omit the first summation and simply write the second sum as a sum over several dummy indices \\(\alpha, \beta, \gamma\\), etc.&mdash;summing over sets \\(B_\alpha, B_\beta, B_\gamma\\) indexed by \\(1 \leq \alpha < \beta < \gamma \leq n \\) is another way of saying "find all combinations (strict sense) of these sets and sum them". This could be written as multiple sums if we want; it is really a triplet of sums, after all. However, in the actual case under consideration, we do not even have a fixed number of intersections, and there is not a natural way to explicitly write the growing number of summations using multiple summation sigmas. 
+The notation here is gnarly. If we were just trying to sum over all possible \\(w\\)-way intersection for a fixed \\(w\\), we could omit the first summation and simply write the second sum as a sum over several dummy indices \\(\alpha, \beta, \gamma\\), etc.&mdash;summing over sets \\(A_\alpha, A_\beta, A_\gamma\\) indexed by \\(1 \leq \alpha < \beta < \gamma \leq n \\) is another way of saying "find all combinations (strict sense) of these sets and sum them". This could be written as multiple sums if we want; it is really a triplet of sums, after all. However, in the actual case under consideration, we do not even have a fixed number of intersections, and there is not a natural way to explicitly write the growing number of summations using multiple summation sigmas. 
 
 # Applying the principle of inclusion-exclusion
 
@@ -183,13 +182,13 @@ Now, we use this to work out the number of ways to distribute \\(n\\) distinguis
 $$
 \begin{align*}
 &k^n  && \text{# ways to distribute $n$ distinct items into $k$ distinct bins} \cr
-|B_j| &= \binom{k}{1} (k-1)^n 
-    && \text{number of partitions with a single box empty} \cr
-|B_j \cap B_h| &= \binom{k}{2} (k-2)^n 
-    && \text{number of partitions with two boxes both empty} \cr
-| \bigcup_{j=1}^k B_j | &= 
-    \sum_{j=1}^k (-1)^{j-1} \binom{k}{j} (k-j)^n
-        && \text{number of partitions with any of $k$ boxes empty} \cr
+|\mathcal{B}_j| &= \binom{k}{1} (k-1)^n 
+    && \text{size of set of collections with a given bin empty} \cr
+|\mathcal{B}_j \cap \mathcal{B}_h| &= \binom{k}{2} (k-2)^n 
+    && \text{size of set of collections with two given bins both empty} \cr
+| \bigcup_{j=1}^k \mathcal{B}_j | &= 
+    \sum_{j=1}^k (-1)^{j-1} \binom{k}{j} (k-j)^n = \mathscr{B}
+        && \text{set of collections with any of $k$ boxes empty} \cr
 & k^n -  
     \sum_{j=1}^k (-1)^{j-1} \binom{k}{j} (k-j)^n
     && \text{number of partitions with no box empty, distinct bins} \cr

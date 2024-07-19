@@ -96,29 +96,29 @@ We can now derive the formula for the variance when sampling from a finite popul
 
 You may want to first recall for comparison how we derive the sampling variance for the infinite population case. 
 
-### The infinite population sampling varinace 
+### The infinite population sampling variance
+
+Assume that \\(Y_1 + Y_2 + ... Y_n = Y\\).
 
 $$
 \begin{align*}
 \mathbb{V}[\hat{\mu}_{Y}] &= \mathbb{V}[\frac{(Y_1 + Y_2 + ... Y_n)}{n}] 
     && \text{Each trial is an iid random variable} \cr
-&= \frac{1}{n^2} \mathbb{V}[\frac{(Y_1 + Y_2 + ... Y_n)}{n}] 
+&= \frac{1}{n^2} \mathbb{V}[(Y_1 + Y_2 + ... Y_n)] 
     && \text{Constants factor out of variances as squares} \cr
 &= \frac{1}{n^2} \mathbb{E}[\left\{(Y_1 + Y_2 + ... Y_n) - 
     \mu_{Y} \right\}^2] && 
-    \text{Definition of expectation} \cr
+    \text{Definition of variance} \cr
 &= \frac{1}{n^2} \mathbb{E}[\left\{(Y_1 + Y_2 + ... Y_n) - 
     (\mu_{Y_1} + \mu_{Y_2} + ... \mu_{Y_n})\right\}^2] && 
     \text{Expectation is linear} \cr
-&= \frac{1}{n^2} \mathbb{E}[{(Y_1 - \mu_{Y_1}) + (Y_2 - \mu_{Y_2}) + ... 
-    (Y_n-\mu_{Y_n})}^2] && 
+&= \frac{1}{n^2} \mathbb{E}[\left\{(Y_1 - \mu_{Y_1}) + (Y_2 - \mu_{Y_2}) + ... 
+    (Y_n-\mu_{Y_n})\right\}^2] && 
     \text{Commutativity of addition} \cr
-&= \frac{1}{n^2} \frac{1}{n^2} \mathbb{E}[\left\{(Y_1 - \mu_{Y_1}) + (Y_2 - \mu_{Y_2}) 
-    + ... (Y_n-\mu_{Y_n})\right\}^2] && \text{Definition of expectation} \cr
 &= \frac{1}{n^2} \mathbb{E}[(Y_1 - \mu_{Y_1})^2 + (Y_1 - \mu_{Y_1})(Y_2 - \mu_{Y_2}) + 
     ... \cr
 &(Y_2-\mu_{Y_2})^2 + (Y_1 - \mu_{Y_1})(Y_2 - \mu_{Y_2})...] && 
-    \text{Multinomial expansion} \cr
+    \text{Polynomial expansion} \cr
 &= \frac{1}{n^2} \sum_{i=1}^n \sigma^2_{Y_i} + 2\sum_{i>j} \sigma_{Y_i, Y_j} && 
     \text{Definition of co/variance} \cr
 &= \frac{1}{n^2} \sum_{i=1}^n \sigma^2_{Y_i} && 
