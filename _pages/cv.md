@@ -9,23 +9,8 @@ redirect_from:
 
 {% include base_path %}
 
----
-title: "Griffin Bur"
-author: |
-    | e-mail: <bur2@wisc.edu>, <gjmbteaching@gmail.com>
-    | phone: 913-579-1164
-    | <https://griffinjmbur.github.io/>
-linkcolor: blue
-urlcolor: blue
-geometry:
-- margin = 1in
-linestretch: 1
-fontsize: 10pt
-colorlinks: true
----
-
-# EDUCATION
-
+Education
+======
 **Ph.D. in Sociology** \hfill December 2026 (expected) \
 University of Wisconsin \hfill Madison, WI
 
@@ -48,7 +33,9 @@ University of North Carolina \hfill Chapel Hill
     *Amidst the Wonders We Have Made? On Some 20th Century Reworkings of Marx's
     Theory of Value*
 
-# SKILLS
+
+SKILLS
+======
 
 - Highly proficient in applied statistics. First dissertation chapter makes use
 of sophisticated decomposition techniques to examine the role of income sources
@@ -65,7 +52,8 @@ as a graduate assistant for an advanced statistics course; have won a number of
 teaching awards (see below).
 
 
-# ACADEMIC HONORS
+ACADEMIC HONORS
+======
 
 - RC28 Travel Award \hfill 2026
 - Wisconsin Scholarship Hub (WISH) Student Research Grants Competition Travel
@@ -79,7 +67,8 @@ Award \hfill 2024
 - Dean’s list, UNC-Chapel Hill \hfill 2010—2014
 - National Merit Finalist \hfill 2010
 
-# CONFERENCE PRESENTATIONS
+CONFERENCE PRESENTATIONS
+======
 
 **RC28** \hfill August 2026
 
@@ -97,7 +86,8 @@ Award \hfill 2024
 
 - "Explaining 'Premature' Deindustrialization in Developing Countries"
 
-# TEACHING
+TEACHING
+======
 
 **Lecturer** \hfill 2020-2023 \
 University of Wisconsin \hfill Madison, WI \
@@ -133,7 +123,8 @@ Galin Education \hfill Madison, WI \
 - Tutor math and standardized test preparation. Received excellent reviews from
 students, available upon request.
 
-# GRADUATE COURSEWORK
+GRADUATE COURSEWORK
+======
 
 - "Statistics for Sociologists I" (SOC360) (A)
 - "Statistics for Sociologists II" (SOC361) (A)
@@ -145,7 +136,8 @@ students, available upon request.
 - Economic Sociology (preliminary examination passed)
 - Sociology of Economic Change and Development (preliminary examination passed)
 
-# LABOR, ORGANIZING, AND WORKER EDUCATION
+LABOR, ORGANIZING, AND WORKER EDUCATION
+======
 
 **Membership Secretary, Executive Board** \hfill 2018–2020 \
 Teaching Assistants' Association (AFT Local 3220), University of Wisconsin
@@ -187,7 +179,8 @@ and workplace and political issues.
 
 - Gave regular public presentations on voting, political participation, and legislative issues.
 
-# REFERENCES
+REFERENCES
+======
 
 - Christine Schwartz (Professor of Sociology, UW-Madison)
     - 4462 Sewell Social Science, 1180 Observatory Drive, Madison, WI 53706
@@ -200,6 +193,3 @@ and workplace and political issues.
 - Joel Rogers (Professor of Law, Public Affairs, and Sociology, UW-Madison)
     - 7122 Sewell Social Science, 1180 Observatory Drive, Madison, WI 53706
     - <jrogers@highroad.wisc.edu>
-
-
-
