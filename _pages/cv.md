@@ -19,7 +19,9 @@ colorlinks: true
 
 Education
 ======
-**Ph.D. in Sociology** <div style="text-align: right"> May 2027 (expected) </div>
+**Ph.D. in Sociology**
+May 2027 (expected)
+{: style="text-align: right;"}
 University of Wisconsin \hfill Madison, WI
 
 - Dissertation:
