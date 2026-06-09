@@ -20,9 +20,13 @@ colorlinks: true
 Education
 ======
 **Ph.D. in Sociology**
+{: style="text-align: left;"}
 May 2027 (expected)
 {: style="text-align: right;"}
-University of Wisconsin \hfill Madison, WI
+University of Wisconsin
+{: style="text-align: left;"}
+Madison, WI
+{: style="text-align: right;"}
 
 - Dissertation:
     *Measuring Income, Measuring Inequality: The Key Role of Capital in US
