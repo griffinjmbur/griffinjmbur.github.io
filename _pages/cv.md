@@ -9,9 +9,10 @@ redirect_from:
 
 {% include base_path %}
 
+
 Education
 ======
-**Ph.D. in Sociology** \hfill December 2026 (expected) \
+**Ph.D. in Sociology** <div style="text-align: right"> May 2027 (expected) </div>
 University of Wisconsin \hfill Madison, WI
 
 - Dissertation:
