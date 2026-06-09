@@ -5,6 +5,13 @@ permalink: /cv/
 author_profile: true
 redirect_from:
   - /resume
+author: |
+    | e-mail: <bur2@wisc.edu>, <gjmbteaching@gmail.com>
+    | phone: 913-579-1164
+    | <https://griffinjmbur.github.io/>
+linkcolor: blue
+urlcolor: blue
+colorlinks: true
 ---
 
 {% include base_path %}
