@@ -1,4 +1,3 @@
-
 ---
 title: "Job market teaching statement"
 collection: teaching

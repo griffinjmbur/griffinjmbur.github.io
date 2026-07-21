@@ -4,9 +4,9 @@ collection: research
 ---
 
 This file is my general research statement, written at a fairly high level of
-abstraction; this is part of my job market file. The post directly below this
-one contains a more detailed description of my teaching portfolio.
-
+abstraction; this is part of my job market file. The first two chapters of my
+dissertation are out for review at the *American Journal of Sociology* and
+*Social Indicators Research*, respectively. See below for draft versions.
 <!--
 Introduction: The first paragraph should introduce your research
 interests in the context of your field, tying the research you have done so far
