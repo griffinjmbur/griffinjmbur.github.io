@@ -1,6 +1,8 @@
 ---
 title: "Job market teaching statement"
 collection: teaching
+type: "Undergraduate courses"
+venue: "University of Wisconsin-Madison, Sociology Department"
 ---
 
 This file is my general teaching statement, written at a fairly high level of
