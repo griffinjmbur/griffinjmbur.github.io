@@ -1,6 +1,7 @@
 ---
 title: "Job market research statement"
 collection: research
+layout: archive
 ---
 
 This file is my general research statement, written at a fairly high level of
@@ -72,19 +73,18 @@ RC28 in 2026. I am presenting the second chapter at a roundtable at ASA in 2026.
 
 In my future research, I plan to expand on the third chapter of my dissertation.
 I am particularly interested in developing systematically the link between the
-unified framework for decomposition analysis based on the Shapley approach
-[@shorrocks2013] and recent research by scholars working in the potential
-outcomes framework [@elwert2025]. Scholars in the latter tradition have
-developed a robust framework for identifying causal effects in the (ubiquitous)
-situation where assignment to a treatment is non-random, while scholars in the
-former tradition have focused their attention on the problem of assigning a
-given factor a particular "contribution" to inequality, depending on the
-inequality measure and model used. These traditions have developed largely in
-isolation from one another but address fundamentally similar problems: when is
-it possible to say that factor $X$ actually "explains" some outcome $Y$, and
-when is this illusory? The causal identification framework can be brought to
-bear fruitfully on the slightly older but important literature on inequality
-decomposition.
+unified framework for decomposition analysis based on the Shapley approach and
+recent research by scholars working in the potential outcomes framework.
+Scholars in the latter tradition have developed a robust framework for
+identifying causal effects in the (ubiquitous) situation where assignment to a
+treatment is non-random, while scholars in the former tradition have focused
+their attention on the problem of assigning a given factor a particular
+"contribution" to inequality, depending on the inequality measure and model
+used. These traditions have developed largely in isolation from one another but
+address fundamentally similar problems: when is it possible to say that factor
+$$X$$ actually "explains" some outcome $$Y$$, and when is this illusory? The causal
+identification framework can be brought to bear fruitfully on the slightly older
+but important literature on inequality decomposition.
 
 Finally, I should note the connection of my research to my teaching. I am an
 especially teaching-focused scholar, and my research is closely tied to my
