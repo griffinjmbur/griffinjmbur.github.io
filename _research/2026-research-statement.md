@@ -2,6 +2,7 @@
 title: "Job market research statement"
 collection: research
 layout: archive
+author_profile: true
 ---
 
 This file is my general research statement, written at a fairly high level of
