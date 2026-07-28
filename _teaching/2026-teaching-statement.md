@@ -51,22 +51,22 @@ answers being possible (that it is analogous to the Pythagorean theorem, that
 the sum of unsquared deviations is zero, etc.)-->
 
 Second, I strongly believe in student-oriented, hands-on learning. Even when I
-deliver lectures on statistics to more than $100$ students, I generally do "call
-and response". I have been surprised at how well this works; if I put in the
-effort to learn students' names when they volunteer information, I have found
-that I can even cold call students in large math classes and get enthusiastic
-answers, even when students are not confident in their answer. On the level of
-the material itself, I hope for students to take ownership of the material. I
-expect students to feel comfortable with some pen-and-paper calculations and to
-be confident using statistical software. Even in the age of large language
-models, I believe it is important for students to actually play with formulae,
-to be able to make mistakes and achieve the satisfaction of struggling and
-getting a correct answer, rather than to merely loosely understand the
-"concept". I have found that many students in fact thrive when they see that,
-for example, they can calculate the correlation coefficient by hand for a small
-set of data and observe that it obeys all of the expected properties &mdash; the
-sign goes the direction they would hope and the strength is about what they
-would guess.
+deliver lectures on statistics to more than $$100$$ students, I generally do
+"call and response". I have been surprised at how well this works; if I put in
+the effort to learn students' names when they volunteer information, I have
+found that I can even cold call students in large math classes and get
+enthusiastic answers, even when students are not confident in their answer. On
+the level of the material itself, I hope for students to take ownership of the
+material. I expect students to feel comfortable with some pen-and-paper
+calculations and to be confident using statistical software. Even in the age of
+large language models, I believe it is important for students to actually play
+with formulae, to be able to make mistakes and achieve the satisfaction of
+struggling and getting a correct answer, rather than to merely loosely
+understand the "concept". I have found that many students in fact thrive when
+they see that, for example, they can calculate the correlation coefficient by
+hand for a small set of data and observe that it obeys all of the expected
+properties &mdash; the sign goes the direction they would hope and the strength
+is about what they would guess.
 
 Finally, I seek to make the material relevant to students. When I teach
 statistics, the course culminates in a research project of their choosing.

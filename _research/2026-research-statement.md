@@ -6,11 +6,9 @@ collection: research
 This file is my general research statement, written at a fairly high level of
 abstraction; this is part of my job market file. The first two chapters of my
 dissertation are out for review at the *American Journal of Sociology* and
-*Social Indicators Research*, respectively. See below for draft versions.
-<!--
-Introduction: The first paragraph should introduce your research
-interests in the context of your field, tying the research you have done so far
-to a distinct trajectory that will take you well into the future.-->
+*The Journal of Economic Inequality*, respectively.
+
+# My research
 
 My research is centered on economic inequality in the United States,
 particularly income inequality. This inequality is particularly salient for both
@@ -25,10 +23,6 @@ this level, and the determinants of income inequality. My future research will
 follow this path: my ultimate goal is to synthesize some of these "local"
 debates about income inequality with the findings of broader methodological
 debates about what can (and cannot) be said about "decomposition" methods.
-
-<!--Summary Of Dissertation: This paragraph should summarize your doctoral research
-project. Try not to have too much language repetition across documents, such as
-your abstract or cover letter.-->
 
 My dissertation has three closely interrelated parts; I re-open debates about US
 income inequality in three ways.
@@ -67,29 +61,6 @@ property income), while others are not (and suggest a larger role for
 labor-market mechanisms; the Gini coefficient, often used without thorough
 justification, has this property).
 
-<!--Contribution To Field And Publications: Describe the significance of your
-projects for your field. Detail any publications initiated from your independent
-doctoral or postdoctoral research. Additionally, include plans for future
-publications based on your thesis. Be specific about journals to which you
-should submit or university presses that might be interested in the book you
-could develop from your dissertation (if your field expects that). If you are
-writing a two-page research statement, this section would likely be more than
-one paragraph and cover your future publication plans in greater detail.-->
-
-<!--
-My research has fairly wide-reaching implications (standing, of course, on the
-shoulders of giants). In short, I demonstrate that we know less about income
-inequality than we might think, but that certain core facts are knowable,
-more-or-less: income inequality on *most* plausible definitions of "income" (but
-not all!) has indeed risen precipitously in the United States; much of this
-inequality is driven by capital income, at least by the most compelling
-definitions of "income"; yet, at the same time, different plausible choices of
-an inequality *measure* can tip the balance towards labor income. Interestingly,
-however, the choice of measure is not an arid mathematical debate but instead
-can be cast in intuitive properties of those measures: how averse are we to
-inequality? Do we care more about inequality between rich and poor, or between
-members of the "middle class"? -->
-
 As of this writing, my first chapter is under review at the *American Journal of
 Sociology* and my second chapter is under review at *Social Indicators
 Research*. I will submit the third chapter to *Sociological Methodology* in the
@@ -98,16 +69,6 @@ Inequality, Poverty, and Mobility in 2024, for which I won the Wisconsin
 Scholarship Hub (WISH) Student Research Grants Competition Travel Award. This
 paper was also accepted for an oral presentation and won a Travel Award from
 RC28 in 2026. I am presenting the second chapter at a roundtable at ASA in 2026.
-
-<!--
-Second Project: If you are submitting a cover letter along with your research
-statement, then the committee may already have a paragraph describing your
-second project. In that case, use this space to discuss your second project in
-greater depth and the publication plans you envision for this project. Make sure
-you transition from your dissertation to your second large project smoothly –
-you want to give a sense of your cohesion as a scholar, but also to demonstrate
-your capacity to conceptualize innovative research that goes well beyond your
-dissertation project. -->
 
 In my future research, I plan to expand on the third chapter of my dissertation.
 I am particularly interested in developing systematically the link between the
@@ -125,12 +86,6 @@ when is this illusory? The causal identification framework can be brought to
 bear fruitfully on the slightly older but important literature on inequality
 decomposition.
 
-<!--
-Wider Impact Of Research Agenda: Describe the broader significance of your work.
-What ties your research projects together? What impact do you want to make on
-your field? If you’re applying for a teaching-oriented institution, how would
-you connect your research with your teaching? -->
-
 Finally, I should note the connection of my research to my teaching. I am an
 especially teaching-focused scholar, and my research is closely tied to my
 pedagogy. As a lecturer, I am particularly keen on helping students understand
@@ -144,4 +99,3 @@ on all of the many contestable elements of my major substantive paper. Just as I
 ask, and receive, a great deal of curiosity from my students, I have identified
 active areas of debate by asking myself questions and realizing that the jury is
 still out.
-
