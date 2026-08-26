@@ -9,8 +9,15 @@ I've taught many courses as a graduate student, lecturing statistical and
 general-methodological courses (and TAing for several substantial sociological
 courses in political economy and demography). I generally get quite good
 reviews; you can see the public ones [here](https://archive.ph/2FfJl) (archived
-2024-02-22). Below is some of the large volume of original material I've
-produced for for those courses.
+2024-02-22). My weighted average across seven[^covid] courses as a lecturer is
+$4.48$, and my weighted average across eight courses as a TA is $4.63$.
+
+My favorite comment ever written in a formal evaluation is this: "[This] is
+single handedly the best math class I've ever taken [...] as transfer student
+[...] I was already nervous taking a course like this because I was never good
+at math. Yet, the professor has changed my whole outlook on math." Below are
+some other nice anonymous comments I have received, along with the large volume
+of original material I've produced for for those courses.
 
 # Lecture experience
 
@@ -56,9 +63,9 @@ generally find teaching substantial sociology completely effortless.
 
 The first is SOC125, "American Society: How It Really Works", based on the
 textbook of the same name, written by the living legend Joel Rogers and the
-sadly-dead legend Erik Olin Wright, my first graduate school advisor; I taught
-for both of them, as well as graduate student lecturer. My notes written as a
-teaching assistant are
+sadly-deceased legend Erik Olin Wright, my first graduate school advisor; I
+taught for both of them, as well as graduate student lecturer. My notes written
+as a teaching assistant are
 [here](https://drive.google.com/drive/u/0/folders/1I7Q2qzbWmGnrSvMIytVlHyVnRDmjGAlf).
 They will primarily be of interest to you if you are teaching a course using
 this book, but if you are simply trying to teach an ambitious undergraduate
@@ -79,3 +86,79 @@ Finally, I also ended up teaching "Statistics for Sociologists II" as a teaching
 assistant under the supervision of Prof. Theodore Gerber. That was in Fall 2024.
 You can see my detailed lab notes
 [here](https://github.com/griffinjmbur/soc361fa24).
+
+# Rave reviews
+
+These are, of course, cherry-picked, and the title is tongue-in-cheek. But, I do
+want to share some of the nice things people have said about me in evaluations.
+
+## SOC361fa24
+
+- "I can't think of a better instructor of this material. A genuine pleasure being
+in this class"
+
+- "I felt like I would not have been able to get through this class if it wasn't
+ for Griffin. He was extraordinarily responsive, clear, and helpful in lab,
+ via email, and in office hours. Griffin is extremely fast with responses and
+ always goes above and beyond to answer questions in depth and provide
+ reasoning behind answers. As a student who does not have a strong
+ quantitative background, Griffin made me feel as though I was just as capable
+ as anyone else and encouraged my work as a growing quantitative student. So
+ lucky I got to learn from him before he graduates:)"
+
+- "His classes are always well-organized and clear. He excels in teaching
+statistics and math."
+
+- "Griffin is gonna be a great professor (if he chooses to)!! Took both 360 and
+361 with him and he'salways super clear and helpful"
+
+## SOC360su24
+
+- "GREAT!"
+
+- "The lectures have helped my learning the most. I have taken other
+ statistic classes before but this is the course that I felt I understood and
+ learned the most from. Also, learning STATA is really useful."
+
+## SOC360sp23
+
+- "This was a great course and Griffin did a lot to help students learn the
+ material in an engaging manner. I found the breakdowns of formulas and then
+ the application on a real-world statistical problem to be very helpful."
+
+- "Office hours helped me learn the most. I also learned a lot through the videos
+ that Griffin posted on the shared doc drive because I could see the Stata
+ codes and everything."
+
+- "Although I was not interested in the information, the professor made the
+ class very interesting with ripe discussion and example problems that we could
+ do with the help of the professor and the TA's."
+
+- "Explained everything that needed to be explained and beyond. Was very
+understanding and accommodating to all students. Drawing diagrams on the board
+and solving problems in class were the most useful in learning the content."
+
+- "Amazing class and professor"
+
+- "This was a tough course for me but with the help of my professor and friends in
+the class we got through it and learned a lot. Classes were more fun than other
+classes I have had because there were a lot more group work and talking with
+neighbors which I thought was helpful. Our professor was clear and great when
+giving lectures."
+
+- "Griffin was super responsive, flexible, and understanding via email. He made
+ me feel a lot better about the course whenever contacted [...] I think I
+ would've been more scared if I did not have him as my instructor. I always
+ enjoyed his comments about what was relevant and what was not in lecture. He
+ was also super caring and reassured students consistently if something was
+ overwhelming. Overall, he was a very fair and excellent instructor."
+
+## SOC360fa22
+
+- Griffin was great! I learned more from meeting with him one-on-one than from
+ anything else. He was happy to help me with my project and I appreciated his
+ knowledge on the subject. I would definitely change the textbook for the class,
+ though, because it is confusing to switch back and forth between the
+ dumbed-down info and the detailed info without any bridge or explanation to it.
+ A book that more consistently supports the depth of the lectures would be much
+ better." Note that I took this suggestion to heart!
