@@ -10,7 +10,7 @@ general-methodological courses (and TAing for several substantial sociological
 courses in political economy and demography). I generally get quite good
 reviews; you can see the public ones [here](https://archive.ph/2FfJl) (archived
 2024-02-22). My weighted average across seven[^covid] courses as a lecturer is
-$4.48$, and my weighted average across eight courses as a TA is $4.63$.
+$$4.48$$, and my weighted average across eight courses as a TA is $$4.63$$.
 
 My favorite comment ever written in a formal evaluation is this: "[This] is
 single handedly the best math class I've ever taken [...] as transfer student
@@ -18,6 +18,10 @@ single handedly the best math class I've ever taken [...] as transfer student
 at math. Yet, the professor has changed my whole outlook on math." Below are
 some other nice anonymous comments I have received, along with the large volume
 of original material I've produced for for those courses.
+
+[^covid]: Thanks to the vagaries of COVID, I was the instructor of record but
+    did not actually deliver lecture content for my first two semesters spent
+    teaching introductory statistics.
 
 # Lecture experience
 
@@ -161,4 +165,4 @@ giving lectures."
  though, because it is confusing to switch back and forth between the
  dumbed-down info and the detailed info without any bridge or explanation to it.
  A book that more consistently supports the depth of the lectures would be much
- better." Note that I took this suggestion to heart!
+ better." **Note that I took this suggestion to heart!**
