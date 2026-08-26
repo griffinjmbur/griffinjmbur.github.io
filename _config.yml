@@ -11,7 +11,8 @@ locale                   : "en-US"
 title                    : "gjmb research"
 title_separator          : "-"
 name                     : &name "Griffin JM Bur"
-description              : &description "Welcome to my research blog. I'm a PhD candidate (ABD) in Sociology at UW-Madison. I post my research here."
+description              : &description
+  "Welcome to my research blog. I'm a PhD candidate (ABD) in Sociology at UW-Madison. I post my research here."
 url                      : https://griffinjmbur.github.io/ # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "griffinjmbur/griffinjmbur.github.io"
@@ -21,7 +22,7 @@ repository               : "griffinjmbur/griffinjmbur.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "bur-sociology-department-headshot.jpg"
   name             : ""
   pronouns         : # example: "she/her"
   bio              : "PhD candidate in at UW-Madison with an interest in statistics and social class"
