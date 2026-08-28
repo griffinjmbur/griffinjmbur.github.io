@@ -18,4 +18,4 @@ dated 2026-07-20
   <a href="{{ base_path }}/files/2026-CV-BUR-G.pdf" class="btn btn--primary">Download CV as PDF</a>
 </div> -->
 
-<object data="{{ base_path }}/files/2026-CV-BUR-G.pdf" width="1000" height="1000" type='application/pdf'/></object>
+<object data="{{ base_path }}/files/2026-CV-BUR-G-upd.pdf" width="1000" height="1000" type='application/pdf'/></object>
