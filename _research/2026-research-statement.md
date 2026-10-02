@@ -6,10 +6,10 @@ author_profile: true
 ---
 
 This file is my general research statement, written at a fairly high level of
-abstraction; this is part of my job market file. The first two chapters of my
-dissertation have received a Revise & Resubmit and are ready for submission at
-the *American Journal of Sociology* and *The Journal of Economic Inequality*,
-respectively.
+abstraction; this is part of my job market file. The first chapter of my
+dissertation has received a Revise & Resubmit at the *American Journal of
+Sociology*. The second is approaching final submission to *The Journal of
+Economic Inequality*, and the third remains in manuscript form at present.
 
 # My research
 
